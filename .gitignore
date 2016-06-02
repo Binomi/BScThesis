@@ -1,0 +1,15 @@
+*.aux
+
+*.gz
+
+*.toc
+
+*.synctx.gz
+
+*.tex.bak
+
+*.bbl
+
+*.blg
+
+*.log

@@ -1,13 +1,21 @@
-\BOOKMARK [0][]{nom.0}{Nomenklatur}{}% 1
-\BOOKMARK [0][]{chapter.1}{1 Einleitung}{}% 2
-\BOOKMARK [0][]{chapter.2}{2 Grundlagen}{}% 3
-\BOOKMARK [1][]{section.2.1}{2.1 Unterkapitel Gliederungsebene 2}{chapter.2}% 4
-\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Unterkapitel Gliederungsebene 3}{section.2.1}% 5
-\BOOKMARK [0][]{chapter.3}{3 Experimentelle Vorgehensweise}{}% 6
-\BOOKMARK [0][]{chapter.4}{4 Ergebnisse}{}% 7
-\BOOKMARK [0][]{chapter.5}{5 Diskussion}{}% 8
-\BOOKMARK [1][]{section.5.1}{5.1 Unterkapitel}{chapter.5}% 9
-\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Unterkapitel}{section.5.1}% 10
-\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung}{}% 11
-\BOOKMARK [0][]{appendix.A}{A erster Anhang}{}% 12
-\BOOKMARK [0][]{appendix.B}{B zweiter Anhang}{}% 13
+\BOOKMARK [0][]{chapter.1}{1 Einleitung}{}% 1
+\BOOKMARK [0][]{chapter.2}{2 Grundlagen}{}% 2
+\BOOKMARK [1][]{section.2.1}{2.1 Der Laser}{chapter.2}% 3
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Mode-Locking}{section.2.1}% 4
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 Betriebsmodi}{section.2.1}% 5
+\BOOKMARK [1][]{section.2.2}{2.2 Dispersive Fourier-Transformation}{chapter.2}% 6
+\BOOKMARK [0][]{chapter.3}{3 Experimentelle Vorgehensweise}{}% 7
+\BOOKMARK [1][]{section.3.1}{3.1 Kalibration}{chapter.3}% 8
+\BOOKMARK [1][]{section.3.2}{3.2 Photodiode}{chapter.3}% 9
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Undispergiert}{section.3.2}% 10
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Dispergiert}{section.3.2}% 11
+\BOOKMARK [0][]{chapter.4}{4 Ergebnisse}{}% 12
+\BOOKMARK [1][]{section.4.1}{4.1 Doppelpulse 100fs}{chapter.4}% 13
+\BOOKMARK [1][]{section.4.2}{4.2 Doppelpulse 200fs}{chapter.4}% 14
+\BOOKMARK [1][]{section.4.3}{4.3 Dreifach-Pulse}{chapter.4}% 15
+\BOOKMARK [1][]{section.4.4}{4.4 Weiteres}{chapter.4}% 16
+\BOOKMARK [0][]{chapter.5}{5 Diskussion}{}% 17
+\BOOKMARK [1][]{section.5.1}{5.1 Colliding Pulse Modelocking}{chapter.5}% 18
+\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung}{}% 19
+\BOOKMARK [0][]{appendix.A}{A erster Anhang}{}% 20
+\BOOKMARK [0][]{appendix.B}{B zweiter Anhang}{}% 21
