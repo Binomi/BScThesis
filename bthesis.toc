@@ -1,6 +1,7 @@
 \select@language {ngerman}
 \select@language {ngerman}
 \select@language {ngerman}
+\select@language {ngerman}
 \select@language {english}
 \select@language {ngerman}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
@@ -14,13 +15,13 @@
 \contentsline {section}{\numberline {3.2}Photodiode}{6}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Undispergiert}{6}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Dispergiert}{6}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Ergebnisse}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Doppelpulse 100fs}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}Doppelpulse 200fs}{7}{section.4.2}
-\contentsline {section}{\numberline {4.3}Dreifach-Pulse}{7}{section.4.3}
-\contentsline {section}{\numberline {4.4}Weiteres}{7}{section.4.4}
-\contentsline {chapter}{\numberline {5}Diskussion}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}Colliding Pulse Modelocking}{9}{section.5.1}
-\contentsline {chapter}{\numberline {6}Zusammenfassung}{11}{chapter.6}
-\contentsline {chapter}{\numberline {A}erster Anhang}{13}{appendix.A}
-\contentsline {chapter}{\numberline {B}zweiter Anhang}{15}{appendix.B}
+\contentsline {chapter}{\numberline {4}Ergebnisse}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Doppelpulse 100fs}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}Doppelpulse 200fs}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Dreifach-Pulse}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Weiteres}{9}{section.4.4}
+\contentsline {chapter}{\numberline {5}Diskussion}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}Colliding Pulse Modelocking}{13}{section.5.1}
+\contentsline {chapter}{\numberline {6}Zusammenfassung}{15}{chapter.6}
+\contentsline {chapter}{\numberline {A}erster Anhang}{17}{appendix.A}
+\contentsline {chapter}{\numberline {B}zweiter Anhang}{19}{appendix.B}
