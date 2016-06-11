@@ -68,7 +68,7 @@
 %% dem Verzeichnis mit der Arbeit).
 
 % Mehrere Abbildungen nebeneinander
-\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage{adjustbox}
 
 \begin{document}
@@ -81,7 +81,7 @@
 \PlaceOfBirth{Bad Nauheim}
 %% Titel Arbeit. Das erste Argument ist der deutsche, das zweite der
 %% englische Titel.
-\ThesisTitle{Beobachtung von Doppelpulsen im KLM-Ti:Sa-Laser mittels Einzelschuss-Spektroskopie}{Observation of double pulses in a KLM-Ti:Sa Laser with single-shot spectroscopy}
+\ThesisTitle{Einzelschuss-Spektroskopie von Doppelpulsen im KLM-Ti:Sa-Laser}{Single-shot spectroscopy of double pulses in a KLM-Ti:Sa Laser}
 %% Erst- und Zweitgutacher/in
 %% Ist der/die Betreuer/in nicht identisch mit dem/r Erstgutachter/in,
 %% muss diese/r als optionales Argument angegeben werden.
@@ -176,6 +176,12 @@ Dies eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
 \section{Der Laser}
 Der zu untersuchende Laser ist ein Titan:Saphir-Laser (\textit{Rainbow} von \textit{FemtoLasers}).
 Er erzeugt 7-fs-Pulse bei einer Puls-Wiederholrate von $80\,$MHz und einer Leistung von mehr als $250\,$mW.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
+	\caption{Aufbau des \textit{Rainbow}s.}
+	\label{fig:rainbow}
+\end{figure}
 \subsection{Mode-Locking}
 Damit der Laser solche kurzen Pulse erzeugen kann, müssen viele Longitudinal-Moden in der Cavity in Phase sein.
 Dieses \emph{Mode-Locking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
@@ -244,13 +250,13 @@ Nimmt man nun so das Spektrum sowohl auf dem herkömmlichen Grating-Spektrometer
 
  \begin{figure}[!htb]
    \centering
-   \subfigure[Spektrometer\label{fig:gratingEtalon}]
+   \subfloat[Spektrometer\label{fig:gratingEtalon}]
    {\includegraphics[width=0.49\textwidth]{figures/gratingEtalon}}
    \hfill
-   \subfigure[Oszilloskop\label{fig:osziEtalon}]
+   \subfloat[Oszilloskop\label{fig:osziEtalon}]
    {\includegraphics[width=0.49\textwidth]{figures/osziEtalon}}
    \hfill
-   \subfigure[Kalibration\label{fig:calibration}]
+   \subfloat[Kalibration\label{fig:calibration}]
    {\includegraphics[width=0.7\textwidth]{figures/calibration}}
    \caption{Beschriftung allgemein}
    \label{fig:label-gesamt}
@@ -292,42 +298,81 @@ Zuletzt muss man noch die Änderung der Repetitionsrate bzw. die Abweichung vom 
 
 
 \section{Doppelpulse 100fs}
-\begin{figure}
-	\includegraphics[scale=1.0]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_noCB}
+\subsection{Running}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,45W_Ch2_2}
+	\caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben (\textit{FastFrame}-Aufnahme).}
+	\label{fig:running}
 \end{figure}
 
+\subsection{Bouncing}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/bounceDistTime}
+	\caption{Maximaler Pulsabstand $\tau_\text{max}$ versus Zeit zwischen zwischen zwei Kollisionen $T_\text{interColl.}$. Das bestimmte $\tau_\text{max}$ ist begrenzt durch die maximale Modulationsfrequenz des Spektrums.}
+	\label{fig:bounceDistTime}
+\end{figure}
+
+\subsection{Fixed distance}
 \begin{figure}[!htb]
    \centering
-   \subfigure[$P_\text{Pump}=4.58\,$W\label{fig:rBF458}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_noCB}}
+   \subfloat[\label{fig:rBF458}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
    \hfill
-   \subfigure[$P_\text{Pump}=4.63\,$W\label{fig:rBF463}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_noCB}}
+   \subfloat[\label{fig:rBF463}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB}}
+   
+   \subfloat[\label{fig:rBF464}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB}}
    \hfill
-   \subfigure[$P_\text{Pump}=4.64\,$W\label{fig:rBF464}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_noCB}}
-   \hfill
-   \subfigure[$P_\text{Pump}=4.68\,$W\label{fig:rBF468}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_noCB}}
+   \subfloat[\label{fig:rBF468}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWnoCB}}
    \caption{Beschriftung allgemein}
    \label{fig:label-gesamt}
  \end{figure}
  
  \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows2.pdf}
+	\caption{Phasendynamik in der Interaction Plane.}
+	\label{fig:interactionPlane}
+\end{figure}
+
+\section{Doppelpulse 200fs}
+
+\begin{figure}[!htb]
    \centering
-   \subfigure[$P_\text{Pump}=4.58\,$W\label{fig:rBF458}]
-   {\includegraphics[width=0.6\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_noCB}}
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
+   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,8W_2_Ch_PWnoCB}}
    \hfill
-   \subfigure[$P_\text{Pump}=4.63\,$W\label{fig:rBF463}]
-   {\includegraphics[width=0.6\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_noCB}}
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,6W_Ch_PWnoCB}}
+   %\hfill
+   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB}}
    \hfill
-   \subfigure[$P_\text{Pump}=4.68\,$W\label{fig:rBF468}]
-   {\includegraphics[width=0.6\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_noCB}}
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,49W_Ch_PWnoCB}}
+   %\hfill
+   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,34W_Ch_PWnoCB}}
+   %\hfill
+   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB}}
    \caption{Beschriftung allgemein}
    \label{fig:label-gesamt}
  \end{figure}
-
-\section{Doppelpulse 200fs}
 
 \section{Dreifach-Pulse}
 
