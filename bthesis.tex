@@ -71,6 +71,8 @@
 \usepackage{subfig}
 \usepackage{adjustbox}
 
+\newcommand{\dif}{\ensuremath{\mathrm{d}}}
+
 \begin{document}
 %%
 %%                   Ab hier muessen die Anpassungen geschehen
@@ -193,6 +195,33 @@ Höhere Intensitäten führen zu einer stärkeren Fokussierung des Strahls in da
 Da dort auch der Pumpstrahl hinein fokussiert wird, ist in dessen Fokus die Besetzungsinversion höher und diese kann durch die stärkere Fokussierung effizienter abgebaut werden.
 So wird dieser intensive Puls gegenüber dem cw-Signal bevorzugt und letzteres stirbt aus.
 Dieses Verfahren nennt man \textbf{soft aperture modelocking}, während man 
+
+\subsection{theoretisches Model}
+
+\begin{align}
+	\frac{\partial A(z,t)}{\partial z}=\left[\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}+(t_f^2+iD)\frac{\partial^2}{\partial t^2}-i\beta |A(z,t)|^2\right]A(z,t)
+\end{align}
+
+%\begin{align}
+%	A_1(z,t)&=A(z,t)\exp\left(\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}-i\beta |A(z,t)|^2\right)\\
+%	\tilde{A_2}(z,\omega)&=\tilde{A_1}(z,\omega)\exp\left(-\omega^2( t_f^2-iD)\right)\tilde{A_1}(z,\omega)
+%\end{align}
+
+\begin{align}
+	\frac{\dif \alpha(t)}{\dif t}=\frac{I_p\sigma_a}{h\nu_a}(\alpha_\text{max}-\alpha(t))-\frac{\sigma_g|A(z,t)|^2}{h\nu}\alpha(t)-\frac{\alpha(t)}{T_r}
+\end{align}
+
+\begin{align}
+	\alpha(z)&=\alpha(z-1)\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right) \notag \\
+	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]
+\end{align}
+
+\begin{align}
+	\alpha_2(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2\\
+	\alpha_\text{corr}(z,t)&=\alpha_2(z,t)-\int_{t_1}^{t_2} \dif t\, \alpha_2(z,t)\\
+	\alpha(z,t)&=\alpha(z)+\alpha_\text{corr}(z,t)
+\end{align}
+
 \subsection{Betriebsmodi}
 Der Laser kann in vielen verschiedenen Modi betrieben werden.
 Wenn er angeschaltet wird, liefert er zunächst ein cw-Signal.
@@ -216,6 +245,8 @@ Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen Pro
 
 Eine zeitliche Verschiebung im Signal nach der Faser könnte zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
 Deshalb nimmt man mit einer zweiten Photodiode parallel noch das reine Zeitsignal auf, also den undispergierten Puls.
+
+\subsection{Spektrale Interferenz}
 
 \chapter{Experimentelle Vorgehensweise}
 Der experimentelle Aufbau ist sehr einfach.
@@ -287,7 +318,7 @@ Danach übersteuert man die Photodiode, sodass nicht genug Ladungsträger zwisch
 \chapter{Ergebnisse}
 Um durch eine langen Messung mit dem Oszilloskop die Entwicklung des Spektrums, etc. darstellen zu können, muss man erst die Pulswiederholrate bestimmen.
 Dies geschieht über eine Fouriertransformation des ganzen Signals.
-Die Frequenz des höchsten Peaks entspricht der Wiederholrate, das inverse davon also dem Pulsabstand $t_\text{rep}$ bzw. der optischen Cavity-Länge des Lasers.
+Die Frequenz des höchsten Peaks entspricht der Wiederholrate, das Inverse davon also dem Pulsabstand $t_\text{rep}$ bzw. der optischen Cavity-Länge des Lasers.
 Da man diese zum Starten ändert, ist die bestimmte Wiederholrate nur für einen kurzen Ausschnitt der Messung korrekt.
 Hat man also $t_\text{rep}$ bestimmt, legt man fest, in wie viele äquidistante Punkte man diese Zeit unterteilen möchte.
 Dies sollte so gewählt sein, dass die Abstände in etwa zugehörigen Samplingrate entspricht.
@@ -295,57 +326,89 @@ Dann interpoliert man die Messdaten an den neuen Zeitpunkten und stellt die Date
 Die eine Achse entspricht den Roundtrips, die andere ist die Zeitachse pro Roundtrip.
 
 Zuletzt muss man noch die Änderung der Repetitionsrate bzw. die Abweichung vom richtigen Wert korrigieren.
+Dies kann auf zwei Arten geschehen:
+Ist der Anteil an der Messung, bei der der Laser gemodelockt ist, groß, legt man ein Polynom durch die Peakpositionen des undispergierten, gemodelockten Signals, dehnt den Definitionsbereichs des Polynoms auf die gesamte Messung aus und verschiebt dann jeden Roundtrip so, dass diese Peakpositionen konstant sind.
+Mit dem gleichen Polynom (nur mit einem anderen Offset) verschiebt man auch die dispergierte Messung.
+Ist der Anteil an der Messung, bei der der Laser gemodelockt ist, jedoch kleiner, sodass man einen großen Fehler macht, wenn man das wie oben gefittete Polynom auch auf den nicht-gemodelockten Bereich ausdehnt, muss man sich einer anderen Methode bedienen, um die Änderung der Rep.rate zu korrigieren.
+Dies basiert auf der Korrelation zwischen zwei Roundtrips, denn man davon ausgehen, dass sich zwischen zwei aufeinanderfolgenden Roundtrips kaum etwas ändert.
+Man beginnt mit einem gemodelockten Spektrum und geht von diesem Spektrum zu früheren Roundtrips und bestimmt zu diesem die Korrelation.
+Sollte der maximale Wert nicht bei der Verschiebung $\tau=0$ der beiden Signale zueinander sein, verschiebt man diesen Roundtrip um eben diesen Wert, sodass die Korrelation nun maximal bei $\tau=0$ ist.
+Nun wird dieser Roundtrip (allerdings unverschoben) als neue Referenz genommen.
+Das Spiel beginnt von vorne, es wird wieder die Korrelation zwischen diesem und vorigen Roundtrips gebildet, etc.
+Allerdings wird die benötigte Verschiebung logischerweise aufsummiert.
+Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wählen, sondern die Mittelung über mehrere.
+Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu zu starken Verschiebungen führen.
 
+Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
+Dies geschieht anhand zwei verschiedener Messreihen.
+Danach folgen weitere Beobachtungen wie z.B. Tripletts.
 
-\section{Doppelpulse 100fs}
-\subsection{Running}
+\section{Doppelpulse Messreihe 1}
+\subsection{Running ($P_\text{Pump}=4.39\dots4.47\,$W)}
+In diesem Zustand ist die Pumpleistung so gering, dass zwar zwei Pulse durch den Laser laufen, diese aber einen großen Intensitätsunterschied haben, so dass sie unterschiedliche optische Weglängen haben und sich so auf einer Skala von 100\,ms gegeneinander verschieben.
+In Abb. \ref{fig:rBF441} sieht man eine \textit{FastFrame}-Aufnahme dieses Betriebs.
+Dabei wird auf den stärkeren Puls getriggert und im Gegensatz zu den anderen Aufnahmen ist dies keine kontinuierliche Messung, bei der man zu jedem Roundtrip Spektrum und zeitliches Signal aufnimmt.
+Hier überspringt man sehr viele Pulse, damit man eine solch lange Zeit mit so einer gleich hohen Samplingrate aufnehmen kann.
+
+Wenn man genau hinschaut erkennt man, dass die Relativgeschwindigkeit zwischen beiden Pulsen nur annähernd konstant ist.
+Dies lässt sich auch in der Peak-Spannung des undispergierten Signals erkennen, welche proportional zur Pulsenergie ist.
+So wird der schwache Puls die meiste Zeit schwächer während der starke stärker wird.
+Dies führt zu einer Zunahme der Relativgeschwindigkeit.
+Es gibt jedoch zwei Zeitpunkte zwischen zwei aufeinanderfolgenden Kollisionen,bei denen sich dieses Verhalten genau umgekehrt: Es findet ein Energietransfer vom stärkeren zum schwächeren Puls statt und die Relativgeschwindigkeit nimmt ab.
+Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Laserkristall begegnen und so der schwächere Puls vom Kerr-Effekt durch den stärkeren profitiert.
+
 \begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,45W_Ch2_2}
-	\caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben (\textit{FastFrame}-Aufnahme).}
-	\label{fig:running}
-\end{figure}
-
-\subsection{Bouncing}
-\begin{figure}[!htb]
-   \centering
-   \subfloat[\label{fig:rBF451}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,51W_Ch1_100000_150000_autocorr}}
+   \centering   
+   \subfloat[\textit{FastFrame}-Aufnahme\label{fig:rBF441}]
+   {\includegraphics[width=0.49\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,41W_Ch2}}
    \hfill
-   \subfloat[\label{fig:rBF453}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,53W_Ch1_100000_150000_autocorr}}
-   
-   \subfloat[\label{fig:rBF455}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,55W_Ch1_100000_150000_autocorr}}
-   \hfill
-   \subfloat[\label{fig:rBF456}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_100000_150000_autocorr}}
-   \caption{Beschriftung allgemein}
-   \label{fig:label-gesamt}
+   \subfloat[\label{fig:rBF441peakTau}]
+   {\includegraphics[width=0.49\textwidth]{figures/runningPeakTau}}
+   \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben.}
+   \label{fig:running441}
  \end{figure}
 
+\subsection{Bouncing ($P_\text{Pump}=4.48\dots4.57\,$W)}
+Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt.
+Diese entfernen sich danach schnell voneinander bevor der Abstand beider Pulse linear abnimmt und es schließlich zur erneuten Kollision kommt.
+Erklären kann man dies damit, dass sich nach der Kollision ein schwacher Puls vor dem starken ausbildet, dieser aufgrund des Kerr-Effektes schneller durch die Cavity läuft und somit der Abstand beider größer wird.
+Dann kommt es jedoch zu einem Erstarken des vorderen Pulses und zu einer Schwächung des hinteren, weil der hintere nur die schon vom vorderen reduzierte Besetzungsinversion sieht und so weniger Verstärkung bekommt.
+Es stellt sich ein fixes Intensitätsverhältnis und somit auch eine konstante Relativgeschwindigkeit ein, sodass sich beide mit dieser annnähern bis es zur nächsten Kollision kommt.
+
+\begin{figure}[!htb]
+   \centering   
+   \subfloat[Ausschnitt der Autokorrelation\label{fig:rBF456}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_100000_150000_autocorr}}
+   \hfill
+   \subfloat[Histogramm des maximalen Abstandes $\tau_\text{max}$ der beiden Pulse pro Bounce\label{fig:rBF456histo}]
+   {\includegraphics[width=0.49\textwidth]{figures/bounce456histo}}
+   \caption{Bouncing-Mode bei einer Pumpleistung von $4.56\,$W.}
+   \label{fig:bouncing456}
+ \end{figure}
+
+Wenn man die Pumpleistung auf 4.57\,W erhöht
 
 \begin{figure}[!htb]
    \centering
-   \subfloat[\label{fig:rBF457_autocorr}]
+   \subfloat[Überblick.\label{fig:rBF457_autocorr}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_120000_170000_autocorr}}
    \hfill
-   \subfloat[\label{fig:rBF457_autocorr_zoom}]
+   \subfloat[Zoom.\label{fig:rBF457_autocorr_zoom}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_137000_141000_autocorr}}
    
-   \subfloat[\label{fig:rBF457_repel_spec}]
+   \subfloat[Abstoßung, spektrale Ansicht.\label{fig:rBF457_repel_spec}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_138700_139500_spectrum}}
    \hfill
-   \subfloat[\label{fig:rBF457_repel_autocorr}]
+   \subfloat[Abstoßung, Autokorrelation.\label{fig:rBF457_repel_autocorr}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_138700_139500_autocorr}}
    
-   \subfloat[\label{fig:rBF457_coll_spec}]
+   \subfloat[Kollision, spektrale Ansicht.\label{fig:rBF457_coll_spec}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_136700_137500_spectrum}}
    \hfill
-   \subfloat[\label{fig:rBF457_coll_autocorr}]
+   \subfloat[Kollision, Autokorellation.\label{fig:rBF457_coll_autocorr}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_136700_137500_autocorr}}
-   \caption{Beschriftung allgemein}
-   \label{fig:label-gesamt}
+   \caption{$P_\text{Pump}=4.57\,$W: Unterschied zwischen Kollision und Abstoßung der beiden Pulse.}
+   \label{fig:rbf457}
  \end{figure}
 
 \begin{figure}[!htb]
@@ -355,7 +418,7 @@ Zuletzt muss man noch die Änderung der Repetitionsrate bzw. die Abweichung vom 
 	\label{fig:bounceDistTime}
 \end{figure}
 
-\subsection{Fixed distance}
+\subsection{Bound Solitons ($P_\text{Pump}=4.57\dots4.81\,$W)}
 \begin{figure}[!htb]
    \centering
    \subfloat[\label{fig:rBF458}]
@@ -380,8 +443,16 @@ Zuletzt muss man noch die Änderung der Repetitionsrate bzw. die Abweichung vom 
 	\label{fig:interactionPlane}
 \end{figure}
 
-\section{Doppelpulse 200fs}
-
+\section{Doppelpulse Messreihe 2}
+Hier beginnt man mit Doppelpulsen, deren Phase und relativer Abstand fix sind.
+Der Abstand liegt etwa bei 170 \,fs.
+Dann dreht man die Pumpleistung herunter.
+Dabei beobachtet man, dass der Abstand der beiden Pulse immer noch sehr konstant ist, während die Phase jedoch beginnt, durchzulaufen.
+Dies deutet auf einen Intensitätsunterschied zwischen beiden Pulsen hin.
+Die Phase läuft jedoch nicht linear durch, sondern bildet Stufen.
+Nach XXX ist die Phase bei $\varphi=\pm\pi/2$ gelockt.
+Vermutlich kann in der Umgebung von diesem Wert die fehlende Energie noch durch Senkung beider Pulsamplituden aufgefangen werden, was zu einer annähernd konstanten Phase führt, wohingegen diese ab einer bestimmten Abweichung von $\pi/2$ sich in sehr kurzer Zeit um fast $2\pi$ ändert.
+Dies könnte bedeuten, dass dann der vordere sehr schnell stärker und er hinter schwächer wird. 
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
@@ -411,6 +482,25 @@ Zuletzt muss man noch die Änderung der Repetitionsrate bzw. die Abweichung vom 
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB}}
+   \caption{Beschriftung allgemein}
+   \label{fig:165014steps}
+ \end{figure}
+ 
+ \begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,6W_Ch_PWnoCB}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB}}
+   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB}}
    \caption{Beschriftung allgemein}
    \label{fig:label-gesamt}
  \end{figure}
@@ -445,11 +535,11 @@ Nun ist die Abstandsinformation auch wieder im Spektrum einkodiert und man kann 
 \chapter{Zusammenfassung}
 Laser ist komplex, Messmethode ist verdammt cool!
 
-\appendix
-\chapter{erster Anhang}
-Text\dots
-\chapter{zweiter Anhang}
-Text\dots
+%\appendix
+%\chapter{erster Anhang}
+%Text\dots
+%\chapter{zweiter Anhang}
+%Text\dots
 
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.

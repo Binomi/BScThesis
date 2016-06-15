@@ -2,23 +2,23 @@
 \BOOKMARK [0][]{chapter.2}{2 Grundlagen}{}% 2
 \BOOKMARK [1][]{section.2.1}{2.1 Der Laser}{chapter.2}% 3
 \BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Mode-Locking}{section.2.1}% 4
-\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 Betriebsmodi}{section.2.1}% 5
-\BOOKMARK [1][]{section.2.2}{2.2 Dispersive Fourier-Transformation}{chapter.2}% 6
-\BOOKMARK [0][]{chapter.3}{3 Experimentelle Vorgehensweise}{}% 7
-\BOOKMARK [1][]{section.3.1}{3.1 Kalibration}{chapter.3}% 8
-\BOOKMARK [1][]{section.3.2}{3.2 Photodiode}{chapter.3}% 9
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Undispergiert}{section.3.2}% 10
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Dispergiert}{section.3.2}% 11
-\BOOKMARK [0][]{chapter.4}{4 Ergebnisse}{}% 12
-\BOOKMARK [1][]{section.4.1}{4.1 Doppelpulse 100fs}{chapter.4}% 13
-\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Running}{section.4.1}% 14
-\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 Bouncing}{section.4.1}% 15
-\BOOKMARK [2][]{subsection.4.1.3}{4.1.3 Fixed distance}{section.4.1}% 16
-\BOOKMARK [1][]{section.4.2}{4.2 Doppelpulse 200fs}{chapter.4}% 17
-\BOOKMARK [1][]{section.4.3}{4.3 Dreifach-Pulse}{chapter.4}% 18
-\BOOKMARK [1][]{section.4.4}{4.4 Weiteres}{chapter.4}% 19
-\BOOKMARK [0][]{chapter.5}{5 Diskussion}{}% 20
-\BOOKMARK [1][]{section.5.1}{5.1 Colliding Pulse Modelocking}{chapter.5}% 21
-\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung}{}% 22
-\BOOKMARK [0][]{appendix.A}{A erster Anhang}{}% 23
-\BOOKMARK [0][]{appendix.B}{B zweiter Anhang}{}% 24
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 theoretisches Model}{section.2.1}% 5
+\BOOKMARK [2][]{subsection.2.1.3}{2.1.3 Betriebsmodi}{section.2.1}% 6
+\BOOKMARK [1][]{section.2.2}{2.2 Dispersive Fourier-Transformation}{chapter.2}% 7
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Spektrale Interferenz}{section.2.2}% 8
+\BOOKMARK [0][]{chapter.3}{3 Experimentelle Vorgehensweise}{}% 9
+\BOOKMARK [1][]{section.3.1}{3.1 Kalibration}{chapter.3}% 10
+\BOOKMARK [1][]{section.3.2}{3.2 Photodiode}{chapter.3}% 11
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Undispergiert}{section.3.2}% 12
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Dispergiert}{section.3.2}% 13
+\BOOKMARK [0][]{chapter.4}{4 Ergebnisse}{}% 14
+\BOOKMARK [1][]{section.4.1}{4.1 Doppelpulse Messreihe 1}{chapter.4}% 15
+\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Running \(PPump=4.39\2034.47W\)}{section.4.1}% 16
+\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 Bouncing \(PPump=4.48\2034.57W\)}{section.4.1}% 17
+\BOOKMARK [2][]{subsection.4.1.3}{4.1.3 Bound Solitons \(PPump=4.57\2034.81W\)}{section.4.1}% 18
+\BOOKMARK [1][]{section.4.2}{4.2 Doppelpulse Messreihe 2}{chapter.4}% 19
+\BOOKMARK [1][]{section.4.3}{4.3 Dreifach-Pulse}{chapter.4}% 20
+\BOOKMARK [1][]{section.4.4}{4.4 Weiteres}{chapter.4}% 21
+\BOOKMARK [0][]{chapter.5}{5 Diskussion}{}% 22
+\BOOKMARK [1][]{section.5.1}{5.1 Colliding Pulse Modelocking}{chapter.5}% 23
+\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung}{}% 24
