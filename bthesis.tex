@@ -168,25 +168,29 @@ Besonders Titan-Saphir-Laser werden häufig eingesetzt, weil sie die kürzesten 
 Wenn diese richtig eingestellt sind, laufen sie auch ultrastabil und reproduzieren das immer gleiche Spektrum.
 Anders sieht das allerdings aus, wenn man den Laser so justiert, dass nicht nur ein Puls im Laser umher läuft, sondern zwei oder mehrere.
 Dann kann es zu Interaktionen zwischen den Pulsen kommen.
-Dieses dynamische Verhalten konnte zuvor noch nicht in Echtzeit beobachtet werden.
+Dieses dynamische Verhalten konnte zuvor noch nicht beobachtet werden.
 Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} ist es nun möglich, das Spektrum jedes einzelnen Pulses bzw. Pulspaares aufzunehmen und in letzterem Fall daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
 Dies eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
+Mit dieser Echtzeit-Methode kann man außerdem erstmals auch transiente Dynamiken auflösen und somit die Prozesse im Laser besser verstehen.
 
 
 \chapter{Grundlagen}
 
 \section{Der Laser}
 Der zu untersuchende Laser ist ein Titan:Saphir-Laser (\textit{Rainbow} von \textit{FemtoLasers}).
-Er erzeugt 7-fs-Pulse bei einer Puls-Wiederholrate von $80\,$MHz und einer Leistung von mehr als $250\,$mW.
+Er erzeugt 7-fs-Pulse bei einer Puls-Wiederholrate von $78\,$MHz und einer Leistung von mehr als $250\,$mW.
+Der Pumplaser ist ein frequenzverdoppelter, diodengepumpter Nd:YAG-Laser (\textit{Coherent Verdi V5}) mit bis zu 5\,W Leistung.
+Der Ti:Sa-Kristall hat eine Länge von 2\,mm, in den der Pumpstrahl mit einer 4\,cm-Linse fokussiert wird.
+Aufgrund \dots ist der lange Arm doppelt so lang wie der kurze.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
 	\caption{Aufbau des \textit{Rainbow}s.}
 	\label{fig:rainbow}
 \end{figure}
-\subsection{Mode-Locking}
+\subsection{Modelocking}
 Damit der Laser solche kurzen Pulse erzeugen kann, müssen viele Longitudinal-Moden in der Cavity in Phase sein.
-Dieses \emph{Mode-Locking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
+Dieses \emph{Modelocking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
 Hier wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes: 
 Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan-Saphir-Kristall wie eine Linse.
 Die Strahlmitte hat nämlich den längsten optischen Weg, während die äußeren Bereiche schneller durch den Kristall propagieren.
@@ -194,33 +198,54 @@ Die Strahlmitte hat nämlich den längsten optischen Weg, während die äußeren
 Höhere Intensitäten führen zu einer stärkeren Fokussierung des Strahls in das Laser-Medium.
 Da dort auch der Pumpstrahl hinein fokussiert wird, ist in dessen Fokus die Besetzungsinversion höher und diese kann durch die stärkere Fokussierung effizienter abgebaut werden.
 So wird dieser intensive Puls gegenüber dem cw-Signal bevorzugt und letzteres stirbt aus.
-Dieses Verfahren nennt man \textbf{soft aperture modelocking}, während man 
+Dieses Verfahren nennt man \textbf{Soft aperture Modelocking}, während man beim \textit{Hard aperture Modelocking} einen Schlitz oder ähnliches benötigt.
+Diese Apertur lässt den fokussierten, intensiven Strahl ohne Verlust passieren, während der cw-Anteil zum Teil adsorbiert wird und so hohe Verluste erfährt.
 
 \subsection{theoretisches Model}
 
 \begin{align}
 	\frac{\partial A(z,t)}{\partial z}=\left[\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}+(t_f^2+iD)\frac{\partial^2}{\partial t^2}-i\beta |A(z,t)|^2\right]A(z,t)
 \end{align}
+In der Simulation wird diese Gleichung numerisch gelöst, indem die Manipulation pro Roundtrip 
 
 %\begin{align}
 %	A_1(z,t)&=A(z,t)\exp\left(\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}-i\beta |A(z,t)|^2\right)\\
 %	\tilde{A_2}(z,\omega)&=\tilde{A_1}(z,\omega)\exp\left(-\omega^2( t_f^2-iD)\right)\tilde{A_1}(z,\omega)
 %\end{align}
+Der lineare Gain $\alpha$, also die Besetzungsinversion, ist zeitabhängig.
+Es gibt drei Terme, die diese ändern:
+Das Pumpen, der Abbau durch stimulierte sowie durch spontane Emission, wobei die Änderung durch die beiden letzteren proportional zur aktuellen Besetzungsinversion sind, während die Änderung durch Pumpen proportional zur Differenz zwischen maximal erreichbarer Besetzungsversion $\alpha_\text{max}$ und dem aktuellen Wert ist.
 
+%\begin{align*}
+%	\frac{\dif \alpha(t)}{\dif t}_\text{pump}&\propto \alpha_\text{max}-\alpha(t)\\
+%	\frac{\dif \alpha(t)}{\dif t}_\text{stimuliert}&\propto \alpha(t)\\
+%\end{align*}
+Man kann dies mit einem quasi 2-Level-System modellieren:
 \begin{align}
-	\frac{\dif \alpha(t)}{\dif t}=\frac{I_p\sigma_a}{h\nu_a}(\alpha_\text{max}-\alpha(t))-\frac{\sigma_g|A(z,t)|^2}{h\nu}\alpha(t)-\frac{\alpha(t)}{T_r}
+	\frac{\dif \alpha(t)}{\dif t}=\frac{I_p\sigma_a}{h\nu_a}(\alpha_\text{max}-\alpha(t))-\frac{\sigma_g|A(z,t)|^2}{h\nu}\alpha(t)-\frac{\alpha(t)}{T_r}\,,
 \end{align}
+wobei $I_p$ die Pumpintensität, $\sigma_a$ der Absorptionsquerschnitt bei der Pumpfrequenz $\nu_a$ ist.
+Weiter ist $\sigma_g$ der Verstärkungsquerschnitt bei der Laserfrequenz $\nu$ und $T_r$ die Lifetime des oberen Laserniveaus.
 
+Wenn man davon ausgeht, dass das Pulspaar viel kürzer ist als die Resonatorlänge $T_\text{cav}$ und sich und sich $\alpha$ während der Pulse vernachlässigbar ändert, kann man obige Gleichung mit $T_\text{cav}$ multiplizieren und anschließend integrieren und erhält
 \begin{align}
 	\alpha(z)&=\alpha(z-1)\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right) \notag \\
-	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]
+	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]\,.
 \end{align}
+Hier ist $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ und $E_s=h\nu/\sigma_g$ sowie $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$.
 
+Nun baut jedoch der erste Puls eines Pulspaars die Besetzungsinversion zumindest ein wenig ab, während Pumpen und spontane Emission auf dieser Zeitskala vernachlässigbar sind.
+Um diesen Effekt zu berücksichtigen, kann man in erster Näherung
 \begin{align}
-	\alpha_2(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2\\
+	\alpha_2(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2
+\end{align}
+Damit man nun jedoch nicht $\alpha$ muss man von $\alpha_2$ noch den Mittelwert abziehen bevor dieses $\alpha_\text{corr}$ zu $\alpha(z)$ addiert wird.
+\begin{align}
 	\alpha_\text{corr}(z,t)&=\alpha_2(z,t)-\int_{t_1}^{t_2} \dif t\, \alpha_2(z,t)\\
 	\alpha(z,t)&=\alpha(z)+\alpha_\text{corr}(z,t)
 \end{align}
+Nun ändert sich der Gain auch wärend eines Roundtrips im Simulationsfenster.
+Dies hat zur Folge, dass für zwei nicht-interagierende Pulse die Phasendifferenz linear durchläuft, denn der hintere ist immer ein wenig schwächer als der vordere.  
 
 \subsection{Betriebsmodi}
 Der Laser kann in vielen verschiedenen Modi betrieben werden.
@@ -246,7 +271,13 @@ Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen Pro
 Eine zeitliche Verschiebung im Signal nach der Faser könnte zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
 Deshalb nimmt man mit einer zweiten Photodiode parallel noch das reine Zeitsignal auf, also den undispergierten Puls.
 
-\subsection{Spektrale Interferenz}
+\subsection{Spektrale Interferenz und Doppelpulse}
+Das Spektrum zweier gleichartiger Pulse, die einen bestimmten zeitlichen Abstand haben, weist eine Modulation auf, die invers zu diesem ist.
+Dies lässt sich damit erklären, dass bestimmte Wellenlängen in Phase, andere aber außer Phase sind.
+Mathematischer kann man das über folgende Eigenschaft begründen:
+Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen Signals.
+
+
 
 \chapter{Experimentelle Vorgehensweise}
 Der experimentelle Aufbau ist sehr einfach.
@@ -277,7 +308,7 @@ Wie in \dots beschrieben, ergeben sich Frequenzabstände von
 	\Delta f=\frac{c}{2Ln}\,,
 \end{align*}
 wobei $c$ die Lichtgeschwindigkeit, $n$ der Brechungsindex und $L$ die Länge des Materials ist.
-Nimmt man nun so das Spektrum sowohl auf dem herkömmlichen Grating-Spektrometer sowie mit dem Oszilloskop auf, kann man anhand der Fringes im Spektrum den Frequenzen einen Delay nach der Glasfaser zuordnen.
+Nimmt man nun so das Spektrum sowohl auf dem herkömmlichen Grating-Spektrometer (Abb.\ref{fig:gratingEtalon}) sowie mit dem Oszilloskop (Abb.\ref{fig:osziEtalon}) auf, kann man anhand der Fringes im Spektrum den Frequenzen einen Delay nach der Glasfaser zuordnen (Abb.\ref{fig:calibration}).
 
  \begin{figure}[!htb]
    \centering
@@ -288,9 +319,9 @@ Nimmt man nun so das Spektrum sowohl auf dem herkömmlichen Grating-Spektrometer
    {\includegraphics[width=0.49\textwidth]{figures/osziEtalon}}
    \hfill
    \subfloat[Kalibration\label{fig:calibration}]
-   {\includegraphics[width=0.7\textwidth]{figures/calibration}}
-   \caption{Beschriftung allgemein}
-   \label{fig:label-gesamt}
+   {\includegraphics[width=0.6\textwidth]{figures/calibration}}
+   \caption{Kalibration durch ein Etalon: Delay nach der Faser wird zu Frequenzen zugeordnet.}
+   \label{fig:caliEtalon}
  \end{figure}
 
 \section{Photodiode}
@@ -305,8 +336,14 @@ Als nächstes muss noch die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert 
 		\hline	
 	\end{tabular}
 \end{table}
-Zunächst wird getestet, in welchem Power-Bereich die Photodiode linear reagiert, damit man bei zu künftigen Messungen in diesem Bereich bleibt.
+Zunächst wird getestet, in welchem Power-Bereich die Photodiode linear reagiert, damit man bei zukünftigen Messungen in diesem Bereich bleibt.
 Dies muss für die beiden Modi undispergierter Puls sowie dispergiertes Signal geschehen.
+Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (ca. 1\,ps) ist es wichtig, das die Photodiode schnell reagiert.
+Diese Pulse sind zu nah, um sie im zeitlichen Signal getrennt zu sehen.
+So kann man sie gerade noch als spektrale Interferenz wahrnehmen.
+Das Spektrum sollte voll durchmoduliert sein, wenn beide Pulse gleich stark sind.
+Die Photodiode wird jedoch ab einer bestimmten Modulationfrequenz, also einem bestimmten Abstand der Doppelpulse nicht so schnell reagieren können, dass das Signal komplett auf 0 heruntergeht.
+Dadurch überschätzt man den Intensitätsunterschied der beiden Pulse.
 \subsection{Undispergiert}
 Man erkennt, dass die Peakamplitude bis ca. 2\,mW linear ansteigt.
 Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
@@ -314,6 +351,8 @@ Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
 \subsection{Dispergiert}
 Bis ca. 10\,mW wächst das Signal linear.
 Danach übersteuert man die Photodiode, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können.
+
+\subsection{Bandbreite}
 
 \chapter{Ergebnisse}
 Um durch eine langen Messung mit dem Oszilloskop die Entwicklung des Spektrums, etc. darstellen zu können, muss man erst die Pulswiederholrate bestimmen.
@@ -336,7 +375,7 @@ Sollte der maximale Wert nicht bei der Verschiebung $\tau=0$ der beiden Signale 
 Nun wird dieser Roundtrip (allerdings unverschoben) als neue Referenz genommen.
 Das Spiel beginnt von vorne, es wird wieder die Korrelation zwischen diesem und vorigen Roundtrips gebildet, etc.
 Allerdings wird die benötigte Verschiebung logischerweise aufsummiert.
-Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wählen, sondern die Mittelung über mehrere.
+Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wählen, sondern die Mittlung über mehrere.
 Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu zu starken Verschiebungen führen.
 
 Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
@@ -369,11 +408,12 @@ Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Lase
  \end{figure}
 
 \subsection{Bouncing ($P_\text{Pump}=4.48\dots4.57\,$W)}
-Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt.
+Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt, wie in Abbildung \ref{fig:rBF456} gut zu erkennen ist.
 Diese entfernen sich danach schnell voneinander bevor der Abstand beider Pulse linear abnimmt und es schließlich zur erneuten Kollision kommt.
 Erklären kann man dies damit, dass sich nach der Kollision ein schwacher Puls vor dem starken ausbildet, dieser aufgrund des Kerr-Effektes schneller durch die Cavity läuft und somit der Abstand beider größer wird.
 Dann kommt es jedoch zu einem Erstarken des vorderen Pulses und zu einer Schwächung des hinteren, weil der hintere nur die schon vom vorderen reduzierte Besetzungsinversion sieht und so weniger Verstärkung bekommt.
 Es stellt sich ein fixes Intensitätsverhältnis und somit auch eine konstante Relativgeschwindigkeit ein, sodass sich beide mit dieser annähern bis es zur nächsten Kollision kommt.
+Somit lässt sich auch erklären, warum die Kollisionszeit $T_\text{interColl.}$, also die Zeit zwischen zwei Kollisionen linear mit der maximalen Entfernung $\tau_\text{max}$ zusammenhängt (Abb. \ref{fig:bounceDistTime}).
 
 \begin{figure}[!htb]
    \centering   
@@ -419,6 +459,11 @@ Wenn man die Pumpleistung auf 4.57\,W erhöht, sieht man noch einen weiteren Int
 \end{figure}
 
 \subsection{Bound Solitons ($P_\text{Pump}=4.57\dots4.81\,$W)}
+In diesem Zustand ändert sich der Abstand der Pulse nicht gravierend.
+Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
+Für drei der in Abbildung \ref{fig:boundSpectro} gezeigten Messreihen ist dieses Verhalten in die \textit{Interaction Plane} eingezeichnet, also ein polarer Plot mit dem Abstand als Radius und der Phase als Winkel.
+In Abbildung \ref{fig:interactionPlane} ist jedoch der Radius der um 80\,fs verringerte Abstand, damit man Abstandsänderungen gut erkennen kann.
+Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbits durchlaufen werden.
 \begin{figure}[!htb]
    \centering
    \subfloat[\label{fig:rBF458}]
@@ -432,8 +477,8 @@ Wenn man die Pumpleistung auf 4.57\,W erhöht, sieht man noch einen weiteren Int
    \hfill
    \subfloat[\label{fig:rBF468}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWnoCB}}
-   \caption{Beschriftung allgemein}
-   \label{fig:label-gesamt}
+   \caption{Bound Solitons: Spektren bei Änderung der Pumpleistung.}
+   \label{fig:boundSpectro}
  \end{figure}
  
  \begin{figure}[!htb]
@@ -452,7 +497,8 @@ Dies deutet auf einen Intensitätsunterschied zwischen beiden Pulsen hin.
 Die Phase läuft jedoch nicht linear durch, sondern bildet Stufen.
 Nach XXX ist die Phase bei $\varphi=\pm\pi/2$ gelockt.
 Vermutlich kann in der Umgebung von diesem Wert die fehlende Energie noch durch Senkung beider Pulsamplituden aufgefangen werden, was zu einer annähernd konstanten Phase führt, wohingegen diese ab einer bestimmten Abweichung von $\pi/2$ sich in sehr kurzer Zeit um fast $2\pi$ ändert.
-Dies könnte bedeuten, dass dann der vordere sehr schnell stärker und der hintere schwächer wird. 
+Dies könnte bedeuten, dass dann der vordere sehr schnell stärker und der hintere schwächer wird, bis die Phase erneut etwas kleiner als $\pi/2$ ist und beide Pulse ihre Amplituden angleichen.
+Verringert man die Pumpleistung weiter, geschieht dieser Prozess schneller, bis die Phase annähernd linear durchläuft.
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
@@ -482,7 +528,7 @@ Dies könnte bedeuten, dass dann der vordere sehr schnell stärker und der hinte
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB}}
-   \caption{Beschriftung allgemein}
+   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
    \label{fig:165014steps}
  \end{figure}
  
@@ -530,6 +576,10 @@ Wie stabil ist dieser Abstand überhaupt, gibt es auch später noch Oszillatione
 
 Um all diese Fragen zu beantworten, könnte man den Strahl aufspalten und den einen Teil so verzögern, dass der erste Puls in diesem Arm zeitgleich mit dem zweiten Puls im kürzeren Abschnitt überlappt.
 Nun ist die Abstandsinformation auch wieder im Spektrum einkodiert und man kann die Abstände zwischen beiden Pulsen genau messen.
+
+\section{Woher stammen die Doppelpulse?}
+Splitting?
+Modelockt eine andere Fluktuation?
 
 
 \chapter{Zusammenfassung}
