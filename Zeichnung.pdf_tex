@@ -1,0 +1,67 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Zeichnung.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{499.25717468bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.39283855)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Zeichnung.pdf}}%
+    \put(0.01796955,0.28250315){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Ti:Sa-Laser}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Zeichnung.pdf}}%
+    \put(0.85538207,-0.1169823){\color[rgb]{0.12941176,0.11372549,0.11372549}\rotatebox{-0.03176207}{\makebox(0,0)[lb]{\smash{Oscilloscope}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Zeichnung.pdf}}%
+    \put(0.47281668,0.03070057){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{400m}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Zeichnung.pdf}}%
+    \put(0.50486435,0.34636952){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f=5cm}}}%
+    \put(0.54171911,0.00025526){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f=5cm}}}%
+    \put(0.26533985,0.24133764){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Polarisator}}}%
+    \put(0.31982079,0.31344482){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Isolator}}}%
+    \put(0.5665874,0.31024006){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{PD 2}}}%
+    \put(0.58902073,0.07789483){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{PD 1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Zeichnung.pdf}}%
+  \end{picture}%
+\endgroup%

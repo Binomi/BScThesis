@@ -53,7 +53,7 @@
 
 %\usepackage{SIunits} %% Korrektes Setzen von Einheiten
 \usepackage{units}   %% Variante fuer Einheiten
-
+\usepackage{xcolor}
 %% Hyperlinks im Dokument; muss als eines der letzten Pakete geladen werden
 \usepackage[pdfstartview=FitH,      % Oeffnen mit fit width
             breaklinks=true,        % Umbrueche in Links, nur bei pdflatex default
@@ -281,8 +281,16 @@ Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen S
 \section{Dissipative Solitonen}
 
 \chapter{Experimentelle Vorgehensweise}
+\section{Aufbau}
+\begin{figure}[!htb]
+	\centering
+	\def\svgwidth{\columnwidth}
+	\input{DFTSetup2.pdf_tex}
+	\caption{Aufbau.}
+	\label{fig:DFTSetup}
+\end{figure}
 Der experimentelle Aufbau ist sehr einfach.
-Wie in Abb. \dots zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
+Wie in Abb.\ref{fig:DFTSetup} zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
 Danach passiert er einen optischen Isolator, welcher verhindert, dass Reflektionen an einer späteren Stelle bis in den Laser gelangen und dort zu unerwünschten Effekten bzw. Instabilitäten führen.
 Als nächstes wird der Strahl mit einem Beamsplitter aufgeteilt.
 Der transmittierte Anteil wird mit reflektiven ND-Filtern weiter abgeschwächt und mit einer Linse auf Photodiode Nr.2 fokussiert.
@@ -346,12 +354,35 @@ Das Spektrum sollte voll durchmoduliert sein, wenn beide Pulse gleich stark sind
 Die Photodiode wird jedoch ab einer bestimmten Modulationfrequenz, also einem bestimmten Abstand der Doppelpulse nicht so schnell reagieren können, dass das Signal komplett auf 0 heruntergeht.
 Dadurch überschätzt man den Intensitätsunterschied der beiden Pulse.
 \subsection{Undispergiert}
+\begin{figure}[!htb]
+	\centering
+	\subfloat[Antwortverhalten der beiden Photodioden: Bei steigender Leistung sättigt die Peakspannung und die Photodoiden-Antwort wird länger.\label{fig:PDfwhmMaxI}]
+   {\includegraphics[width=0.49\textwidth]{figures/PDfwhmMaxI}}
+   \hfill
+   \subfloat[2\,mW\label{fig:PD2mW}]
+   {\includegraphics[width=0.49\textwidth]{figures/PD2mW}}
+	\caption{Undispergiert}
+	\label{fig:PDundisp}
+\end{figure}
 Man erkennt, dass die Peakamplitude bis ca. 2\,mW linear ansteigt.
 Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
+
 
 \subsection{Dispergiert}
 Bis ca. 10\,mW wächst das Signal linear.
 Danach übersteuert man die Photodiode, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können.
+
+\begin{figure}[!htb]
+	\centering
+	\subfloat[\label{fig:PDdispMeanA}]
+   {\includegraphics[width=0.49\textwidth]{figures/PDdispMeanA}}
+   \hfill
+   \subfloat[Sensitivität aus dem Datenblatt\label{fig:PDsensDB}]
+   {\includegraphics[width=0.49\textwidth]{figures/PDsensitivty}}
+	\caption{Sensitivität der Photodioden}
+	\label{fig:PDsens}
+\end{figure}
+
 
 \subsection{Bandbreite}
 
@@ -382,6 +413,14 @@ Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu 
 Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
 Dies geschieht anhand zwei verschiedener Messreihen.
 Danach folgen weitere Beobachtungen wie z.B. Tripletts.
+
+\section{Map}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
+	\caption{Ein Plot. Er ist nicht schön.}
+	\label{fig:map}
+\end{figure}
 
 \section{Doppelpulse Messreihe 1}
 \subsection{Running ($P_\text{Pump}=4.39\dots4.47\,$W)}
@@ -426,6 +465,11 @@ Somit lässt sich auch erklären, warum die Kollisionszeit $T_\text{interColl.}$
    \caption{Bouncing-Mode bei einer Pumpleistung von $4.56\,$W.}
    \label{fig:bouncing456}
  \end{figure}
+ 
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.0]{figures/bounceColl3.pdf}
+\end{figure} 
 
 Wenn man die Pumpleistung auf 4.57\,W erhöht, sieht man noch einen weiteren Interaktionsmechanismus: Die beiden Pulse stoßen sich voneinander ab, bevor sie überhaupt kollidieren.
 
