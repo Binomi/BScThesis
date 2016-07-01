@@ -78,6 +78,10 @@
 % SI-Paket
 \usepackage{siunitx}
 
+%Matlab-Code
+\usepackage{listings}
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
 \newcommand{\dif}{\ensuremath{\mathrm{d}}}
 
 \begin{document}
@@ -301,14 +305,7 @@ Sie können auch stabile Multipulsformationen bilden.
 
 \chapter{Experimentelle Vorgehensweise}
 \section{Aufbau}
-\begin{figure}[!htb]
-	\centering
-	\def\svgwidth{\columnwidth}
-	\input{DFTSetup2.pdf_tex}
-	\caption{Setup Einzelschuss-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgesetzt.}
-	\label{fig:DFTSetup}
-\end{figure}
-Der experimentelle Aufbau ist sehr einfach.
+Der experimentelle Aufbau, um Echtzeit-Spektroskopie zu betreiben, ist sehr simpel.
 Wie in Abb.\ref{fig:DFTSetup} zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
 Danach passiert er einen optischen Isolator, welcher verhindert, dass Reflektionen an einer späteren Stelle bis in den Laser gelangen und dort zu unerwünschten Effekten bzw. Instabilitäten führen.
 Als nächstes wird der Strahl mit einem Beamsplitter aufgeteilt.
@@ -326,6 +323,14 @@ Dies entspricht mehr als 300\,000 Pulsen, denn die Pulswiederholrate des Lasers 
 
 
 Um nun diese Technik der dispersiven Fouriertransformation richtig nutzen zu können, müssen die wichtigsten Bauteile charakterisiert werden: die Glasfaser sowie die beiden Photodioden.
+
+\begin{figure}[!htb]
+	\centering
+	\def\svgwidth{\columnwidth}
+	\input{DFTSetup2.pdf_tex}
+	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgesetzt.}
+	\label{fig:DFTSetup}
+\end{figure}
 
 \section{Kalibration}
 Zunächst muss die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerung gemessen werden kann und nicht direkt Frequenzen.
@@ -366,6 +371,15 @@ Diese sollen überprüft bzw. auf die experimentelle Situation hin getestet werd
 Nun werden aber 2 Photodioden für das Experiment eingesetzt.
 Um diese zu unterscheiden, bekam die eine ein Label, im Folgenden mit \texttt{CRC-Label} gekennzeichnet.
 Die andere wird im Folgenden mit \texttt{noLabel} bezeichnet.
+
+Zunächst wird getestet, in welchem Power-Bereich die Photodioden linear reagieren, damit zukünftige Messungen in diesem Bereich bleiben.
+Dies muss für die beiden Modi undispergierter Puls sowie dispergiertes Signal geschehen.
+Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (ca. 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
+Diese Pulse sind zu nah, um sie im zeitlichen Signal getrennt zu sehen.
+So können sie gerade noch als spektrale Interferenz wahrgenommen werden.
+
+Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda/2$-Platte variabel abgeschwächt, mit einem Powermeter direkt vor der entsprechenden Photodiode wird dies kontrolliert.
+
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -379,13 +393,15 @@ Die andere wird im Folgenden mit \texttt{noLabel} bezeichnet.
 	\caption{Herstellerangaben zur Photodiode {\scriptsize (Alphalas UPD-40-UVIR)}.}
 	\label{tab:PD}
 \end{table}
-Zunächst wird getestet, in welchem Power-Bereich die Photodioden linear reagieren, damit zukünftige Messungen in diesem Bereich bleiben.
-Dies muss für die beiden Modi undispergierter Puls sowie dispergiertes Signal geschehen.
-Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (ca. 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
-Diese Pulse sind zu nah, um sie im zeitlichen Signal getrennt zu sehen.
-So können sie gerade noch als spektrale Interferenz wahrgenommen werden.
 
 \subsection{Undispergiert}
+In Abbildung \ref{fig:PDundisp} wird in Abhängigkeit der eingestrahlten Leistung die Photodiodenantwort auf das undispergierte Signal dargestellt, also auf einen kurzen Puls, dessen Dauer viel geringer als die Risetime der Photodiode ist.
+Um dies zu messen, wird der Laserstrahl so auf die Photodiode gerichtet, dass er auf den sensitivsten Bereich trifft.
+Dazu wird die Linse vor der Photodiode richtig positioniert.
+Erkennbar ist, dass die Peakamplitude bis ca. 2\,mW linear ansteigt und in dieser Region die Pulsbreite (FWHM) etwas über 100\,ps liegt.
+Dies ist verträglich mit der angegebenen Risetime von 40\,ps.
+Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
+
 \begin{figure}[!htb]
 	\centering
 	\subfloat[Antwortverhalten der beiden Photodioden: Bei steigender Leistung sättigt die Peakspannung und die Photodioden-Antwort wird länger.\label{fig:PDfwhmMaxI}]
@@ -396,10 +412,6 @@ So können sie gerade noch als spektrale Interferenz wahrgenommen werden.
 	\caption{Undispergiert}
 	\label{fig:PDundisp}
 \end{figure}
-
-Erkennbar ist, dass die Peakamplitude bis ca. 2\,mW linear ansteigt und in dieser Region die Pulsbreite (FWHM) etwas über 100\,ps liegt.
-Dies ist verträglich mit der angegebenen Risetime von 40\,ps.
-Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
 
 
 \subsection{Dispergiert}
@@ -678,9 +690,12 @@ Laser ist komplex, Messmethode ist verdammt cool!
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/RainbowSetupManual.png}
 \end{figure}
-%Text\dots
-%\chapter{zweiter Anhang}
-%Text\dots
+\chapter{zweiter Anhang}
+\begin{lstlisting}
+a = 1;    % MATLAB comment
+b = 2;
+c = a^2 + b^2;
+\end{lstlisting}
 
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.
