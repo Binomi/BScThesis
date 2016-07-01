@@ -175,35 +175,26 @@
 
 \chapter{Einleitung}
 Femtosekundenlaser sind heutzutage aus der aktuellen Forschung nicht mehr wegzudenken.
-Besonders Titan-Saphir-Laser werden häufig eingesetzt, weil sie die kürzesten Pulse mit wenigen optischen Zyklen emittieren können.
+Besonders Titan-Saphir-Laser sind der Standard im Labor, weil sie die kürzesten Pulse mit wenigen optischen Zyklen emittieren können.
+
+Solch ein Laser ist ein nichtlineares System und basiert auf Verstärkung und Verlusten, Dispersion und 
+
+
 Wenn diese richtig eingestellt sind, laufen sie auch ultrastabil und reproduzieren das immer gleiche Spektrum, etwa 80 Millionen Pulse pro Sekunde.
 Anders sieht das allerdings aus, wenn der Laser so justiert ist, dass nicht nur ein Puls im Laser umher läuft, sondern zwei oder mehrere.
 Dann kann es zu Interaktionen zwischen den Pulsen kommen.
 Dieses dynamische Verhalten konnte zuvor noch nicht in Echtzeit beobachtet werden.
-Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie schneller Elektronik ist es nun möglich, das Spektrum jedes einzelnen Pulses bzw. Pulspaares aufzunehmen und in letzterem Fall daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
-So lassen sich viel kleinere Pulsabstände auflösen als das im zeitlichen Signal jemals möglich wäre.
+Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie Hochgeschwindigkeitselektronik bestehend aus schnellen Photodetektoren und den schnellsten, kommerziell erhältlichen AD-Wandlern ist es nun möglich, das Spektrum jedes einzelnen Pulses bzw. Pulspaares aufzunehmen und in letzterem Fall daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
+So lassen sich deutlich kleinere Pulsabstände auflösen als das im zeitlichen Signal jemals möglich wäre.
 Dies eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
-Numerisch wurden schon vielfältigste Zustände modelliert, diese können nun das erste Mal im Experiment überprüft werden.
+Numerisch wurden schon vielfältigste Zustände modelliert, diese können nun erstmals im Experiment überprüft werden.
 
 Mit dieser Echtzeit-Methode können außerdem erstmals auch transiente Dynamiken aufgelöst und somit die Prozesse im Laser besser verstanden werden.
 Während \cite{herink_resolving_2016}
 
 \chapter{Grundlagen}
 
-\section{Der Laser}
-Der zu untersuchende Laser ist ein Titan:Saphir-Laser (\textit{Rainbow} von \textit{FemtoLasers}).
-Er erzeugt 7-fs-Pulse bei einer Puls-Wiederholrate von $78\,$MHz und einer Leistung von mehr als $250\,$mW.
-Der Pumplaser ist ein frequenzverdoppelter, diodengepumpter Nd:YAG-Laser (\textit{Coherent Verdi V5}) mit bis zu 5\,W Leistung.
-Der Ti:Sa-Kristall hat eine Länge von 2\,mm, in den der grüne Pumpstrahl mit einer 4\,cm-Linse fokussiert wird.
-Um einen guten Kompromiss zwischen Stabilität und nichtlinearer Verstärkung im Pulsbetrieb zu erhalten \cite{stingl_sub-10-fs_1995}, ist der lange Arm etwa doppelt so lang wie der kurze.
-Außerdem werden gechirpte Spiegel verwendet, um die Dispersion durch den Kristall auszugleichen.
-Mit kleinen Prismen, den sogenannten Wedges, wird die Netto-Dispersion feingetunt.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
-	\caption{Aufbau des \textit{Rainbow}s.}
-	\label{fig:rainbow}
-\end{figure}
+\section{Ultrakurzpuls-Laser}
 \subsection{Modelocking}
 Damit der Laser solche kurzen Pulse erzeugen kann, müssen viele Longitudinal-Moden in der Cavity in Phase sein.
 Dieses \emph{Modelocking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
@@ -217,7 +208,8 @@ So wird dieser intensive Puls gegenüber dem cw-Signal bevorzugt und letzteres s
 Dieses Verfahren wird \textbf{Soft aperture Modelocking} genannt, während beim \textit{Hard aperture Modelocking} einen Schlitz oder ähnliches benötigt wird.
 Diese Apertur lässt den fokussierten, intensiven Strahl ohne Verlust passieren, während der cw-Anteil zum Teil adsorbiert wird und so hohe Verluste erfährt.
 
-\subsection{theoretisches Model}
+
+\subsection{Theoretisches Model}
 Das Modell ist etwas abgewandelt
 
 \cite{kalashnikov_multipulse_2003}
@@ -304,7 +296,21 @@ Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwisc
 Sie können auch stabile Multipulsformationen bilden.
 
 \chapter{Experimentelle Vorgehensweise}
-\section{Aufbau}
+\section{Laserquelle Femtolasers Rainbow}
+Der zu untersuchende Laser ist ein Titan:Saphir-Laser (\textit{Rainbow} von \textit{FemtoLasers}).
+Er erzeugt 7-fs-Pulse bei einer Puls-Wiederholrate von $78\,$MHz und einer Leistung von mehr als $250\,$mW.
+Der Pumplaser ist ein frequenzverdoppelter, diodengepumpter Nd:YAG-Laser (\textit{Coherent Verdi V5}) mit bis zu 5\,W Leistung.
+Der Ti:Sa-Kristall hat eine Länge von 2\,mm, in den der grüne Pumpstrahl mit einer 4\,cm-Linse fokussiert wird.
+Um einen guten Kompromiss zwischen Stabilität und nichtlinearer Verstärkung im Pulsbetrieb zu erhalten \cite{stingl_sub-10-fs_1995}, ist der lange Arm etwa doppelt so lang wie der kurze.
+Außerdem werden gechirpte Spiegel verwendet, um die Dispersion durch den Kristall auszugleichen.
+Mit kleinen Prismen, den sogenannten Wedges, wird die Netto-Dispersion feingetunt.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
+	\caption{Aufbau des \textit{Rainbow}s.}
+	\label{fig:rainbow}
+\end{figure}
+\section{Detektions-Aufbau}
 Der experimentelle Aufbau, um Echtzeit-Spektroskopie zu betreiben, ist sehr simpel.
 Wie in Abb.\ref{fig:DFTSetup} zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
 Danach passiert er einen optischen Isolator, welcher verhindert, dass Reflektionen an einer späteren Stelle bis in den Laser gelangen und dort zu unerwünschten Effekten bzw. Instabilitäten führen.
@@ -332,9 +338,9 @@ Um nun diese Technik der dispersiven Fouriertransformation richtig nutzen zu kö
 	\label{fig:DFTSetup}
 \end{figure}
 
-\section{Kalibration}
+\section{Kalibration der Dispersiven Fouriertransformation}
 Zunächst muss die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerung gemessen werden kann und nicht direkt Frequenzen.
-So wird ein Etalon, hier ein Mikroskopier-Abdeckplättchen, in den Strahlengang gehalten, wenn der Laser stabil Einzelpulse liefert.
+Dazu wird ein Etalon, hier ein Mikroskopie-Deckplättchen, genutzt, wenn der Laser stabil Einzelpulse liefert.
 Aufgrund von Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
 Wie in \dots beschrieben, ergeben sich Frequenzabstände von
 \begin{align*}
@@ -364,16 +370,16 @@ Durch zeroPadding kann dies zwar noch erhöht werden,  die Daten werden dabei ab
    \label{fig:caliEtalon}
  \end{figure}
 
-\section{Photodiode}
+\section{Charakterisierung der Photodioden}
 Als nächstes muss noch die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert werden.
 In Tabelle \ref{tab:PD} finden sich die wichtigsten Herstellerangaben zu diesem ultraschnellen Photodetektor.
 Diese sollen überprüft bzw. auf die experimentelle Situation hin getestet werden.
-Nun werden aber 2 Photodioden für das Experiment eingesetzt.
+Nun werden 2 Photodioden für das Experiment eingesetzt.
 Um diese zu unterscheiden, bekam die eine ein Label, im Folgenden mit \texttt{CRC-Label} gekennzeichnet.
 Die andere wird im Folgenden mit \texttt{noLabel} bezeichnet.
 
-Zunächst wird getestet, in welchem Power-Bereich die Photodioden linear reagieren, damit zukünftige Messungen in diesem Bereich bleiben.
-Dies muss für die beiden Modi undispergierter Puls sowie dispergiertes Signal geschehen.
+Zunächst wird getestet, in welchem Leistungsbereich die Photodioden linear reagieren, damit bei zukünftigen Messungen dieser Bereich nicht überschritten wird.
+Dies muss für die beiden Messmodi mit undispergiertem sowie dispergiertem Signal geschehen.
 Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (ca. 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
 Diese Pulse sind zu nah, um sie im zeitlichen Signal getrennt zu sehen.
 So können sie gerade noch als spektrale Interferenz wahrgenommen werden.
@@ -384,17 +390,19 @@ Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
+		PD. Spezifikation & Wert \\		
+		\hline
 		Risetime & < 40\,ps \\
 		Bandbreite & >8.5\,GHz \\
 		Spektraler Bereich & 350-1700\,nm \\
 		Sensitivität @ 800\,nm & 0.12\,A/W\\
 		\hline	
 	\end{tabular}
-	\caption{Herstellerangaben zur Photodiode {\scriptsize (Alphalas UPD-40-UVIR)}.}
+	\caption{Herstellerangaben zur Photodiode Alphalas UPD-40-UVIV.}
 	\label{tab:PD}
 \end{table}
 
-\subsection{Undispergiert}
+\subsection{Antwort auf Undispergiert}
 In Abbildung \ref{fig:PDundisp} wird in Abhängigkeit der eingestrahlten Leistung die Photodiodenantwort auf das undispergierte Signal dargestellt, also auf einen kurzen Puls, dessen Dauer viel geringer als die Risetime der Photodiode ist.
 Um dies zu messen, wird der Laserstrahl so auf die Photodiode gerichtet, dass er auf den sensitivsten Bereich trifft.
 Dazu wird die Linse vor der Photodiode richtig positioniert.
@@ -423,7 +431,7 @@ Um den geflossenen Strom zu erhalten, wird die am Oszilloskop anliegende Spannun
 Außerdem muss der Strom noch über einen Roundtrip gemittelt werden, denn die eingestrahlte Leistung ist auch nur als Mittlung messbar.
 In Abb. \ref{fig:PDdispMeanA} wird dies für beide Photodioden bestimmt und beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{CRC-Label} und  0.1120(5) für \texttt{noLabel}.
 Der kleine Unterschied kann auch durch die \dots bedingt sein.
-Insgesamt sind beide Werte aber im guten Einklang mit der aus dem Datenblatt entnommenen Sensitvitätskurve aus Abb.\ref{fig:PDsensDB}
+Insgesamt sind beide Werte aber im guten Einklang mit der aus dem Datenblatt entnommenen Sensitvitätskurve in Abb.\ref{fig:PDsensDB}
 
 \begin{figure}[!htb]
 	\centering
@@ -446,6 +454,19 @@ Mit diesem kann durch Variation der einen Armlänge für unterschiedliche Abstä
 Diese Abstände finden sich in der Modulation des Spektrums wieder.
 
 \chapter{Ergebnisse}
+Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
+Dies geschieht anhand zwei verschiedener Messreihen.
+Danach folgen weitere Beobachtungen wie z.B. Tripletts.
+
+\section{Map}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
+	\caption{Ein Plot. Er ist nicht schön.}
+	\label{fig:map}
+\end{figure}
+
+\section{Darstellung der Messdaten}
 Um durch eine langen Messung mit dem Oszilloskop die Entwicklung des Spektrums, etc. darstellen zu können, muss erst die Pulswiederholrate bestimmt werden.
 Dies geschieht über eine Fouriertransformation des ganzen Signals.
 Die Frequenz des höchsten Peaks entspricht der Wiederholrate, das Inverse davon also dem Pulsabstand $t_\text{rep}$ bzw. der optischen Cavity-Länge des Lasers.
@@ -469,44 +490,38 @@ Allerdings wird die benötigte Verschiebung logischerweise aufsummiert.
 Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wählen, sondern die Mittlung über mehrere.
 Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu zu starken Verschiebungen führen.
 
-Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
-Dies geschieht anhand zwei verschiedener Messreihen.
-Danach folgen weitere Beobachtungen wie z.B. Tripletts.
-
-\section{Map}
+\section{Doppelpulse Messreihe 1}
+\subsection{Gebundene Pulse (hohe Pumpleistung)}
+In diesem Zustand ändert sich der Abstand der Pulse nicht gravierend.
+Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
+Für drei der in Abbildung \ref{fig:boundSpectro} gezeigten Messreihen ist dieses Verhalten in die \textit{Interaction Plane} eingezeichnet, also ein polarer Plot mit dem Abstand als Radius und der Phase als Winkel.
+In Abbildung \ref{fig:interactionPlane} ist jedoch der Radius der um 80\,fs verringerte Abstand, damit Abstandsänderungen gut zu erkennen sind.
+Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbits durchlaufen werden.
 \begin{figure}[!htb]
+   \centering
+   \subfloat[\label{fig:rBF458}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
+   \hfill
+   \subfloat[\label{fig:rBF463}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB}}
+   
+   \subfloat[\label{fig:rBF464}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB}}
+   \hfill
+   \subfloat[\label{fig:rBF468}]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWnoCB}}
+   \caption{Bound Solitons: Spektren bei Änderung der Pumpleistung.}
+   \label{fig:boundSpectro}
+ \end{figure}
+ 
+ \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
-	\caption{Ein Plot. Er ist nicht schön.}
-	\label{fig:map}
+	\includegraphics[width=0.8\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows2.pdf}
+	\caption{Phasendynamik in der Interaction Plane.}
+	\label{fig:interactionPlane}
 \end{figure}
 
-\section{Doppelpulse Messreihe 1}
-\subsection{Running ($P_\text{Pump}=4.39\dots4.47\,$W)}
-In diesem Zustand ist die Pumpleistung so gering, dass zwar zwei Pulse durch den Laser laufen, diese aber einen großen Intensitätsunterschied haben, so dass sie unterschiedliche optische Weglängen haben und sich so auf einer Skala von 100\,ms gegeneinander verschieben.
-In Abb. \ref{fig:rBF441} ist eine \textit{FastFrame}-Aufnahme dieses Betriebs zu sehen.
-Dabei wird auf den stärkeren Puls getriggert und im Gegensatz zu den anderen Aufnahmen ist dies keine kontinuierliche Messung, bei der zu jedem Roundtrip das Spektrum und zeitliches Signal aufgenommen wird.
-Hier werden sehr viele Pulse übersprungen, damit eine solch lange Zeit mit so einer gleich hohen Samplingrate aufgenommen werden kann.
-
-Genauer hinschauend erkennt man, dass die Relativgeschwindigkeit zwischen beiden Pulsen nur annähernd konstant ist.
-Dies lässt sich auch in der Peak-Spannung des undispergierten Signals erkennen, welche proportional zur Pulsenergie ist.
-So wird der schwache Puls die meiste Zeit schwächer während der starke stärker wird.
-Dies führt zu einer Zunahme der Relativgeschwindigkeit.
-Es gibt jedoch zwei Zeitpunkte zwischen zwei aufeinanderfolgenden Kollisionen, bei denen sich dieses Verhalten genau umgekehrt: Es findet ein Energietransfer vom stärkeren zum schwächeren Puls statt und die Relativgeschwindigkeit nimmt ab.
-Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Laserkristall begegnen und so der schwächere Puls vom Kerr-Effekt durch den stärkeren profitiert.
-
-\begin{figure}[!htb]
-   \centering   
-   \subfloat[\textit{FastFrame}-Aufnahme\label{fig:rBF441}]
-   {\includegraphics[width=0.49\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,41W_Ch2}}
-   \hfill
-   \subfloat[\label{fig:rBF441peakTau}]
-   {\includegraphics[width=0.49\textwidth]{figures/runningPeakTau}}
-   \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben.}
-   \label{fig:running441}
- \end{figure}
-
-\subsection{Bouncing ($P_\text{Pump}=4.48\dots4.57\,$W)}
+\subsection{Kollidierende Pulse (mittlere Pumpleistung)}
 Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt, wie in Abbildung \ref{fig:rBF456} gut zu erkennen ist.
 Diese entfernen sich danach schnell voneinander bevor der Abstand beider Pulse linear abnimmt und es schließlich zur erneuten Kollision kommt.
 Erklären lässt sich dies damit, dass sich nach der Kollision ein schwacher Puls vor dem starken ausbildet, dieser aufgrund des Kerr-Effektes schneller durch die Cavity läuft und somit der Abstand beider größer wird.
@@ -557,37 +572,33 @@ Wenn die Pumpleistung auf 4.57\,W erhöht wird, zeigt sich noch ein weiterer Int
 	\label{fig:bounceDistTime}
 \end{figure}
 
-\subsection{Bound Solitons ($P_\text{Pump}=4.57\dots4.81\,$W)}
-In diesem Zustand ändert sich der Abstand der Pulse nicht gravierend.
-Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
-Für drei der in Abbildung \ref{fig:boundSpectro} gezeigten Messreihen ist dieses Verhalten in die \textit{Interaction Plane} eingezeichnet, also ein polarer Plot mit dem Abstand als Radius und der Phase als Winkel.
-In Abbildung \ref{fig:interactionPlane} ist jedoch der Radius der um 80\,fs verringerte Abstand, damit Abstandsänderungen gut zu erkennen sind.
-Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbits durchlaufen werden.
+\subsection{Durchlaufende Pulse (niedrige Pumpleistung)}
+In diesem Zustand ist die Pumpleistung so gering, dass zwar zwei Pulse durch den Laser laufen, diese aber einen großen Intensitätsunterschied haben, so dass sie unterschiedliche optische Weglängen haben und sich so auf einer Skala von 100\,ms gegeneinander verschieben.
+In Abb. \ref{fig:rBF441} ist eine \textit{FastFrame}-Aufnahme dieses Betriebs zu sehen.
+Dabei wird auf den stärkeren Puls getriggert und im Gegensatz zu den anderen Aufnahmen ist dies keine kontinuierliche Messung, bei der zu jedem Roundtrip das Spektrum und zeitliches Signal aufgenommen wird.
+Hier werden sehr viele Pulse übersprungen, damit eine solch lange Zeit mit so einer gleich hohen Samplingrate aufgenommen werden kann.
+
+Genauer hinschauend erkennt man, dass die Relativgeschwindigkeit zwischen beiden Pulsen nur annähernd konstant ist.
+Dies lässt sich auch in der Peak-Spannung des undispergierten Signals erkennen, welche proportional zur Pulsenergie ist.
+So wird der schwache Puls die meiste Zeit schwächer während der starke stärker wird.
+Dies führt zu einer Zunahme der Relativgeschwindigkeit.
+Es gibt jedoch zwei Zeitpunkte zwischen zwei aufeinanderfolgenden Kollisionen, bei denen sich dieses Verhalten genau umgekehrt: Es findet ein Energietransfer vom stärkeren zum schwächeren Puls statt und die Relativgeschwindigkeit nimmt ab.
+Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Laserkristall begegnen und so der schwächere Puls vom Kerr-Effekt durch den stärkeren profitiert.
+
 \begin{figure}[!htb]
-   \centering
-   \subfloat[\label{fig:rBF458}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
+   \centering   
+   \subfloat[\textit{FastFrame}-Aufnahme\label{fig:rBF441}]
+   {\includegraphics[width=0.49\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,41W_Ch2}}
    \hfill
-   \subfloat[\label{fig:rBF463}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB}}
-   
-   \subfloat[\label{fig:rBF464}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB}}
-   \hfill
-   \subfloat[\label{fig:rBF468}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWnoCB}}
-   \caption{Bound Solitons: Spektren bei Änderung der Pumpleistung.}
-   \label{fig:boundSpectro}
+   \subfloat[\label{fig:rBF441peakTau}]
+   {\includegraphics[width=0.49\textwidth]{figures/runningPeakTau}}
+   \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben.}
+   \label{fig:running441}
  \end{figure}
- 
- \begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows2.pdf}
-	\caption{Phasendynamik in der Interaction Plane.}
-	\label{fig:interactionPlane}
-\end{figure}
+
 
 \section{Doppelpulse Messreihe 2}
+\subsection{Stufenweise Phasenentwicklung gebundener Doppelpulse}
 Hier beginnt die Messreihe mit Doppelpulsen, deren Phase und relativer Abstand fix sind.
 Der Abstand liegt etwa bei 170 \,fs.
 Dann wird die Pumpleistung verringert.
@@ -650,7 +661,7 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
 %   \label{fig:label-gesamt}
 % \end{figure}
 
-\section{Dreifach-Pulse}
+\subsection{Dreifach-Pulse}
 
 \section{Weiteres}
 
