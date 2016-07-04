@@ -79,8 +79,8 @@
 \usepackage{siunitx}
 
 %Matlab-Code
-\usepackage{listings}
-%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+%\usepackage{listings}
+\usepackage[framed,numbered]{matlab-prettifier}
 
 \newcommand{\dif}{\ensuremath{\mathrm{d}}}
 
@@ -175,10 +175,17 @@
 
 \chapter{Einleitung}
 Femtosekundenlaser sind heutzutage aus der aktuellen Forschung nicht mehr wegzudenken.
+Auch ihre Anwendungsgebiete werden vom industriellen Schneiden bis in den medizinischen Bereich immer vielfältiger.
 Besonders Titan-Saphir-Laser sind der Standard im Labor, weil sie die kürzesten Pulse mit wenigen optischen Zyklen emittieren können.
+Solch ein Laser ist ein nichtlineares System welches nicht nur auf Verstärkung und Verlusten basiert wie ein Dauerstrich-Laser (cw-Laser), der nur eine Wellenlänge emittiert.
+Kurze Pulse besitzen ein umso breiteres Spektrum.
+In einem Femtosekundenpuls sind also viele Wellenlängen enthalten.
+Diese haben im Lasermedium dispersionsbedingt unterschiedliche Ausbreitungsgeschwindigkeiten.
+Dies würde dazu führen, dass der Puls zerläuft.
+Damit dies aber nicht geschieht und sich eine stabile Pulsform ausbildet, muss es zu  einem Gleichgewicht zwischen Dispersion und einem nichtlinearen Effekt kommen, welcher schnellere Frequenzen in langsamere wandelt -- und umgekehrt.
 
-Solch ein Laser ist ein nichtlineares System und basiert auf Verstärkung und Verlusten, Dispersion und 
-
+Dies führt zu Soliton-ähnlichen Pulszuständen.
+Ein Titan:Sapphir-Laser eignet sich also hervorragend, um solche Systeme zu studieren.
 
 Wenn diese richtig eingestellt sind, laufen sie auch ultrastabil und reproduzieren das immer gleiche Spektrum, etwa 80 Millionen Pulse pro Sekunde.
 Anders sieht das allerdings aus, wenn der Laser so justiert ist, dass nicht nur ein Puls im Laser umher läuft, sondern zwei oder mehrere.
@@ -196,9 +203,13 @@ Während \cite{herink_resolving_2016}
 
 \section{Ultrakurzpuls-Laser}
 \subsection{Modelocking}
-Damit der Laser solche kurzen Pulse erzeugen kann, müssen viele Longitudinal-Moden in der Cavity in Phase sein.
+Damit ein Laser Femtosekundenpulse erzeugen kann, müssen viele Longitudinal-Moden im Resonator in Phase sein.
 Dieses \emph{Modelocking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
-Hier wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes: 
+Hier wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes
+\begin{align}
+	n(I)=n_1+n_2\cdot I\,.
+	\label{eq:kerr}
+\end{align}
 Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan-Saphir-Kristall wie eine Linse.
 Die Strahlmitte hat nämlich den längsten optischen Weg, während die äußeren Bereiche schneller durch den Kristall propagieren.
 
@@ -208,20 +219,53 @@ So wird dieser intensive Puls gegenüber dem cw-Signal bevorzugt und letzteres s
 Dieses Verfahren wird \textbf{Soft aperture Modelocking} genannt, während beim \textit{Hard aperture Modelocking} einen Schlitz oder ähnliches benötigt wird.
 Diese Apertur lässt den fokussierten, intensiven Strahl ohne Verlust passieren, während der cw-Anteil zum Teil adsorbiert wird und so hohe Verluste erfährt.
 
+\subsection{Dissipative Solitonen}
+Solitonen sind sehr stabile Pulse.
+Sie beruhen auf einer Balance zwischen Dispersion, welches den Puls länger werden lässt, und einer Nichtlinearität, die den gegenteiligen Effekt hat.
+So stellt sich eine sehr stabile Pulsform ein.
+Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
+Sie können auch stabile Multipulsformationen bilden.
 
-\subsection{Theoretisches Model}
-Das Modell ist etwas abgewandelt
 
-\cite{kalashnikov_multipulse_2003}
+\section{Dispersive Fourier-Transformation}
+Um das Spektrum jedes einzelnen Pulses vermessen zu können, wird eine lange Glasfaser genutzt, in die der Laserstrahl eingekoppelt wird.
+Da ihr Brechungsindex frequenzabhängig ist, benötigen die unterschiedlichen Frequenzen des Femtosekunden-Pulses unterschiedlich lange, um durch die Glasfaser zu propagieren.
+Die Länge der Glasfaser wird so angepasst, dass das ausgehende Signal etwas kürzer als die Puls-Wiederholrate des Lasers ist.
+Dann kann das Spektrum am Ende der Faser mit einer schnellen Photodiode und einem schnellen Oszilloskop vermessen werden.
+Dazu muss jedoch die Dispersion der Glasfaser bekannt sein, denn es kann nur der Zeitunterschied zwischen zwei Frequenzen gemessen werden, dieser muss aber noch den richtigen Frequenzen zugeordnet werden.
+Falls der Laser stabil läuft und so Pulse mit immer dem gleichen Spektrum emittiert, kann dieses Spektrum auch mit einem herkömmlichen Gitter-Spektrometer gemessen werden.
+Dabei wird der Strahl mit einem Gitter räumlich in seine spektralen Anteile zerlegt und diese dann mit einem CCD-Chip aufgenommen.
+Da Letzter sehr langsam ist, wird somit automatisch über viele Pulse gemittelt und kann nur zur Kalibration genutzt werden.
+Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen Prozessen, die sich nicht wiederholen.
+
+Eine zeitliche Verschiebung im Signal nach der Faser könnte zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
+Deshalb wird mit einer zweiten Photodiode parallel noch das reine Zeitsignal aufgenommen, also der undispergierte Puls.
+
+\subsection{Spektrale Interferenz und Doppelpulse}
+Das Spektrum zweier gleichartiger Pulse, die einen bestimmten zeitlichen Abstand haben, weist eine Modulation auf, die invers zu diesem ist.
+Dies lässt sich damit erklären, dass bestimmte Wellenlängen in Phase, andere aber außer Phase sind.
+Mathematischer kann dies über folgende Eigenschaft begründet werden:
+Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen Signals.
+
+\section{Simulation}
+Die Auswirkungen der oben beschriebenen optischen Elemente auf das elektrische Feld im Resonator können mathematisch beschrieben werden.
+Dies resultiert in einer nichtlinearen partiellen Differentialgleichung vom Ginzburg-Landau-Typ.
+Das hier beschriebene Modell wurde von \cite{kalashnikov_multipulse_2003} entwickelt, um Multipulse zu simulieren und damit Aussagen zu deren Stabilität machen zu können.
+Es wird jedoch um die Berücksichtigung der Gaindynamik auf der Zeitskala des Simulationsfensters erweitert.
+
+
+\subsection{Pulsformende Gleichung}
+Zunächst komplexe Einhüllende $A(z,t)$ mit $z$ als und $t$ als 
+
 \begin{align}
 	\frac{\partial A(z,t)}{\partial z}=\left[\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}+(t_f^2+iD)\frac{\partial^2}{\partial t^2}-i\beta |A(z,t)|^2\right]A(z,t)
 \end{align}
-In der Simulation wird diese Gleichung numerisch gelöst, indem die Manipulation pro Roundtrip 
+Hierbei ist $\alpha$ die (zeitabhängige) lineare Verstärkung, $\rho$ der Verlust, $\gamma$ die Modulationstiefe des sättigbaren Absorbers, $\sigma$ die inverse Sättigungs-Intensität, $t_f$ die inverse Bandbreite der spektralen Verstärkung, $D$ die Dispersion und $\beta$ die Selbstphasenmodulation.
 
-%\begin{align}
-%	A_1(z,t)&=A(z,t)\exp\left(\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}-i\beta |A(z,t)|^2\right)\\
-%	\tilde{A_2}(z,\omega)&=\tilde{A_1}(z,\omega)\exp\left(-\omega^2( t_f^2-iD)\right)\tilde{A_1}(z,\omega)
-%\end{align}
+In der Simulation wird diese Gleichung numerisch per split-step-Verfahren gelöst.
+Zeitliche Manipulationen werden im Realraum durchgeführt, während Dispersion und spektrale Verstärkung im Fourierraum angewendet werden.
+
+\subsection{Gaindynamik}
 Der lineare Gain $\alpha$, also die Besetzungsinversion, ist zeitabhängig.
 Es gibt drei Terme, die diese ändern:
 Das Pumpen, der Abbau durch stimulierte sowie durch spontane Emission, wobei die Änderung durch die beiden letzteren proportional zur aktuellen Besetzungsinversion sind, während die Änderung durch Pumpen proportional zur Differenz zwischen maximal erreichbarer Besetzungsversion $\alpha_\text{max}$ und dem aktuellen Wert ist.
@@ -237,7 +281,7 @@ Man kann dies mit einem quasi 2-Level-System modellieren:
 wobei $I_p$ die Pumpintensität, $\sigma_a$ der Absorptionsquerschnitt bei der Pumpfrequenz $\nu_a$ ist.
 Weiter ist $\sigma_g$ der Verstärkungsquerschnitt bei der Laserfrequenz $\nu$ und $T_r$ die Lifetime des oberen Laserniveaus.
 
-Davon ausgehend, dass das Pulspaar viel kürzer ist als die Resonatorlänge $T_\text{cav}$ und sich und sich $\alpha$ während der Pulse vernachlässigbar ändert, kann die obige Gleichung mit $T_\text{cav}$ multipliziert und anschließend integriert werden:
+Davon ausgehend, dass das Pulspaar viel kürzer ist als die Resonatorlänge $T_\text{cav}$ und sich $\alpha$ während der Pulse vernachlässigbar ändert, kann die obige Gleichung mit $T_\text{cav}$ multipliziert und anschließend integriert werden:
 \begin{align}
 	\alpha(z)&=\alpha(z-1)\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right) \notag \\
 	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]\,.
@@ -245,7 +289,8 @@ Davon ausgehend, dass das Pulspaar viel kürzer ist als die Resonatorlänge $T_\
 Hier ist $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ und $E_s=h\nu/\sigma_g$ sowie $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$.
 
 Nun baut jedoch der erste Puls eines Pulspaars die Besetzungsinversion zumindest ein wenig ab, während Pumpen und spontane Emission auf dieser Zeitskala vernachlässigbar sind.
-Um diesen Effekt zu berücksichtigen, kann in erster Näherung
+Die Berücksichtigung dieses Effekts stellt eine Erweiterung des Modells von \cite{kalashnikov_multipulse_2003} dar.
+In erster Näherung ist
 \begin{align}
 	\alpha_2(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2
 \end{align}
@@ -255,45 +300,9 @@ Damit sich nun jedoch nicht das mittlere $\alpha$ ändert, muss von $\alpha_2$ n
 	\alpha(z,t)&=\alpha(z)+\alpha_\text{corr}(z,t)
 \end{align}
 Nun ändert sich der Gain auch wärend eines Roundtrips im Simulationsfenster.
-Dies hat zur Folge, dass für zwei nicht-interagierende Pulse die Phasendifferenz linear durchläuft, denn der hintere ist immer ein wenig schwächer als der vordere.  
+Dies hat zur Folge, dass für zwei nicht-interagierende Pulse die Phasendifferenz linear durchläuft, denn der hintere ist immer ein wenig schwächer als der vordere.
 
-\subsection{Betriebsmodi}
-Der Laser kann in vielen verschiedenen Modi betrieben werden.
-Wenn er angeschaltet wird, liefert er zunächst ein cw-Signal.
-Um nun zum Puls-Betrieb zu gelangen, muss der Endspiegel mit einem dafür vorgesehenen Knopf schnell bewegt werden.
-Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, um genügend Verstärkung zu erfahren und damit das Mode-Locking zu starten.
-
-Außerdem können durch eine höhere Pumpenergie und zugehörige Justage der Spiegel vor und nach dem Ti:Sa-Kristall stabil Doppelpulse erzeugt werden, deren zeitlicher Abstand sehr viel kleiner als die optische Weglänge der Cavity ist.
-
-Weitere, teilweise instabile Modi lassen sich einstellen, sind oft aber unerwünscht bzw. müssen noch untersucht werden.
-
-
-\section{Dispersive Fourier-Transformation}
-Um das Spektrum jedes einzelnen Pulses vermessen zu können, wird eine lange Glasfaser genutzt, in die der Laserstrahl eingekoppelt wird.
-Da ihr Brechungsindex frequenzabhängig ist, benötigen die unterschiedlichen Frequenzen des Femtosekunden-Pulses unterschiedlich lange, um durch die Glasfaser zu propagieren.
-Die Länge der Glasfaser wird so angepasst, dass das ausgehende Signal etwas kürzer als die Puls-Wiederholrate des Lasers ist.
-Dann kann das Spektrum am Ende der Faser mit einer schnellen Photodiode und einem schnellen Oszilloskop vermessen werden.
-Dazu muss jedoch die Dispersion der Glasfaser bekannt sein, denn es kann nur der Zeitunterschied zwischen zwei Frequenzen gemessen werden, dieser muss aber noch den richtigen Frequenzen zugeordnet werden.
-Falls der Laser stabil läuft und so Pulse mit immer dem gleichen Spektrum emittiert, kann dieses Spektrum auch mit einem herkömmlichen Gitter-Spektrometer gemessen werden.
-Dabei wird der Strahl mit einem Gitter räumlich in seine spektralen Anteile zerlegt und diese dann mit einem CCD-Chip aufgenommen.
-Da Letzter sehr langsam ist, wird somit automatisch über viele Pulse gemittelt und kann nur zur Kalibration genutzt werden.
-Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen Prozessen, die sich nicht wiederholen.
-
-Eine zeitliche Verschiebung im Signal nach der Faser könnte zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
-Deshalb wird mit einer zweiten Photodiode parallel noch das reine Zeitsignal aufgenommen, also der undispergierten Puls.
-
-\subsection{Spektrale Interferenz und Doppelpulse}
-Das Spektrum zweier gleichartiger Pulse, die einen bestimmten zeitlichen Abstand haben, weist eine Modulation auf, die invers zu diesem ist.
-Dies lässt sich damit erklären, dass bestimmte Wellenlängen in Phase, andere aber außer Phase sind.
-Mathematischer kann dies über folgende Eigenschaft begründet werden:
-Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen Signals.
-
-\section{Dissipative Solitonen}
-Solitonen sind sehr stabile Pulse.
-Sie beruhen auf einer Balance zwischen Dispersion, welches den Puls länger werden lässt, und einer Nichtlinearität, die den gegenteiligen Effekt hat.
-So stellt sich eine sehr stabile Pulsform ein.
-Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
-Sie können auch stabile Multipulsformationen bilden.
+\subsection{Experimentelle Parameter}
 
 \chapter{Experimentelle Vorgehensweise}
 \section{Laserquelle Femtolasers Rainbow}
@@ -304,6 +313,10 @@ Der Ti:Sa-Kristall hat eine Länge von 2\,mm, in den der grüne Pumpstrahl mit e
 Um einen guten Kompromiss zwischen Stabilität und nichtlinearer Verstärkung im Pulsbetrieb zu erhalten \cite{stingl_sub-10-fs_1995}, ist der lange Arm etwa doppelt so lang wie der kurze.
 Außerdem werden gechirpte Spiegel verwendet, um die Dispersion durch den Kristall auszugleichen.
 Mit kleinen Prismen, den sogenannten Wedges, wird die Netto-Dispersion feingetunt.
+
+Wenn der Laser angeschaltet wird, läuft er zunächst im cw-Betrieb.
+Um nun in den Puls-Betrieb zu gelangen, muss der Endspiegel mit einem dafür vorgesehenen Knopf schnell bewegt werden.
+Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, um genügend Verstärkung zu erfahren und damit das Modelocking zu starten.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
@@ -340,7 +353,7 @@ Um nun diese Technik der dispersiven Fouriertransformation richtig nutzen zu kö
 
 \section{Kalibration der Dispersiven Fouriertransformation}
 Zunächst muss die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerung gemessen werden kann und nicht direkt Frequenzen.
-Dazu wird ein Etalon, hier ein Mikroskopie-Deckplättchen, genutzt, wenn der Laser stabil Einzelpulse liefert.
+Dazu wird ein Etalon, hier ein Mikroskopie-Deckglas, genutzt, wenn der Laser stabil Einzelpulse liefert.
 Aufgrund von Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
 Wie in \dots beschrieben, ergeben sich Frequenzabstände von
 \begin{align*}
@@ -402,7 +415,7 @@ Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda
 	\label{tab:PD}
 \end{table}
 
-\subsection{Antwort auf Undispergiert}
+\subsection{Antwort auf undispergiertes Signal}
 In Abbildung \ref{fig:PDundisp} wird in Abhängigkeit der eingestrahlten Leistung die Photodiodenantwort auf das undispergierte Signal dargestellt, also auf einen kurzen Puls, dessen Dauer viel geringer als die Risetime der Photodiode ist.
 Um dies zu messen, wird der Laserstrahl so auf die Photodiode gerichtet, dass er auf den sensitivsten Bereich trifft.
 Dazu wird die Linse vor der Photodiode richtig positioniert.
@@ -422,7 +435,7 @@ Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
 \end{figure}
 
 
-\subsection{Dispergiert}
+\subsection{Antwort auf dispergiertes Signal}
 Bis ca. 10\,mW wächst das Signal linear an.
 Danach wird die Photodiode übersteuert, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können.
 Die Pulsform ändert sich komplett und das Signal ist nicht mehr nützlich.
@@ -436,7 +449,7 @@ Insgesamt sind beide Werte aber im guten Einklang mit der aus dem Datenblatt ent
 \begin{figure}[!htb]
 	\centering
 	\subfloat[\label{fig:PDdispMeanA}]
-   {\includegraphics[width=0.49\textwidth]{figures/PDdispMeanA}}
+   {\includegraphics[width=0.44\textwidth]{figures/PDdispMeanA}}
    \hfill
    \subfloat[Sensitivität aus dem Datenblatt\label{fig:PDsensDB}]
    {\includegraphics[width=0.49\textwidth]{figures/PDsensitivty}}
@@ -458,7 +471,7 @@ Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden
 Dies geschieht anhand zwei verschiedener Messreihen.
 Danach folgen weitere Beobachtungen wie z.B. Tripletts.
 
-\section{Map}
+\section{Kartierung des Resonators}
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
@@ -499,6 +512,8 @@ In Abbildung \ref{fig:interactionPlane} ist jedoch der Radius der um 80\,fs verr
 Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbits durchlaufen werden.
 \begin{figure}[!htb]
    \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
    \subfloat[\label{fig:rBF458}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
    \hfill
@@ -548,7 +563,7 @@ Wenn die Pumpleistung auf 4.57\,W erhöht wird, zeigt sich noch ein weiterer Int
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_120000_170000_autocorr}}
    \hfill
    \subfloat[Zoom.\label{fig:rBF457_autocorr_zoom}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_137000_141000_autocorr}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_135000_143000_autocorr}}
    
    \subfloat[Abstoßung, spektrale Ansicht.\label{fig:rBF457_repel_spec}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,57W_Ch1_138700_139500_spectrum}}
@@ -701,12 +716,11 @@ Laser ist komplex, Messmethode ist verdammt cool!
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/RainbowSetupManual.png}
 \end{figure}
-\chapter{zweiter Anhang}
-\begin{lstlisting}
-a = 1;    % MATLAB comment
-b = 2;
-c = a^2 + b^2;
-\end{lstlisting}
+\chapter{Matlab-Code}
+\section{Darstellung der Messdaten}
+
+\section{Simulation}
+\lstinputlisting[style=Matlab-editor]{SimulationRBcomment.m}
 
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.

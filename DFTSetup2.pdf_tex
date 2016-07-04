@@ -48,19 +48,23 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.396333)%
+  \begin{picture}(1,0.39788296)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{DFTSetup2.pdf}}%
-    \put(0.11757457,0.2859976){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Ti:Sa-Laser}}}%
+    \put(0.11757457,0.28754756){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Ti:Sa-Laser}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{DFTSetup2.pdf}}%
-    \put(0.49760792,0.03419504){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{400\,m}}}}%
+    \put(0.49760792,0.02933548){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{400\,m}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{DFTSetup2.pdf}}%
-    \put(0.53409626,0.34986397){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{f=5\,cm}}}}%
-    \put(0.57095101,0.00374971){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{f=5\,cm}}}}%
-    \put(0.31231247,0.24483209){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{Polarisator}}}}%
-    \put(0.35258675,0.31693927){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{Isolator}}}}%
-    \put(0.58578046,0.31373451){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{PD 2}}}}%
-    \put(0.60828421,0.08138928){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{PD 1}}}}%
+    \put(0.53409626,0.35141392){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=5\,cm}}}%
+    \put(0.56774625,0.00209491){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=5\,cm}}}%
+    \put(0.3347458,0.23997253){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Polarisator}}}%
+    \put(0.35258675,0.31848923){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Isolator}}}%
+    \put(0.58898523,0.26400829){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD 2}}}%
+    \put(0.60828421,0.08293923){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD 1}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{DFTSetup2.pdf}}%
-    \put(0.27589562,0.34160995){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\tiny{$\lambda$/2-Platte}}}}%
+    \put(0.26307658,0.34636467){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\lambda$/2-Platte}}}%
+    \put(0.49758831,0.20386405){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Dispersive}}}%
+    \put(0.91859958,0.1804019){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Echtzeit}}}%
+    \put(0.49754488,0.1769229){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Faser}}}%
+    \put(0.92232327,0.15351753){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Oszilloskop}}}%
   \end{picture}%
 \endgroup%
