@@ -176,16 +176,16 @@
 \chapter{Einleitung}
 Femtosekundenlaser sind heutzutage aus der aktuellen Forschung nicht mehr wegzudenken.
 Auch ihre Anwendungsgebiete werden vom industriellen Schneiden bis in den medizinischen Bereich immer vielfältiger.
-Besonders Titan-Saphir-Laser sind der Standard im Labor, weil sie die kürzesten Pulse mit wenigen optischen Zyklen emittieren können.
+Besonders Titan-Saphir:Laser sind der Standard im Labor, weil sie die kürzesten Pulse mit wenigen optischen Zyklen emittieren können.
 Solch ein Laser ist ein nichtlineares System welches nicht nur auf Verstärkung und Verlusten basiert wie ein Dauerstrich-Laser (cw-Laser), der nur eine Wellenlänge emittiert.
-Kurze Pulse besitzen ein umso breiteres Spektrum.
+Je kürzer der Puls, desto breiter muss dessen Spektrum sein.
 In einem Femtosekundenpuls sind also viele Wellenlängen enthalten.
 Diese haben im Lasermedium dispersionsbedingt unterschiedliche Ausbreitungsgeschwindigkeiten.
 Dies würde dazu führen, dass der Puls zerläuft.
 Damit dies aber nicht geschieht und sich eine stabile Pulsform ausbildet, muss es zu  einem Gleichgewicht zwischen Dispersion und einem nichtlinearen Effekt kommen, welcher schnellere Frequenzen in langsamere wandelt -- und umgekehrt.
 
 Dies führt zu Soliton-ähnlichen Pulszuständen.
-Ein Titan:Sapphir-Laser eignet sich also hervorragend, um solche Systeme zu studieren.
+Ein Titan:Saphir-Laser eignet sich also hervorragend, um solche Systeme zu studieren.
 
 Wenn diese richtig eingestellt sind, laufen sie auch ultrastabil und reproduzieren das immer gleiche Spektrum, etwa 80 Millionen Pulse pro Sekunde.
 Anders sieht das allerdings aus, wenn der Laser so justiert ist, dass nicht nur ein Puls im Laser umher läuft, sondern zwei oder mehrere.
@@ -207,7 +207,7 @@ Damit ein Laser Femtosekundenpulse erzeugen kann, müssen viele Longitudinal-Mod
 Dieses \emph{Modelocking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
 Hier wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes
 \begin{align}
-	n(I)=n_1+n_2\cdot I\,.
+	n(I)=n_0+n_2\cdot I\,.
 	\label{eq:kerr}
 \end{align}
 Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan-Saphir-Kristall wie eine Linse.
@@ -472,10 +472,21 @@ Dies geschieht anhand zwei verschiedener Messreihen.
 Danach folgen weitere Beobachtungen wie z.B. Tripletts.
 
 \section{Kartierung des Resonators}
+Für das Einstellen von Multipulsen ist die Kenntnis der wichtigsten Resonatorparameter nötig.
+Dazu gehört die Kristallposition und der Abstand zwischen den beiden fokussierenden Spiegeln.
+In Abbildung \ref{fig:map} wird letzterer bei verschiedenen Kristallpositionen variiert.
+In Abhängigkeit dessen wird mit einem Powermeter direkt am Laserausgang die cw-Leistung und -- wenn möglich -- auch die gemodelockte Leistung gemessen.
+Da die Abstände nur sehr gering geändert werden ($\sim 100\,\si{\micro\meter}$), ist die Messung dieser etwas ungenau.
+Gemessen wird nämlich von außen durch Anhalten eines digitalen Messschiebers, dessen Genauigkeit  bei ca. $10\,\si{\micro\meter}$ liegt.
+
+
+Zu erkennen ist, dass die cw-Leistung geringer wird, wenn der Abstand zwischen den beiden Spiegeln verringert wird.
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
-	\caption{Ein Plot. Er ist nicht schön.}
+	\caption{Abhängigkeit der Leistung (cw \& gemodelockt) von der Position des fokussierenden Spiegels (Stabilität) bei verschiedenen Kristallpositionen.
+	Die Positionen werden von außen gemessen, dh. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
 	\label{fig:map}
 \end{figure}
 
@@ -547,10 +558,10 @@ Somit lässt sich auch erklären, warum die Kollisionszeit $T_\text{interColl.}$
 \begin{figure}[!htb]
    \centering   
    \subfloat[Ausschnitt der Autokorrelation\label{fig:rBF456}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_100000_150000_autocorr}}
+   {\includegraphics[width=0.58\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_150000_250000_autocorr_stretch}}
    \hfill
-   \subfloat[Histogramm des maximalen Abstandes $\tau_\text{max}$ der beiden Pulse pro Bounce\label{fig:rBF456histo}]
-   {\includegraphics[width=0.49\textwidth]{figures/bounce456histo}}
+   \subfloat[Histogramm des maximalen Pulsabstandes $\tau_\text{max}$ pro Bounce\label{fig:rBF456histo}]
+   {\includegraphics[width=0.4\textwidth]{figures/bounce456histo}}
    \caption{Bouncing-Mode bei einer Pumpleistung von $4.56\,$W.}
    \label{fig:bouncing456}
  \end{figure}

@@ -767,12 +767,42 @@ Q
 q
 0.50935 0 0 -0.509186 0 1319.300781 cm
 q
+1 0 0 1 1915 1326 cm
+1 0 0 -1 0 0 cm
+0 w
+BT
+/Font2 84 Tf
+(0) Tj
+47 0 Td (.) Tj
+23 0 Td (1) Tj
+47 0 Td (1) Tj
+47 0 Td (2) Tj
+47 0 Td (0) Tj
+47 0 Td (\() Tj
+28 0 Td (5) Tj
+47 0 Td (\)) Tj
+28 0 Td ( ) Tj
+23 0 Td (A) Tj
+56 0 Td (/) Tj
+23 0 Td (W) Tj
+ET
+Q
+Q
+Q
+q
+Q
+q
+q
+Q
+q
+0.50935 0 0 -0.509186 0 1319.300781 cm
+q
 1 0 0 1 3153 1245 cm
 1 0 0 -1 0 0 cm
 0 1 -1 0 0 0 cm
 0 w
 BT
-/Font2 84 Tf
+/Font3 84 Tf
 ( ) Tj
 ET
 Q
@@ -790,7 +820,7 @@ q
 1 0 0 -1 0 0 cm
 0 w
 BT
-/Font3 84 Tf
+/Font2 84 Tf
 ( ) Tj
 ET
 Q
@@ -809,7 +839,7 @@ q
 0 1 -1 0 0 0 cm
 0 w
 BT
-/Font2 99 Tf
+/Font3 99 Tf
 (I) Tj
 ET
 Q
@@ -819,7 +849,7 @@ q
 0 1 -1 0 0 0 cm
 0 w
 BT
-/Font2 60 Tf
+/Font3 60 Tf
 (m) Tj
 50 0 Td (e) Tj
 33 0 Td (a) Tj
@@ -832,7 +862,7 @@ q
 0 1 -1 0 0 0 cm
 0 w
 BT
-/Font2 99 Tf
+/Font3 99 Tf
 ( ) Tj
 28 0 Td ([) Tj
 28 0 Td (m) Tj
@@ -857,7 +887,7 @@ q
 1 0 0 -1 0 0 cm
 0 w
 BT
-/Font3 99 Tf
+/Font2 99 Tf
 (P) Tj
 66 0 Td (o) Tj
 55 0 Td (w) Tj
@@ -937,7 +967,7 @@ q
 1 0 0 -1 0 0 cm
 0 w
 BT
-/Font3 99 Tf
+/Font2 99 Tf
 ( ) Tj
 28 0 Td (C) Tj
 71 0 Td (R) Tj
@@ -998,7 +1028,7 @@ q
 1 0 0 -1 0 0 cm
 0 w
 BT
-/Font3 99 Tf
+/Font2 99 Tf
 ( ) Tj
 28 0 Td (n) Tj
 55 0 Td (o) Tj
@@ -1020,16 +1050,23 @@ Q
 q
 0.50935 0 0 -0.509186 0 1319.300781 cm
 q
-1 0 0 1 1964 1372 cm
+1 0 0 1 1330 1083 cm
 1 0 0 -1 0 0 cm
 0 w
+1 0 0 sc
+1 0 0 SC
 BT
-/Font3 84 Tf
+/Font2 84 Tf
 (0) Tj
 47 0 Td (.) Tj
 23 0 Td (1) Tj
 47 0 Td (1) Tj
-47 0 Td ( ) Tj
+47 0 Td (5) Tj
+47 0 Td (3) Tj
+47 0 Td (\() Tj
+28 0 Td (8) Tj
+47 0 Td (\)) Tj
+28 0 Td ( ) Tj
 23 0 Td (A) Tj
 56 0 Td (/) Tj
 23 0 Td (W) Tj
@@ -1083,7 +1120,7 @@ endobj
 >>
 endobj
 5 0 obj
-8509
+8912
 endobj
 16 0 obj
 <</Type/ExtGState
@@ -1093,11 +1130,11 @@ endobj
 xref
 0 17
 0000000000 65535 f 
-0000009603 00000 n 
-0000009650 00000 n 
-0000009706 00000 n 
-0000009808 00000 n 
-0000009960 00000 n 
+0000010006 00000 n 
+0000010053 00000 n 
+0000010109 00000 n 
+0000010211 00000 n 
+0000010363 00000 n 
 0000001042 00000 n 
 0000000015 00000 n 
 0000000145 00000 n 
@@ -1108,12 +1145,12 @@ xref
 0000000698 00000 n 
 0000000831 00000 n 
 0000000854 00000 n 
-0000009980 00000 n 
+0000010383 00000 n 
 trailer
 <<
 /Size 17
 /Root 1 0 R
 >>
 startxref
-10052
+10455
 %%EOF
