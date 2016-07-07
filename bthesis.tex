@@ -180,16 +180,28 @@ Besonders Titan-Saphir:Laser sind der Standard im Labor, weil sie die kürzesten
 Solch ein Laser ist ein nichtlineares System welches nicht nur auf Verstärkung und Verlusten basiert wie ein Dauerstrich-Laser (cw-Laser), der nur eine Wellenlänge emittiert.
 Je kürzer der Puls, desto breiter muss dessen Spektrum sein.
 In einem Femtosekundenpuls sind also viele Wellenlängen enthalten.
-Diese haben im Lasermedium dispersionsbedingt unterschiedliche Ausbreitungsgeschwindigkeiten.
-Dies würde dazu führen, dass der Puls zerläuft.
+Diese haben im Lasermedium dispersionsbedingt unterschiedliche Ausbreitungsgeschwindigkeiten, was dazu führen würde, dass der Puls zerläuft.
 Damit dies aber nicht geschieht und sich eine stabile Pulsform ausbildet, muss es zu  einem Gleichgewicht zwischen Dispersion und einem nichtlinearen Effekt kommen, welcher schnellere Frequenzen in langsamere wandelt -- und umgekehrt.
+Die sich ausbildende Pulsformen werden \textbf{Solitonen} genannt.
+Ein Titan:Saphir-Laser eignet sich also hervorragend, um deren Dynamik und Interaktionsmechanismen zu studieren.
+Dazu müssen aber mehrerer Solitonen im Laser-Resonator umherlaufen.
+Dies wird zwar in der Entwicklung von Ultrakurzpulslasern vermieden, da die dabei entstehenden Pulse länger sind als der mögliche Einzelpuls, durch eine höhere Pumpleistung sowie eine leichte Dejustage vom Optimalzustand lassen sich solche \textbf{Multipuls-Zustände} jedoch erzielen.
+Davon berichtete zuerst \cite{lai_multiple_1997}.
+Wie auch in den meisten späteren Beobachtungen wurde dort jedoch über viele Laserumläufe gemittelt.
+Typische Ti:Sa-Oszillatoren haben nämlich eine Pulswiederholrate von etwa 80\,MHz.
+Also werden auf einer Nanosekundenskala Pulse emittiert.
+Der maximal mögliche Abstand zwischen zwei Pulsen, die im Laser umherlaufen, beträgt deshalb wenige Nanosekunden.
+Solche Abstände lassen sich mit schnellen Photodioden auflösen, dies stellt experimentell also keine Hürde dar.
+Interessant sind aber vor allem Abstände, die nur eine Größenordnung größer sind als die Pulsdauer, denn dann kommt es zu direkten Interaktionen zwischen den Pulsen.
+Für Femtosekundenpulse liegt der spannende Abstandsbereich also unter einer Pikosekunde.
+Dies ist zeitlich nicht mehr aufzulösen.
+So muss der Pulsabstand entweder aus dem Spektrum bestimmt werden, denn dessen Fouriertransformation ist die Autokorrelation des Zeitsignals.
+Typische Spektrometer besitzen jedoch einen CCD-Chip, auf den der Strahl zuvor spektral aufgespalten wird.
+Ein solcher Chip 
 
-Dies führt zu Soliton-ähnlichen Pulszuständen.
-Ein Titan:Saphir-Laser eignet sich also hervorragend, um solche Systeme zu studieren.
 
-Wenn diese richtig eingestellt sind, laufen sie auch ultrastabil und reproduzieren das immer gleiche Spektrum, etwa 80 Millionen Pulse pro Sekunde.
-Anders sieht das allerdings aus, wenn der Laser so justiert ist, dass nicht nur ein Puls im Laser umher läuft, sondern zwei oder mehrere.
-Dann kann es zu Interaktionen zwischen den Pulsen kommen.
+In beiden Fällen
+
 Dieses dynamische Verhalten konnte zuvor noch nicht in Echtzeit beobachtet werden.
 Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie Hochgeschwindigkeitselektronik bestehend aus schnellen Photodetektoren und den schnellsten, kommerziell erhältlichen AD-Wandlern ist es nun möglich, das Spektrum jedes einzelnen Pulses bzw. Pulspaares aufzunehmen und in letzterem Fall daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
 So lassen sich deutlich kleinere Pulsabstände auflösen als das im zeitlichen Signal jemals möglich wäre.
@@ -393,7 +405,7 @@ Die andere wird im Folgenden mit \texttt{noLabel} bezeichnet.
 
 Zunächst wird getestet, in welchem Leistungsbereich die Photodioden linear reagieren, damit bei zukünftigen Messungen dieser Bereich nicht überschritten wird.
 Dies muss für die beiden Messmodi mit undispergiertem sowie dispergiertem Signal geschehen.
-Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (ca. 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
+Außerdem muss noch die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt werden, denn für die Beobachtung von relativ weit entfernten Pulsen (bis zu 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
 Diese Pulse sind zu nah, um sie im zeitlichen Signal getrennt zu sehen.
 So können sie gerade noch als spektrale Interferenz wahrgenommen werden.
 
@@ -467,24 +479,31 @@ Mit diesem kann durch Variation der einen Armlänge für unterschiedliche Abstä
 Diese Abstände finden sich in der Modulation des Spektrums wieder.
 
 \chapter{Ergebnisse}
-Im folgenden soll zunächst die bei Variation der Pumpleistung untersucht werden.
-Dies geschieht anhand zwei verschiedener Messreihen.
-Danach folgen weitere Beobachtungen wie z.B. Tripletts.
+In diesem Kapitel wird zunächst erläutert, wie der Resonator justiert sein muss, um Multipulse erzeugen zu können.
+Danach wird erklärt, wie die Messdaten bearbeitet werden, damit man aus ihnen Pulsabstände bestimmen kann.
+Mit diesem Vorwissen werden dann die beobachteten Multipulse dargestellt.
+Dabei wird sich hier auf Multipulse mit geringen Pulsabständen ($< 1\,$ps) beschränkt.
+Wie schon von \cite{lai_multiple_1997} beschrieben, gibt es aber auch Multipulszustände, bei denen sich je zwei Pulse genau im Kristall treffen und so auch den Kerr-Effekt des jeweils anderen spüren.
+Im Abschnitt \ref{sec:cpml} wird auf diesen Effekt genauer eingegangen.
 
 \section{Kartierung des Resonators}
 Für das Einstellen von Multipulsen ist die Kenntnis der wichtigsten Resonatorparameter nötig.
 Dazu gehört die Kristallposition und der Abstand zwischen den beiden fokussierenden Spiegeln.
-In Abbildung \ref{fig:map} wird letzterer bei verschiedenen Kristallpositionen variiert.
-In Abhängigkeit dessen wird mit einem Powermeter direkt am Laserausgang die cw-Leistung und -- wenn möglich -- auch die gemodelockte Leistung gemessen.
 Da die Abstände nur sehr gering geändert werden ($\sim 100\,\si{\micro\meter}$), ist die Messung dieser etwas ungenau.
 Gemessen wird nämlich von außen durch Anhalten eines digitalen Messschiebers, dessen Genauigkeit  bei ca. $10\,\si{\micro\meter}$ liegt.
 
-
+In Abbildung \ref{fig:map} wird der Abstand der fokussierenden Spiegel bei verschiedenen Kristallpositionen variiert.
+In Abhängigkeit dessen wird mit einem Powermeter direkt am Laserausgang die cw-Leistung und -- wenn möglich -- auch die gemodelockte Leistung gemessen.
 Zu erkennen ist, dass die cw-Leistung geringer wird, wenn der Abstand zwischen den beiden Spiegeln verringert wird.
+Dies ist auch der typische Weg, den Laser zu justieren.
+Zuerst wird die cw-Leistung durch Justage der Resonator-Endspiegel maximiert.
+Danach wird der Abstand der beiden Fokussierspiegel verringert, während der Endspiegel bewegt wird, um Fluktuationen zu erzeugen, die bei geeigneter Stellung modelocken.
+Des weiteren ist die Ausgangsleistung im gemodelockten Betrieb größer als die cw-Leistung und nahezu unabhängig von der Stabilitätsposition.
+
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/map.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/map.pdf}
 	\caption{Abhängigkeit der Leistung (cw \& gemodelockt) von der Position des fokussierenden Spiegels (Stabilität) bei verschiedenen Kristallpositionen.
 	Die Positionen werden von außen gemessen, dh. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
 	\label{fig:map}
@@ -492,21 +511,9 @@ Zu erkennen ist, dass die cw-Leistung geringer wird, wenn der Abstand zwischen d
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/map2.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/map2.pdf}
 	\caption{Abhängigkeit der Ausgangsleistung (cw \& gemodelockt) von der Position des fokussierenden Spiegels (Stabilität) bei fester Kristallposition.}
 	\label{fig:map2}
-\end{figure}
-
-\begin{figure}[!htb]
-	\centering
-	\subfloat[verschiedene Kristallpositionen\label{fig:map1}]
-   {\includegraphics[width=0.49\textwidth]{figures/map.pdf}}
-   \hfill
-   \subfloat[Unterschied zwischen den einzelnen Betrieben.\label{fig:map2}]
-   {\includegraphics[width=0.49\textwidth]{figures/map2.pdf}}
-	\caption{Abhängigkeit der Leistung (cw \& gemodelockt) von der Position des fokussierenden Spiegels (Stabilität).
-	Die Positionen werden von außen gemessen, dh. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
-	\label{fig:map}
 \end{figure}
 
 
@@ -546,16 +553,16 @@ Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbit
    \captionsetup[subfigure]{labelformat=empty}
    \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
    \subfloat[\label{fig:rBF458}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB111}}
    \hfill
    \subfloat[\label{fig:rBF463}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB111}}
    
    \subfloat[\label{fig:rBF464}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB111}}
    \hfill
    \subfloat[\label{fig:rBF468}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWwithCB111_0}}
    \caption{Bound Solitons: Spektren bei Änderung der Pumpleistung.}
    \label{fig:boundSpectro}
  \end{figure}
@@ -688,6 +695,24 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
    \label{fig:165014steps}
  \end{figure}
  
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/steps_relativ2.pdf}
+	\caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
+   \label{fig:165014steps2}
+\end{figure}
+
+\begin{figure}[!htb]
+   \centering   
+   \subfloat[benötigte Zeit\label{fig:jumpRT}]
+   {\includegraphics[width=0.49\textwidth]{figures/jumpRT}}
+   \hfill
+   \subfloat[\label{fig:steps2}]
+   {\includegraphics[width=0.49\textwidth]{figures/steps_relativ2}}
+   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
+   \label{fig:160514steps2}
+ \end{figure}
+ 
 % \begin{figure}[!htb]
 %   \centering
 %   \captionsetup[subfigure]{labelformat=empty}
@@ -713,6 +738,7 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
 
 \chapter{Diskussion}
 \section{Colliding Pulse Modelocking}
+\label{sec:cpml}
 Während der Messungen konnte das sogennante \textit{Colliding Pulse Modelocking} beobachtet werden.
 Dabei laufen zwei Pulse im Laser umher, die sich im Laserkristall treffen und so den Kerr-Effekt beider Pulse sehen, sodass beide eine höhere Verstärkung erfahren.
 Dieser Zustand ist sehr stabil und wurde zuerst von \cite{lai_multiple_1997} in einem Ti:Sa-Laser beschrieben.
