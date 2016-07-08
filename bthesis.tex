@@ -499,7 +499,10 @@ Dies ist auch der typische Weg, den Laser zu justieren.
 Zuerst wird die cw-Leistung durch Justage der Resonator-Endspiegel maximiert.
 Danach wird der Abstand der beiden Fokussierspiegel verringert, während der Endspiegel bewegt wird, um Fluktuationen zu erzeugen, die bei geeigneter Stellung modelocken.
 Des weiteren ist die Ausgangsleistung im gemodelockten Betrieb größer als die cw-Leistung und nahezu unabhängig von der Stabilitätsposition.
-
+Somit nimmt der Leistungsunterschied zwischen den beiden Betriebsmodi zu größeren Stabilitätspositionen zu.
+Der gemodelockte Puls wird unempfindlicher auf kleine Störungen.
+Die Kristallposition beeinflusst auch die Leistung: Zum einen gibt es eine Position maximaler Leistung.
+Zum anderen ist zu erkennen, dass eine größere Kristallposition (kleinerer Abstand zwischen Kristall und fixem Fokussierspiegel) zu einer Aufspaltung des modelockbaren Bereiches führt.
 
 \begin{figure}[!htb]
 	\centering
@@ -508,6 +511,18 @@ Des weiteren ist die Ausgangsleistung im gemodelockten Betrieb größer als die 
 	Die Positionen werden von außen gemessen, dh. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
 	\label{fig:map}
 \end{figure}
+
+Wo befinden sich nun aber die Multipulse?
+In Abbildung \ref{fig:map2} wird nun die Leistungsabhängigkeit von der Stabiltätsposition bei fester Kristallposition sowohl im cw-Betrieb als auch im Einzel-/Doppelpuls-Zustand  dargestellt.
+Wieder ist das gleiche Verhalten für den cw-Fall (schwarz) zu erkennen.
+Die Einzelpuls-Leistung (rot) ist etwas größer, die Doppelpuls-Leistung (blau) noch größer.
+Zu beachten ist aber, dass die Leistung im Doppelpulsbetrieb keinesfalls doppelt so groß ist wie die Einzelpuls-Leistung.
+Also sind die beiden Pulse des Paares jeweils nicht so energiereich (und auch nicht so kurz) wie der Puls im Einzelpulsbetrieb.
+Vom gemodelockten Einzelpulsbetrieb ausgehend, können Doppelpulse durch Verringern der Stabilitätsposition eingestellt werden.
+Meist befindet sich der Laser der ersten Störung durch Bewegen des Endspiegels gemodelockt im Einzelpuls-Zustand.
+Das Spektrum dieses Zustands ist aber mit einem großen cw-Durchbruch behaftet.
+Die gesamte Ausgangsleistung ist also nicht in diesem Puls vereint.
+Wird der Laser durch Bewegen des Endspiegels ein zweites Mal gestört, können sich Doppelpulse einstellen.
 
 \begin{figure}[!htb]
 	\centering
@@ -542,6 +557,14 @@ Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wä
 Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu zu starken Verschiebungen führen.
 
 \section{Doppelpulse Messreihe 1}
+Wie zuvor beschrieben wird der Laser bei geeigneter Justage durch zweimaliges Stören in den Doppelpuls-Betrieb überführt.
+Durch anschließendes Variieren der Pumpleistung lassen sich drei verschiedene Regime beobachten.
+Bei einer hohen Pumpleistung von $P_\text{Pump}=4.57\dots 4.81\,$W sind die Pulse gebunden.
+Es lässt sich eine interessante Phasen-Abstandsdynamik beobachten.
+Bei einer mittleren Pumpleistung von $P_\text{Pump}=4.48\dots 4.57\,$W kommt es zu wiederkehrenden Kollisionen zwischen den beiden Pulsen.
+Wird die Pumpleistung weiter auf $P_\text{Pump}=4.39\dots 4.47\,$W verringert, laufen die beiden Pulse mit etwas unterschiedlichen Repetitionsraten nahezu unabhängig durch den Resonator.
+Zu beachten ist, dass dieses Verhalten 
+
 \subsection{Gebundene Pulse (hohe Pumpleistung)}
 In diesem Zustand ändert sich der Abstand der Pulse nicht gravierend.
 Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
@@ -553,23 +576,23 @@ Zusätzlich sind Pfeile eingezeichnet, die anzeigen in welche Richtung die Orbit
    \captionsetup[subfigure]{labelformat=empty}
    \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
    \subfloat[\label{fig:rBF458}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB111}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,58W_Ch_PWnoCB}}
    \hfill
    \subfloat[\label{fig:rBF463}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB111}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,63W_Ch_PWnoCB}}
    
    \subfloat[\label{fig:rBF464}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB111}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,64W_Ch_PWnoCB}}
    \hfill
    \subfloat[\label{fig:rBF468}]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWwithCB111_0}}
-   \caption{Bound Solitons: Spektren bei Änderung der Pumpleistung.}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWwithCB}}
+   \caption{Gebundene Pulse: Spektren bei Änderung der Pumpleistung.}
    \label{fig:boundSpectro}
  \end{figure}
  
  \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows2.pdf}
+	\includegraphics[width=0.9\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows_final2.pdf}
 	\caption{Phasendynamik in der Interaction Plane.}
 	\label{fig:interactionPlane}
 \end{figure}
@@ -589,7 +612,7 @@ Somit lässt sich auch erklären, warum die Kollisionszeit $T_\text{interColl.}$
    \hfill
    \subfloat[Histogramm des maximalen Pulsabstandes $\tau_\text{max}$ pro Bounce\label{fig:rBF456histo}]
    {\includegraphics[width=0.4\textwidth]{figures/bounce456histo}}
-   \caption{Bouncing-Mode bei einer Pumpleistung von $4.56\,$W.}
+   \caption{Kollidierende Pulse bei einer Pumpleistung von $4.56\,$W.}
    \label{fig:bouncing456}
  \end{figure}
 
@@ -693,8 +716,15 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB}}
    \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
    \label{fig:165014steps}
- \end{figure}
+\end{figure}
  
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/jumpRT.pdf}
+	\caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
+   \label{fig:jumpRT}
+\end{figure} 
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/steps_relativ2.pdf}
@@ -702,16 +732,7 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
    \label{fig:165014steps2}
 \end{figure}
 
-\begin{figure}[!htb]
-   \centering   
-   \subfloat[benötigte Zeit\label{fig:jumpRT}]
-   {\includegraphics[width=0.49\textwidth]{figures/jumpRT}}
-   \hfill
-   \subfloat[\label{fig:steps2}]
-   {\includegraphics[width=0.49\textwidth]{figures/steps_relativ2}}
-   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
-   \label{fig:160514steps2}
- \end{figure}
+
  
 % \begin{figure}[!htb]
 %   \centering
