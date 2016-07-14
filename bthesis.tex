@@ -196,20 +196,21 @@ Interessant sind aber vor allem Abstände, die nur eine Größenordnung größer
 Für Femtosekundenpulse liegt der spannende Abstandsbereich also unter einer Pikosekunde.
 Dies ist zeitlich nicht mehr aufzulösen.
 So muss der Pulsabstand entweder aus dem Spektrum bestimmt werden, denn dessen Fouriertransformation ist die Autokorrelation des Zeitsignals.
-Typische Spektrometer besitzen jedoch einen CCD-Chip, auf den der Strahl zuvor spektral aufgespalten wird.
-Ein solcher Chip 
+Typische Spektrometer besitzen jedoch einen CCD-Sensor, auf den der Strahl zuvor spektral aufgespalten wird.
+Mit einem solchen Chip wird das Spektrum jedoch über einen Zeitraum von einigen 100 Mikrosekunden bis wenigen Millisekunden gemittelt.
+Dies entspricht mindestens 10\,000 Pulsen eines Ti:Sa-Oszillators.
+Im anderen Fall wird die Autokorrelation direkt durch Überlagerung des Signals mit seiner verzögerten Kopie gemessen.
+Auch mit dieser Methode kann der Abstand der Pulse nicht in Echtzeit bestimmt werden.
+Mit Hilfe dieser beiden Techniken konnten aber schon eine Reihe interessanter Beobachtungen gemacht werden:
+So haben \cite{wang_pulse_1997} und \cite{kitano_stable_1998} diskrete Pulsabstände  gemessen.
 
-
-In beiden Fällen
-
-Dieses dynamische Verhalten konnte zuvor noch nicht in Echtzeit beobachtet werden.
-Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie Hochgeschwindigkeitselektronik bestehend aus schnellen Photodetektoren und den schnellsten, kommerziell erhältlichen AD-Wandlern ist es nun möglich, das Spektrum jedes einzelnen Pulses bzw. Pulspaares aufzunehmen und in letzterem Fall daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
-So lassen sich deutlich kleinere Pulsabstände auflösen als das im zeitlichen Signal jemals möglich wäre.
-Dies eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
-Numerisch wurden schon vielfältigste Zustände modelliert, diese können nun erstmals im Experiment überprüft werden.
-
-Mit dieser Echtzeit-Methode können außerdem erstmals auch transiente Dynamiken aufgelöst und somit die Prozesse im Laser besser verstanden werden.
-Während \cite{herink_resolving_2016}
+Dynamisches Verhalten, welches sich maximal auf einer Mikrosekunden-Skala abspielt, konnte allerdings noch nicht beobachtet werden, während einige Simulationen auf oszillatorische Zustände, etc. hinweisen.
+Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie \textbf{Hochgeschwindigkeitselektronik} bestehend aus schnellen Photodetektoren und den schnellsten, kommerziell erhältlichen AD-Wandlern ist es nun möglich, das Spektrum jedes Pulspaares aufzunehmen und daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
+Dazu wird die spektrale Information durch eine \textbf{dispersive Faser} in zeitliche Information übersetzt.
+Dieses Verfahren eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
+So hat \cite{herink_resolving_2016} mit dieser Technik die Entstehung eines Femtosekundenpulses aufnehmen können.
+In dieser Arbeit sollen nun mit ihr Multipulse untersucht werden.
+Aber auch andere transiente Dynamiken lassen sich erstmals beobachten.
 
 \chapter{Grundlagen}
 
@@ -258,6 +259,13 @@ Das Spektrum zweier gleichartiger Pulse, die einen bestimmten zeitlichen Abstand
 Dies lässt sich damit erklären, dass bestimmte Wellenlängen in Phase, andere aber außer Phase sind.
 Mathematischer kann dies über folgende Eigenschaft begründet werden:
 Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen Signals.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/pulsBsp}
+	\caption{Beispielhafte Doppelpulse: Intensität, Spektrum und Autokorrelation.}
+	\label{fig:PulsBsp}
+\end{figure}
 
 \section{Simulation}
 Die Auswirkungen der oben beschriebenen optischen Elemente auf das elektrische Feld im Resonator können mathematisch beschrieben werden.
@@ -368,7 +376,7 @@ Um nun diese Technik der dispersiven Fouriertransformation richtig nutzen zu kö
 Zunächst muss die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerung gemessen werden kann und nicht direkt Frequenzen.
 Dazu wird ein Etalon, hier ein Mikroskopie-Deckglas, genutzt, wenn der Laser stabil Einzelpulse liefert.
 Aufgrund von Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
-Wie in \dots beschrieben, ergeben sich Frequenzabstände von
+Wie von \cite[S.66]{lauterborn_coherent_2003} beschrieben, ergeben sich Frequenzabstände von
 \begin{align*}
 	\Delta \nu=\frac{c}{2Ln}\,,
 \end{align*}
@@ -567,6 +575,7 @@ Wird die Pumpleistung weiter auf $P_\text{Pump}=4.39\dots 4.47\,$W verringert, l
 Zu beachten ist, dass dieses Verhalten 
 
 \subsection{Gebundene Pulse (hohe Pumpleistung)}
+\label{sec:oscillatingSolitons}
 Die hier beobachteten Doppelpulse sind etwa 95\,fs bis 115\,fs voneinander getrennt, der Abstand der Pulse ändert sich also nicht gravierend.
 Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
 \begin{figure}[!htb]
@@ -619,6 +628,7 @@ Außerdem nimmt die Phase langfristig ab, der hintere Puls ist also durchschnitt
 \end{figure}
 
 \subsection{Kollidierende Pulse (mittlere Pumpleistung)}
+\label{sec:bounce}
 Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt, wie in Abbildung \ref{fig:rBF456} gut zu erkennen ist.
 Diese entfernen sich danach schnell voneinander bevor der Abstand beider Pulse linear abnimmt und es schließlich zur erneuten Kollision kommt.
 Erklären lässt sich dies damit, dass sich nach der Kollision ein schwacher Puls vor dem starken ausbildet, dieser aufgrund des Kerr-Effektes schneller durch die Cavity läuft und somit der Abstand beider größer wird.
@@ -642,7 +652,7 @@ Interessant wäre jedoch, ob sich auch bei anderen Pumpleistungen Häufungen des
  \end{figure}
 
 \begin{figure}[!htb]
-   \centering   
+   \centering 
    \subfloat[spektrale Ansicht\label{fig:bounceZyklusSpectrum}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_141000_144000_spectrum}}
    \hfill
@@ -695,7 +705,7 @@ In diesem Zustand ist die Pumpleistung so gering, dass zwar zwei Pulse durch den
 In Abb. \ref{fig:rBF441} ist eine \textit{FastFrame}-Aufnahme dieses Betriebs zu sehen.
 Dabei wird auf den stärkeren Puls getriggert und im Gegensatz zu den anderen Aufnahmen ist dies keine kontinuierliche Messung, bei der zu jedem Roundtrip das Spektrum und zeitliches Signal aufgenommen wird.
 Hier werden sehr viele Pulse übersprungen, damit eine solch lange Zeit auch mit 25\,GSa/s  aufgenommen werden kann.
-Bei der abgebildeten Messreihe vergehen $5\,\si{\micro\second}$ zwischen je zwei Triggerzeitpunkten
+Bei der abgebildeten Messreihe vergehen $5\,\si{\micro\second}$ zwischen je zwei Triggerzeitpunkten.
 Genauer hinschauend erkennt man, dass die Relativgeschwindigkeit zwischen beiden Pulsen nur annähernd konstant ist.
 Dies lässt sich auch in der Peak-Spannung des undispergierten Signals erkennen, welche proportional zur Pulsenergie ist (vgl. Abb. \ref{fig:rBF441peakTau}).
 So wird der schwache Puls die meiste Zeit schwächer während der starke stärker wird.
@@ -716,17 +726,46 @@ Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Lase
 
 
 \section{Doppelpulse Messreihe 2}
+Bei dieser Messreihe ist der Laser etwas besser als zuvor justiert, sodass die Ausgangsleistung höher ist und somit sogar Dreifachpulse möglich sind.
+Durch Störung des Einzelpuls-Betriebs und anschließendes Variieren der Pumpleistung lassen sich wieder verschiedene Multipulsdynamiken finden.
+Unter anderem wird bei einer deutlich geringeren Pumpleistung das in Abschnitt \ref{sec:oscillatingSolitons} beschriebene oszillatorische Verhalten der Phase und des Abstandes gebundener Doppelpulse bei einem Abstand von 100\,fs beobachtet.
+In diesem Abschnitt wird jedoch das Verhalten von 170\,fs entfernten Doppelpulsen gezeigt.
+Außerdem stehen die Triplett-Zustände im Fokus.
+
 \subsection{Stufenweise Phasenentwicklung gebundener Doppelpulse}
-Hier beginnt die Messreihe mit Doppelpulsen, deren Phase und relativer Abstand fix sind.
+Hier beginnt die Messreihe mit Doppelpulsen, deren Phase und relativer Abstand fix sind (Abb. \ref{fig:165014steps} A+B).
 Der Abstand liegt etwa bei 170 \,fs.
 Dann wird die Pumpleistung verringert.
-Dabei wird beobachtet, dass der Abstand der beiden Pulse immer noch sehr konstant ist, während die Phase jedoch beginnt, in Schüben/Sprüngen durchzulaufen.
-Dies deutet auf einen Intensitätsunterschied zwischen beiden Pulsen hin.
-Die Phase läuft jedoch nicht linear durch, sondern bildet Stufen.
-Nach XXX ist die Phase bei $\varphi=\pm\pi/2$ gelockt.
-Vermutlich kann in der Umgebung von diesem Wert die fehlende Energie noch durch Senkung beider Pulsamplituden aufgefangen werden, was zu einer annähernd konstanten Phase führt, wohingegen diese ab einer bestimmten Abweichung von $\pi/2$ sich in sehr kurzer Zeit um fast $2\pi$ ändert.
-Dies könnte bedeuten, dass dann der vordere sehr schnell stärker und der hintere schwächer wird, bis die Phase erneut etwas kleiner als $\pi/2$ ist und beide Pulse ihre Amplituden angleichen.
-Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis die Phase annähernd linear durchläuft.
+Dabei wird beobachtet, dass der Abstand der beiden Pulse immer noch sehr konstant ist, während die Phase jedoch beginnt, in $2\pi$-Schüben/Sprüngen durchzulaufen (vgl. Abb. \ref{fig:165014steps} C-F).
+Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis die Phase annähernd linear anwächst (vgl. Abb. \ref{fig:165014steps} G+H).
+Je geringer die Pumpleistung ist, desto schneller wächst die relative Phase zwischen beiden Pulsen an.
+Um dies zu verdeutlichen, ist in Abbildung \ref{fig:jumpRT} in Abhängigkeit der Pumpleistung die Anzahl der Roundtrips aufgetragen, innerhalb deren sich die Phase um $2\pi$ ändert.
+Wird die Entwicklung der Phase wie in Abbildung \ref{fig:165014steps2} mit dieser Zeit skaliert, lässt sich der Übergang von einer nahezu stufenförmigen Entwicklung zum linearen Drift der Phase durch Verringerung der Pumpleistung noch besser beobachten.
+
+Für dieses Verhalten lässt sich eine  mögliche Erklärung finden:
+Ist die Pumpleistung gering, ist der Intensitätsunterschied zwischen beiden Pulsen konstant.
+Der hintere erfährt weniger Verstärkung und ist deshalb schwächer.
+Die Phase ändert sich linear.
+Für hohe Pumleistungen hingegen kann es zu einem Locken der Phase kommen.
+Bei einer leicht geringeren Pumpleistung driftet die Phase langsam von der gelockten Position weg.
+Ist der Unterschied zu groß, beschleunigt sich die Änderung der Phase bis diese sich wieder in der Nähe der gelockten Position befindet.
+Der Intensitätsunterschied nimmt also kurzzeitig extrem zu bis sich wieder ein annähernd stabiler Zustand eingestellt hat.
+Je geringer die Pumpleistung, desto größer der Intensitätsunterschied und instabiler dieser Zustand.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/jumpRT.pdf}
+	\caption{Anzahl an Roundtrips, innerhalb deren die relative Phase um $2\pi$ zunimmt, in Abängigkeit der Pumpleistung: Die relative Phase wächst bei niedrigen Pumpleistungen schneller an.}
+   \label{fig:jumpRT}
+\end{figure} 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/steps_relativ4.pdf}
+	\caption{Phasenentwicklung wird je nach Pumpleistung mit der in Abb. \ref{fig:jumpRT} berechneten Zeit skaliert.}
+   \label{fig:165014steps2}
+\end{figure}
+
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
@@ -759,199 +798,101 @@ Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis
    \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
    \label{fig:165014steps}
 \end{figure}
- 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/jumpRT.pdf}
-	\caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
-   \label{fig:jumpRT}
-\end{figure} 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/steps_relativ2.pdf}
-	\caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
-   \label{fig:165014steps2}
-\end{figure}
 
 
- 
-% \begin{figure}[!htb]
+%\begin{figure}[!htb]
 %   \centering
 %   \captionsetup[subfigure]{labelformat=empty}
-%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
+%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
 %   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,6W_Ch_PWnoCB}}
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB_scale}}
 %   \hfill
 %   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB}}
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,49W_Ch_PWnoCB_scale}}
+%   %\hfill
 %   
 %   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB}}
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB_scale}}
 %   \hfill
 %   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB}}
-%   \caption{Beschriftung allgemein}
-%   \label{fig:label-gesamt}
-% \end{figure}
-
-
-\begin{figure}[!htb]
-   \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB_scale}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,49W_Ch_PWnoCB_scale}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB_scale}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,34W_Ch_PWnoCB_scale}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB_scale}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB_scale}}
-   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
-   \label{fig:165014steps2}
-\end{figure}
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,34W_Ch_PWnoCB_scale}}
+%   %\hfill
+%   
+%   \subfloat[]
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB_scale}}
+%   \hfill
+%   \subfloat[]
+%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB_scale}}
+%   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
+%   \label{fig:165014steps_scale}
+%\end{figure}
 
 
 \subsection{Dreifach-Pulse}
-
+In Abbildung \ref{fig:Triplett} ist die spektrale Entwicklung sowie die Autokorrelation vier verschiedener Triplett-Zustände dargestellt, die sich nach mehrmaligem Stören aus dem cw-Betrieb einstellen.
+In der Autokorrelation zeigen sich drei Abstände: der Abstand zwischen dem ersten und zweiten, zweiten und dritten sowie dem ersten und dritten Puls.
+Auffällig ist, dass nur bestimmte Pulsabstände vorkommen: 110\,fs, 165\,fs, 265\,fs sowie 320\,fs.
+Diese Abstände sind etwas größer als die von \cite{kitano_stable_1998} für zwei 15\,fs-Pulse gemessenen Abstände von 98\,fs, 164\,fs, 259\,fs sowie 312\,fs.
+Die hier betrachteten Pulse sind daher wahrscheinlich ein wenig länger.
+Im Spektrum lässt sich erkennen, dass die relativen Phasen oszillatorisches Verhalten sowie kontinuierliches Anwachsen aufweisen.
+Wird die Pumpleistung verringert, stirbt einer der Pulse aus.
+Die verbleibenden Beiden ändern ihren Abstand nicht grundlegend.
+Dieser neue Zustand ist also auch stabil und verdeutlicht noch einmal die nur diskret vorkommenden Pulsabstände.
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
    \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
-   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_Ch_PWnoCB}}
+   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_Ch}}
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_Ch_autocorr}}
    %\hfill
    
    \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_Ch_autocorr}}
-   %\hfill
-   \label{fig:165014steps}
-\end{figure}
-
-\begin{figure}[!htb]
-   \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
-   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_2_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_2_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett2_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett2_Ch}}
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett2_Ch_autocorr}}
    %\hfill
    
    \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_2_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_2_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_4_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_4_Ch_autocorr}}
-   \label{fig:165014steps}
-\end{figure}
-
-\begin{figure}[!htb]
-   \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
-   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_3_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_3_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,7W_3_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,7W_3_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_3_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_3_Ch}}
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_3_Ch_autocorr}}
    %\hfill
    
    \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_33_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_33_Ch_autocorr}}
-   \label{fig:165014steps}
-\end{figure}
-
-\begin{figure}[!htb]
-   \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}
-   \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_4_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,8W_4_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,7W_4_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,7W_4_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_4_Ch_PWnoCB}}
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_4_Ch}}
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett_4_Ch_autocorr}}
-   %\hfill
-   
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_44_Ch_PWnoCB}}
-   \hfill
-   \subfloat[]
-   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Triplett4,5W_44_Ch_autocorr}}
-   \label{fig:165014steps}
+   \caption{Verschiedene Triplett-Zustände: Spektrum und daraus berechntete Autokorrelation.
+   Im Vergleich sind diskrete Pulsabstände zu erkennen.}
+   \label{fig:Triplett}
 \end{figure}
 
-\section{Weiteres}
+%\section{Weiteres}
 
-\chapter{Diskussion}
-\section{Colliding Pulse Modelocking}
+\chapter{Diskussion und Ausblick}
+Es ließen sich -- im Einklang mit der Literatur -- diskrete Pulsabstände  beobachten.
+Durch Messen des Spektrums in Echtzeit konnten jedoch spannende Phasen-, aber auch Abstandsdynamiken für die beiden kleinsten Pulsabstände enthüllt werden.
+Außerdem wurde mit den wiederkehrend kollidierenden Pulsen (vgl. Abschnitt \ref{sec:bounce}) ein neuer Zustand beobachtet, der sich überhaupt nur mit Echtzeit-Methoden messen lässt.
+Der Zustand zweier Pulse, die nahezu unabhängig voneinander durch den Resonator laufen, lässt sich durch unterschiedliche Pulsamplituden erklären, wurde jedoch zuvor noch nie beschrieben.
+
+Trotzdem sind noch viele Fragen offen.
+Für ein besseres Verständnis der verschiedenen Regime muss die Simulation in Einklang mit den Messdaten gebracht werden.
+Zudem sind weitere Dynamiken nicht undenkbar.
+
+In den nächsten beiden Abschnitten werden zwei weitere wichtige Fragen diskutiert, die sich vor allem mit dieser Echtzeit-Methode beantworten lassen:
+Woher stammen die beobachteten Multipulse? Und was passiert, wenn sich zwei Pulse im Kristall begegnen?
+
+\section{Woher stammen die Doppelpulse?}
+Splitting?
+Modelockt eine andere Fluktuation?
+Welche Parameter legen den vorherrschenden Prozess fest?
+
+\section{Begegnung von Pulsen im Kristall}
 \label{sec:cpml}
 Während der Messungen konnte das sogennante \textit{Colliding Pulse Modelocking} beobachtet werden.
 Dabei laufen zwei Pulse im Laser umher, die sich im Laserkristall treffen und so den Kerr-Effekt beider Pulse sehen, sodass beide eine höhere Verstärkung erfahren.
@@ -973,13 +914,6 @@ Wie stabil ist dieser Abstand überhaupt, gibt es auch später noch Oszillatione
 Um all diese Fragen zu beantworten, könnte man den Strahl aufspalten und den einen Teil so verzögern, dass der erste Puls in diesem Arm zeitgleich mit dem zweiten Puls im kürzeren Abschnitt überlappt.
 Nun ist die Abstandsinformation auch wieder im Spektrum einkodiert und der Abstand zwischen beiden Pulsen kann genau gemessen werden.
 
-\section{Woher stammen die Doppelpulse?}
-Splitting?
-Modelockt eine andere Fluktuation?
-
-
-\chapter{Zusammenfassung}
-Laser ist komplex, Messmethode ist verdammt cool!
 
 \appendix
 \chapter{Femtolasers Rainbow CEP HP}
@@ -996,13 +930,15 @@ Laser ist komplex, Messmethode ist verdammt cool!
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.
 %% Ein Beispiel fuer eine solche Datenbank finden Sie in bthesis_datenbank.bib
-\bibliography{test} 
+\bibliography{test}
 
 \chapter*{Danksagung}
+Ganz besonders bedanke ich mich bei Prof. Dr. Claus Ropers.
+
 Ein besonderes Dankeschön geht an Herrn Dr. Christoph Bollig von \textit{Abacus Laser}, der das nötige Equipment und Know-How hatte, um die für das Experiment so wichtige dispersive Faser wieder zu spleißen, nachdem sie gerissen ist.
 So konnte ich ohne lange Unterbrechung wieder weiter messen.
 
-Außerdem bedanke ich mich bei der Elekronik-Werkstatt sowie der feinmechanischen Werkstatt des 4.Physikalischen Instituts für ihre kompetente und schnelle Unterstützung.
+Außerdem bedanke ich mich bei den Mitarbeitern der Elekronik-Werkstatt sowie Andreas Juretzko von der feinmechanischen Werkstatt des 4.Physikalischen Instituts für ihre kompetente und schnelle Unterstützung.
 
 %% Dieser Befehl MUSS am Ende stehen und erzeugt die Erklaerung ueber die
 %% benutzten Mittel
