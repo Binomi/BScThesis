@@ -341,9 +341,10 @@ Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/rainbow.png}
-	\caption{Aufbau des \textit{Rainbow}s.}
+	\caption{Aufbau des \textit{Rainbow}s\protect\footnotemark.}
 	\label{fig:rainbow}
 \end{figure}
+\footnotetext{aus Femtolasers, \textit{Femtolaser Compact Pro CE Phase - Owners Manual v3.3}}
 \section{Detektions-Aufbau}
 Der experimentelle Aufbau, um Echtzeit-Spektroskopie zu betreiben, ist sehr simpel.
 Wie in Abb.\ref{fig:DFTSetup} zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
@@ -432,7 +433,7 @@ Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda
 		Sensitivität @ 800\,nm & 0.12\,A/W\\
 		\hline	
 	\end{tabular}
-	\caption{Herstellerangaben zur Photodiode Alphalas UPD-40-UVIV.}
+	\caption{Herstellerangaben zur Photodiode Alphalas UPD-40-UVIR.}
 	\label{tab:PD}
 \end{table}
 
@@ -451,7 +452,7 @@ Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
    \hfill
    \subfloat[Vergleich der beiden Dioden bei 2\,mW: Unterschied kann auch auf Einstrahlung zurückzuführen sein. \label{fig:PD2mW}]
    {\includegraphics[width=0.49\textwidth]{figures/PD2mW}}
-	\caption{Undispergiert}
+	\caption{Photodiodenantwort auf undispergiertes Signal.}
 	\label{fig:PDundisp}
 \end{figure}
 
@@ -464,20 +465,20 @@ Im linearen Bereich kann allerdings die Sensitivität der Photodiode bestimmt we
 Um den geflossenen Strom zu erhalten, wird die am Oszilloskop anliegende Spannung durch den benutzen Widerstand von $50\,\si\ohm$ geteilt.
 Außerdem muss der Strom noch über einen Roundtrip gemittelt werden, denn die eingestrahlte Leistung ist auch nur als Mittlung messbar.
 In Abb. \ref{fig:PDdispMeanA} wird dies für beide Photodioden bestimmt und beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{CRC-Label} und  0.1120(5) für \texttt{noLabel}.
-Der kleine Unterschied kann auch durch die \dots bedingt sein.
-Insgesamt sind beide Werte aber im guten Einklang mit der aus dem Datenblatt entnommenen Sensitvitätskurve in Abb.\ref{fig:PDsensDB}
+Der kleine Unterschied kann auch durch eine leicht unterschiedliche Einstrahlung bedingt sein.
+Insgesamt sind beide Werte aber im guten Einklang mit der aus dem Datenblatt\footnote{\url{http://www.alphalas.com/images/stories/products/laser_diagnostic_tools/Ultrafast_Photodetectors_UPD_ALPHALAS.pdf}, abgerufen am 08.02.2016} entnommenen Sensitvitätskurve in Abb.\ref{fig:PDsensDB}
 
 \begin{figure}[!htb]
 	\centering
-	\subfloat[\label{fig:PDdispMeanA}]
+	\subfloat[Mittlerer Stromfluss skaliert linear mit eingestrahlter Leistung.
+	Steigung entspricht Sensitivität.\label{fig:PDdispMeanA}]
    {\includegraphics[width=0.44\textwidth]{figures/PDdispMeanA}}
    \hfill
-   \subfloat[Sensitivität aus dem Datenblatt\label{fig:PDsensDB}]
+   \subfloat[Wellenlängenabhängige Sensitivität aus dem Datenblatt im Vergleich mit dem gemessenen Wert und dem Pulsspektrum nach der dispersiven Faser.\label{fig:PDsensDB}]
    {\includegraphics[width=0.49\textwidth]{figures/PDsensitivty}}
-	\caption{Sensitivität der Photodioden}
+	\caption{Sensitivität der Photodioden.}
 	\label{fig:PDsens}
 \end{figure}
-
 
 \subsection{Bandbreite}
 Das Spektrum sollte voll durchmoduliert sein, wenn beide Pulse gleich stark sind.
@@ -716,10 +717,10 @@ Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Lase
 \begin{figure}[!htb]
    \centering   
    \subfloat[\textit{FastFrame}-Aufnahme\label{fig:rBF441}]
-   {\includegraphics[width=0.49\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,41W_Ch2}}
+   {\includegraphics[width=0.46\textwidth]{figures/400ms_5musHold_25GSA_400m_MLrun_runBounceFix_4,41W_Ch2}}
    \hfill
-   \subfloat[\label{fig:rBF441peakTau}]
-   {\includegraphics[width=0.49\textwidth]{figures/runningPeakTau}}
+   \subfloat[Zeitliche Entwicklung der beiden Puls\-energien (proportional zur Peakspannung) und der Differenz der Umlaufzeit\label{fig:rBF441peakTau}]
+   {\includegraphics[width=0.46\textwidth]{figures/runningPeakTau}}
    \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen sehen und sich so gegeneinander verschieben.}
    \label{fig:running441}
  \end{figure}
@@ -919,7 +920,8 @@ Nun ist die Abstandsinformation auch wieder im Spektrum einkodiert und der Absta
 \chapter{Femtolasers Rainbow CEP HP}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/RainbowSetupManual.png}
+	\includegraphics[width=0.55\textwidth]{figures/RainbowSetupManual.png}
+	\caption{CAD-Zeichnung des Oszillators aus Femtolasers, \textit{Femtosource Rainbow HP CEP - Users Manual v1.1}.}
 \end{figure}
 %\chapter{Matlab-Code}
 %\section{Darstellung der Messdaten}

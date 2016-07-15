@@ -13,6 +13,10 @@ spectrum=spectrum./max(spectrum);
 spectrum=circshift(spectrum,[0,0]);
 autocorr=fftshift(fft(spectrum));
 autocorr=autocorr./max(abs(autocorr));
+
+y1=a1*exp(-(1.1779*t).^2);
+spectrum1=fftshift(abs(fft(y1)).^2);
+spectrum1=spectrum1/max(spectrum1);
 % autocorr2=zeros(N,1);
 % for ii=1:N
 %     autocorr2(ii)=conj(y)*circshift(y,[0,ii-1])';
@@ -24,7 +28,7 @@ plot(t,abs(y).^2)
 xlim([-15,15])
 
 figure
-plot(f,spectrum)
+plot(f,spectrum,f,spectrum1,'--')
 xlim(1.2*[-1,1])
 
 t2=t(1:2:end);
