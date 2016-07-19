@@ -1,0 +1,114 @@
+\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+%%    2009/03/12 v1.0 GAUBM Vorlage für Aschlussarbeiten Physik
+%% Template fuer Bachelor- und Masterarbeiten
+%% an der Fakultaet fuer Physik (c) Thomas Pruschke der GA Universität
+%% Verbesserungsvorschlaege bitte an pruschke@theorie.physik.uni-goettingen.de
+%%
+%% Benoetigte Pakete: datenumber
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Bitte vor dem Veraendern diese Datei umbenennen! %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% scrbook - Ersatz für LaTeX book Klasse aus dem KOMA Script
+%% Moegliche Optionen: diejenigen der Klasse scrbook ausser titlepage
+
+%% deutsche Arbeit:
+\documentclass[bachelor,       %% Typ der Arbeit: bachelor oder master
+               twoside,        %% zweiseitiges Layout
+               BCOR10mm,       %% Bindekorrektur 10 mm
+%               liststotoc,nomtotoc,bibtotoc, %% Aufnahme der div. Verzeichnisse
+                                              %% ins Inhaltsverzeichnis
+               english,ngerman, %% Alternativspr. Englisch, Dokumentspr. Deutsch
+%               ngerman,english  %% Alternativspr. Deutsch, Dokumentspr. Englisch
+%               final,          %% Endversion; draft fuer schnelles Kompilieren
+               ]{GAUBM}
+
+\usepackage{setspace}  %% Zur Setzung des Zeilenabstandes
+\usepackage{babel}     %% Sprachen-Unterstuetzung
+\usepackage{calc}      %% ermoeglicht Rechnen mit Laengen und Zaehlern
+\usepackage[T1]{fontenc}       %% Unterstutzung von Umlauten etc.
+%\usepackage[latin1]{inputenc}  %% 
+%% in aktuellem Linux & MacOS X wird standardmaessig UTF8 kodiert!
+\usepackage[utf8]{inputenc}    %% Wenn latin1 nicht geht ...
+
+\usepackage{amsmath,amssymb} %% zusaetzliche Mathe-Symbole
+
+\usepackage{lmodern} %% type1-taugliche CM-Schrift als Variante zur
+                     %% "normalen" EC-Schrift
+%% Paket fuer bibtex-Datenbanken
+%\usepackage[comma,numbers,sort&compress]{natbib}
+\usepackage{babelbib}
+\selectbiblanguage{ngerman}
+\bibliographystyle{apalike}
+
+\newcommand{\tabheadfont}[1]{\textbf{#1}} %% Tabellenkopf in Fett
+\usepackage{booktabs}                      %% Befehle fuer besseres Tabellenlayout
+\usepackage{longtable}                     %% umbrechbare Tabellen
+\usepackage{array}                         %% zusaetzliche Spaltenoptionen
+
+%% umfangreiche Pakete fuer Symbole wie \micro, \ohm, \degree, \celsius etc.
+\usepackage{textcomp,gensymb}
+
+%\usepackage{SIunits} %% Korrektes Setzen von Einheiten
+\usepackage{units}   %% Variante fuer Einheiten
+\usepackage{xcolor}
+%% Hyperlinks im Dokument; muss als eines der letzten Pakete geladen werden
+\usepackage[pdfstartview=FitH,      % Oeffnen mit fit width
+            breaklinks=true,        % Umbrueche in Links, nur bei pdflatex default
+            bookmarksopen=true,     % aufgeklappte Bookmarks
+            bookmarksnumbered=true  % Kapitelnummerierung in bookmarks
+            ]{hyperref}
+
+%% Weiter benoetigte Pakete: datenumber
+%% Falls dieses Paket nicht in der Installation vorhanden ist,
+%% kann es von der Seite mit diesem Template heruntergeladen werden
+%% und in einem LaTeX bekanntem Verzeichnis installiert werden (notfalls
+%% dem Verzeichnis mit der Arbeit).
+
+% Mehrere Abbildungen nebeneinander
+\usepackage{subfig}
+\usepackage{adjustbox}
+
+%Boxen,etc.
+\usepackage{fancybox}
+\usepackage{empheq}
+
+% SI-Paket
+\usepackage{siunitx}
+
+%Matlab-Code
+%\usepackage{listings}
+\usepackage[framed,numbered]{matlab-prettifier}
+
+\newcommand{\dif}{\ensuremath{\mathrm{d}}}
+
+\begin{document}
+%%
+%%                   Ab hier muessen die Anpassungen geschehen
+%%
+%% Hier den eigenen Namen einsetzen
+\ThesisAuthor{Felix}{Kurtz}
+%% Hier den Geburtsort einsetzen
+\PlaceOfBirth{Bad Nauheim}
+%% Titel Arbeit. Das erste Argument ist der deutsche, das zweite der
+%% englische Titel.
+\ThesisTitle{Echtzeit-Spektroskopie der Multipuls-Dynamik in einem Ti:Sa-Femtosekunden-Oszillator}{Real-time spectroscopy of\\ multipulse dynamics in a \\Ti:Sapph femtosecond oscillator}
+%% Erst- und Zweitgutacher/in
+%% Ist der/die Betreuer/in nicht identisch mit dem/r Erstgutachter/in,
+%% muss diese/r als optionales Argument angegeben werden.
+\FirstReferee[Dr.\ Georg Herink]{Prof.\ Dr.\ Claus Ropers}
+\Institute{4.\,Physikalischen Institut}
+\SecondReferee{Prof.\ Dr.\ Stefan Mathias}
+%% Beginn und Ende des Anfertigungszeitraumes
+\ThesisBegin{1}{4}{2016}
+\ThesisEnd{15}{7}{2016}
+%% DO NOT TOUCH THESE LINES!!!!
+%\frontmatter
+\maketitle
+
+\mainmatter   %% Anfang Hauptteil
+
+\Declaration
+\end{document}
