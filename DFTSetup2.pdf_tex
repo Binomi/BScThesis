@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{499.25717468bp}%
+    \setlength{\unitlength}{532.2863739bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,23 +48,24 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.39788296)%
+  \begin{picture}(1,0.3521524)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{DFTSetup2.pdf}}%
-    \put(0.11757457,0.28754756){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Ti:Sa-Laser}}}%
+    \put(0.11027889,0.27271068){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Ti:Sa-Laser}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{DFTSetup2.pdf}}%
-    \put(0.49760792,0.02933548){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{400\,m}}}%
+    \put(0.52384268,0.02751516){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{400\,m}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{DFTSetup2.pdf}}%
-    \put(0.53409626,0.35141392){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=5\,cm}}}%
-    \put(0.56774625,0.00209491){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=5\,cm}}}%
-    \put(0.3347458,0.23997253){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Polarisator}}}%
-    \put(0.35258675,0.31848923){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Isolator}}}%
-    \put(0.58898523,0.26400829){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD 2}}}%
-    \put(0.60828421,0.08293923){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD 1}}}%
+    \put(0.54003146,0.33261404){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=75\,mm}}}%
+    \put(0.65275274,0.00196492){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{f=50\,mm}}}%
+    \put(0.3139743,0.22207596){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Polarisator}}}%
+    \put(0.37595141,0.30769189){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Isolator}}}%
+    \put(0.60053219,0.24762616){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD\,2}}}%
+    \put(0.6907753,0.08079863){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{PD\,1}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{DFTSetup2.pdf}}%
-    \put(0.26307658,0.34636467){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\lambda$/2-Platte}}}%
-    \put(0.49758831,0.20386405){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Dispersive}}}%
-    \put(0.91859958,0.1804019){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Echtzeit}}}%
-    \put(0.49754488,0.1769229){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Faser}}}%
-    \put(0.92232327,0.15351753){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Oszilloskop}}}%
+    \put(0.24975817,0.33388991){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\lambda$/2-Platte}}}%
+    \put(0.52382429,0.19722577){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Dispersive}}}%
+    \put(0.86460494,0.14816638){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Echtzeit}}}%
+    \put(0.52378356,0.16895046){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Faser}}}%
+    \put(0.86809758,0.12295022){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Oszilloskop}}}%
+    \put(0.86779743,0.09546927){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{\footnotesize{(min. 25\,GSa/s)}}}}%
   \end{picture}%
 \endgroup%

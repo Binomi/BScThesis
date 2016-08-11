@@ -377,7 +377,7 @@ Um diese Technik der dispersiven Fouriertransformation richtig nutzen zu können
 	\centering
 	\def\svgwidth{\columnwidth}
 	\input{DFTSetup2.pdf_tex}
-	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgesetzt.}
+	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgewandelt.}
 	\label{fig:DFTSetup}
 \end{figure}
 
@@ -881,7 +881,216 @@ Dieser neue Zustand ist also auch stabil und verdeutlicht noch einmal die nur di
    \label{fig:Triplett}
 \end{figure}
 
-%\section{Weiteres}
+\cleardoublepage
+
+\section{Starts}
+\subsection{Getrennte Starts}
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/160518_205904_Doppelstart_undisp}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/160518_205904_Doppelstart_spec}}
+   \caption{2-facher Start.}
+   \label{fig:StartGetrennt}
+\end{figure}
+
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[]
+   {\includegraphics[scale=0.29]{figures/2fachStartPeak}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[scale=0.29]{figures/2fachStartPeakDist}}
+   \caption{2-facher Start.}
+   \label{fig:StartGetrennt}
+\end{figure}
+
+
+\subsection{Annäherung}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse2_Annaeherung_280500}
+	\caption{XXX}
+	\label{fig:StartAnnaeherung}
+\end{figure}
+
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppel6_autoCorr_stepWiseCloser_188300.pdf}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse_Annaeherung_248000.pdf}}
+   \caption{XXX}
+   \label{fig:StartAnnaehrung2}
+\end{figure}
+
+\subsection{Transiente Doppelpulse}
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp2e_Doppeltransient_spec}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp2e_Doppeltransient_autoCorr}}
+   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp2e_Doppeltransient_autoCorr_zoom1}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp2e_Doppeltransient_autoCorr_zoom2}}
+   \caption{Transiente Doppelpulse}
+   \label{fig:TransientDoppel}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/TransientSplittingEnergy}
+	\caption{XXX}
+	\label{fig:TransientSplittingEnergy}
+\end{figure}
+
+\subsection{Splitting}
+
+\begin{figure}[!htb]
+   \centering
+   \includegraphics[width=\textwidth]{figures/4ms_25GSA_400m_Mlstart_Doppelpulse4_Splitting_93800}
+   \caption{XXX}
+   \label{fig:Splitting}
+\end{figure}
+
+
+\section{Self-Q-Switching}
+172 Roundtrips, also etwa $2.21\,\si{\mu\second}$
+\begin{figure}[!htb]
+   \centering
+   \includegraphics[width=\textwidth]{figures/4ms_25GSA_400m_MLrun_ZitternHeftig_239100}
+   \caption{XXX}
+   \label{fig:SelfQSwitch}
+\end{figure}
+
+
+\cleardoublepage
+\section{Simulation}
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		Größe & Wert\\
+		\hline
+		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
+		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
+		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
+		Kristalllänge & $x=2\,$mm\\
+		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
+		Selbstamplitudenmodulation & $\sigma=60$\\
+		Modulationstiefe des sättigbaren Absorbers & $\gamma=0.24$\\
+		Verluste & $\rho=3.3\%$\\
+		Dispersion & $D_0=-50\,\si{\femto\second^2\per\meter}$\\
+		Wirkungsquerschnitt Emission & $\sigma_g=41\,\si{\pico\meter^2}$\\
+		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\	
+		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
+		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
+		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
+		maximale Verstärkung & $\alpha_\text{max}=0.33$\\
+		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
+		Pumpleistung & $P_\text{Pump}=4.6\,$W\\
+		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
+		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
+		& $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
+		\hline		
+		Pulsform & 2 Gaußförmige Pulse\\
+		Pulsamplitude & 1\\
+		Pulsbreite & 25\,fs\quad @ 1/e der Pulsamplitude\\
+		Pulsabstand & $100,200\,$fs\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Linear anwachsende Phase}
+
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}   
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_200_time}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_200_freq}}
+   \caption{Simulation.}
+   \label{fig:Simulatin}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/SimRBLinear}
+	\caption{XXX}
+	\label{fig:SimRBLinear}
+\end{figure}
+
+\subsection{Oszillatorisches Verhalten}
+
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   %\captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_100_time}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_100_freq}}
+   \caption{Simulation.}
+   \label{fig:Simulatin}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/SimRBOszi}
+	\caption{XXX}
+	\label{fig:SimRBOszi}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
+	\caption{Interaction Plane}
+	\label{fig:SimRBOszi_IP}
+\end{figure}
+
+\subsection{Fester Abstand und feste Phase}
+
+\begin{figure}[!htb]
+   \centering
+   \captionsetup[subfigure]{labelformat=empty}
+   \captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,8W_100_time}}
+   \hfill
+   \subfloat[]
+   {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,8W_100_freq}}
+   \caption{Simulation.}
+   \label{fig:Simulatin}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/SimRBFixed}
+	\caption{XXX}
+	\label{fig:SimRBFix}
+\end{figure}
 
 \chapter{Diskussion und Ausblick}
 Es ließen sich -- im Einklang mit der Literatur -- diskrete Pulsabstände  beobachten.
@@ -945,8 +1154,7 @@ Nun ist die Abstandsinformation auch wieder im Spektrum kodiert und der Abstand 
 \chapter*{Danksagung}
 Ganz besonders bedanke ich mich bei Prof. Dr. Claus Ropers.
 
-Ein besonderes Dankeschön geht an Herrn Dr. Christoph Bollig von \textit{Abacus Laser}, der das nötige Equipment und Know-How hatte, um die für das Experiment so wichtige dispersive Faser wieder zu spleißen, nachdem sie gerissen ist.
-So konnte ich ohne lange Unterbrechung wieder weiter messen.
+Ein besonderes Dankeschön geht an Herrn Dr. Christoph Bollig von \textit{Abacus Laser} für seine schnelle, technische Unterstützung.
 
 Außerdem bedanke ich mich bei den Mitarbeitern der Elekronik-Werkstatt sowie Andreas Juretzko von der feinmechanischen Werkstatt des 4.Physikalischen Instituts für ihre kompetente und schnelle Unterstützung.
 
