@@ -1,0 +1,108 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\select@language {ngerman}
+\select@language {ngerman}
+\select@language {english}
+\select@language {ngerman}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Beispielhafte Doppelpulse: zeitlicher Intensit\IeC {\"a}tsverlauf, Spektrum und Autokorrelation.\relax }}{5}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Aufbau des \textit {Rainbow}s\footnotemark .\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information in zeitliche umgewandelt.\relax }}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Kalibration durch ein Etalon: Verz\IeC {\"o}gerung nach der Faser wird Frequenzen zugeordnet.\relax }}{12}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Spektrometer}}}{12}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oszilloskop}}}{12}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Kalibration}}}{12}{subfigure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Photodiodenantwort auf undispergiertes Signal.\relax }}{14}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Antwortverhalten der beiden Photodioden: Bei steigender Leistung s\IeC {\"a}ttigt die Peakspannung und die Photodioden-Antwort wird l\IeC {\"a}nger.}}}{14}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Vergleich der beiden Dioden bei 2\tmspace +\thinmuskip {.1667em}mW: Unterschied kann auch auf Einstrahlung zur\IeC {\"u}ckzuf\IeC {\"u}hren sein. }}}{14}{subfigure.4.2}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sensitivit\IeC {\"a}t der Photodioden.\relax }}{15}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Der mittlere Stromfluss skaliert linear mit der eingestrahlten Leistung. Die Steigung entspricht der Sensitivit\IeC {\"a}t.}}}{15}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Wellenl\IeC {\"a}ngenabh\IeC {\"a}ngige Sensitivit\IeC {\"a}t aus dem Datenblatt im Vergleich mit dem gemessenen Wert und dem Pulsspektrum nach der dispersiven Faser.}}}{15}{subfigure.5.2}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Bandbreitenbestimmung der Photodiode durch ein Interferometer: Die Variation des Pulsabstandes erm\IeC {\"o}glicht verschiedene Modulationsfrequenzen des Signals nach der Faser (Doppelpulsspektren) und somit die Charakterisierung der Photodiode.\relax }}{16}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Spektrum als Signal nach der Faser in Abh\IeC {\"a}ngigkeit der Arml\IeC {\"a}ngendifferenz.}}}{16}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Fouriertransformierte von a) logarithmiert }}}{16}{subfigure.6.2}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Relative H\IeC {\"o}he der Nebenmaxima in Abh\IeC {\"a}ngigkeit der jeweiligen Modulationsfrequenz aus Abb.\ref {fig:PDBandbreite_FFT}.\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Schematische Zeichnung eines Michelson-Interferometers\footnotemark : Bei beiden Armen wird der Strahl jeweils einmal reflektiert sowie einmal transmittiert, sodass die zwei Strahleng\IeC {\"a}nge die gleiche Leistung aufweisen. Die Reflexion an der Vorderkante des Strahlteilers f\IeC {\"u}hrt jedoch zu verschiedenen Propagationsl\IeC {\"a}ngen im Glas des Strahlteilers und somit zu etwas h\IeC {\"o}herer Dispersion im Arm des zuerst transmittierten Strahls.\relax }}{17}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Abh\IeC {\"a}ngigkeit der Leistung (cw \& modengekoppelt) von der Position des fokussierenden Spiegels (Stabilit\IeC {\"a}t) bei verschiedenen Kristallpositionen. Die Positionen werden von au\IeC {\ss }en gemessen, dh. dass gr\IeC {\"o}\IeC {\ss }ere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.\relax }}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Abh\IeC {\"a}ngigkeit der Ausgangsleistung (cw \& modengekoppelt) von der Position des fokussierenden Spiegels (Stabilit\IeC {\"a}t) bei fester Kristallposition.\relax }}{21}{figure.caption.17}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gebundene Pulse: Zeitaufgel\IeC {\"o}ste Spektren bei \IeC {\"A}nderung der Pumpleistung.\relax }}{23}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{23}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{23}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{23}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{23}{subfigure.3.4}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Gebundene Pulse: Phasendynamik in der Interaction Plane in Abh\IeC {\"a}ngigkeit der Pumpleistung. W\IeC {\"a}hrend sich bei niedriger (blau) und hoher Pumpleistung (gelb) ein Kreis/Halbkreis-\IeC {\"a}hnliches Verhalten zeigt, ist die Dynamik bei einer mittleren Pumpleistung (rot) deutlich komplexer. Trotzdem ergibt sich ein geschlossener Orbit.\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Kollidierende Pulse bei einer Pumpleistung von $4.56\tmspace +\thinmuskip {.1667em}$W.\relax }}{25}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ausschnitt der Autokorrelation}}}{25}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Histogramm des maximalen Pulsabstandes $\tau _\text {max}$ vor jeder Kolllision}}}{25}{subfigure.5.2}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Kollisionszyklus ($P_\text {Pump}=4.56\tmspace +\thinmuskip {.1667em}$W)\relax }}{26}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {spektrale Ansicht}}}{26}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Autokorrelation }}}{26}{subfigure.6.2}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Maximaler Pulsabstand $\tau _\text {max}$ versus Zeit zwischen zwischen zwei Kollisionen $T_\text {interColl.}$. Das bestimmte $\tau _\text {max}$ ist begrenzt durch die maximale Modulationsfrequenz des Spektrums.\relax }}{26}{figure.caption.22}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces $P_\text {Pump}=4.57\tmspace +\thinmuskip {.1667em}$W: Unterschied zwischen Kollision und Absto\IeC {\ss }ung der beiden Pulse.\relax }}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\IeC {\"U}berblick.}}}{27}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom.}}}{27}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Kollision, spektrale Ansicht.}}}{27}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Kollision, Autokorellation.}}}{27}{subfigure.8.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Absto\IeC {\ss }ung, spektrale Ansicht.}}}{27}{subfigure.8.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Absto\IeC {\ss }ung, Autokorrelation.}}}{27}{subfigure.8.6}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Wegl\IeC {\"a}ngen vorfinden und sich so gegeneinander verschieben.\relax }}{28}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textit {FastFrame}-Aufnahme des Zeitsignals}}}{28}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zeitliche Entwicklung der beiden Puls\discretionary {-}{}{}energien und der Differenz der Umlaufzeit}}}{28}{subfigure.9.2}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Verringerung der Pumpleistung: Von einer festen Phase \IeC {\"u}ber Stufen zu einer ann\IeC {\"a}hernd linear durchlaufenden Phase.\relax }}{31}{figure.caption.25}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{31}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{31}{subfigure.10.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{31}{subfigure.10.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{31}{subfigure.10.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{31}{subfigure.10.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{31}{subfigure.10.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{31}{subfigure.10.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{31}{subfigure.10.8}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Anzahl an Roundtrips, innerhalb derer die relative Phase um $2\pi $ zunimmt, in Ab\IeC {\"a}ngigkeit der Pumpleistung: Die relative Phase w\IeC {\"a}chst bei niedrigen Pumpleistungen schneller an.\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Phasenentwicklung \IeC {\"u}ber 2 Perioden f\IeC {\"u}r verschiedene Pumpleistungen mit der in Abb. \ref {fig:jumpRT} berechneten Zeit skaliert.\relax }}{32}{figure.caption.27}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Verschiedene Triplett-Zust\IeC {\"a}nde: Spektrum und daraus berechntete Autokorrelation. Im Vergleich sind diskrete Pulsabst\IeC {\"a}nde zu erkennen.\relax }}{33}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{33}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{33}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{33}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{33}{subfigure.13.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{33}{subfigure.13.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{33}{subfigure.13.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{33}{subfigure.13.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{33}{subfigure.13.8}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Innerhalb von etwa $10^4$ Laseruml\IeC {\"a}ufen wachsen zwei Pikosekunden-Fluktuationen zu modengekoppelten Pulsen an. Der Pulsabstand betr\IeC {\"a}gt anfangs ca. 430\tmspace +\thinmuskip {.1667em}ps.\relax }}{34}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Undispergiertes Signal}}}{34}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dispergiertes Signal}}}{34}{subfigure.14.2}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Auswertung der 2 getrennt startenden Femtosekundenpulse aus Abb. \ref {fig:StartGetrennt}: Entwicklung der beiden Pulsenenergien sowie des Pulsabstandes.\relax }}{34}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Startphase der beiden Pulse.}}}{34}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Der zweite Puls ist etwas schw\IeC {\"a}cher, sodass sich der Pulsabstand verringert.}}}{34}{subfigure.15.2}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Pulsann\IeC {\"a}herung bis ein stabiler Doppelpulszustand erreicht ist (\textit {oben:} Spektrale Entwicklung, \textit {unten:} Autokorrelation).\relax }}{35}{figure.caption.31}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Autokorrelation zweier beispielhafter Ann\IeC {\"a}herungen.\relax }}{36}{figure.caption.32}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Langsame Ann\IeC {\"a}herung mit vielen semistabilen Pulsabst\IeC {\"a}nden.}}}{36}{subfigure.17.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Schnelle Ann\IeC {\"a}herung mit Absto\IeC {\ss }ung vor stabilem Doppelpulszustand.}}}{36}{subfigure.17.2}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Anwachsen einer Pikosekunden-Fluktuation und gleichzeitiges Aufspalten des sich ausbildenden Femtoesekundenpulses (\textit {oben:} Spektrale Entwicklung, \textit {unten:} Autokorrelation).\relax }}{37}{figure.caption.33}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Transiente Doppelpulse: Nach Aufspalten in zwei Pulse und mehr als 2000 Laseruml\IeC {\"a}ufen in einem semistabilen Doppelpulszustand stirbt einer der beiden Pulse aus (\textit {oben links:} Spektrale Entwicklung, \textit {oben rechts:} Autokorrelation, \textit {unten:} Entstehen und Aussterben als Ausschnitt der Autokorrelation).\relax }}{38}{figure.caption.34}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{38}{subfigure.19.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{38}{subfigure.19.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{38}{subfigure.19.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{38}{subfigure.19.4}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Transiente Doppelpulse: Entwicklung der Energie sowie der \IeC {\"A}nderungsrate der relativen Phase $\Delta \varphi $. W\IeC {\"a}hrend die Gesamtenergie beider Pulse lange konstant ist, nimmt $\Delta \varphi $ zu, dh. das Ungleichgewicht zwischen beiden Pulsen w\IeC {\"a}chst an.\relax }}{39}{figure.caption.35}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Erh\IeC {\"o}ht man die Verluste im Resonator, durch den ein modengekoppelter Puls propagiert, kommt es zu selbstverursachten Leistungsmodulationen auf einer Zeitskala der Lebensdauer des oberen Laserniveaus: Dabei k\IeC {\"o}nnen sich hier sogar bis zu drei Pulse ausbilden -- gefolgt von einer Phase nahezu keiner Laseremission. (\textit {oben:} Spektrale Entwicklung, \textit {mitte:} Autokorrelation, \textit {unten:} Energie).\relax }}{40}{figure.caption.36}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Simulation mit einem Anfangsabstand von $\tau _0=200\tmspace +\thinmuskip {.1667em}$fs sowie einer Pumpleistung von $P_\text {Pump}=4.6\tmspace +\thinmuskip {.1667em}$W. Die beiden Pulse interagieren kaum, aufgrund leicht unterschiedlicher Pulsamplituden w\IeC {\"a}chst die relative Phase zwischen beiden linear an.\relax }}{42}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entwicklung der zeitlichen Wellenform.}}}{42}{subfigure.22.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Spektrale Entwicklung.}}}{42}{subfigure.22.2}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.\relax }}{42}{figure.caption.39}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Simulation ($\tau _0=100\tmspace +\thinmuskip {.1667em}$fs, $P_\text {Pump}=4.6\tmspace +\thinmuskip {.1667em}$W), bei der Abstand und relative Phase oszillieren, da sich die beiden Pulse immer wieder leicht absto\IeC {\ss }en.\relax }}{43}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entwicklung der zeitlichen Wellenform.}}}{43}{subfigure.24.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Spektrale Entwicklung.}}}{43}{subfigure.24.2}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.\relax }}{43}{figure.caption.41}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Oszillatorisches Verhalten in der Interaction Plane.\relax }}{44}{figure.caption.42}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Simulation ($\tau _0=100\tmspace +\thinmuskip {.1667em}$fs, $P_\text {Pump}=4.8\tmspace +\thinmuskip {.1667em}$W), bei der die Pumpleistung h\IeC {\"o}her ist, sodass die beiden Pulse ihren Abstand und ihre relative Phase locken k\IeC {\"o}nnen.\relax }}{45}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entwicklung der zeitlichen Wellenform.}}}{45}{subfigure.27.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Spektrale Entwicklung.}}}{45}{subfigure.27.2}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.\relax }}{45}{figure.caption.44}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces CAD-Zeichnung des Oszillators aus Femtolasers, \textit {Femtosource Rainbow HP CEP - Users Manual v1.1}.\relax }}{49}{figure.caption.45}
+\addvspace {10\p@ }

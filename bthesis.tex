@@ -18,20 +18,22 @@
 \documentclass[bachelor,       %% Typ der Arbeit: bachelor oder master
                twoside,        %% zweiseitiges Layout
                BCOR10mm,       %% Bindekorrektur 10 mm
-%               liststotoc,nomtotoc,bibtotoc, %% Aufnahme der div. Verzeichnisse
+               liststotoc,nomtotoc,bibtotoc, %% Aufnahme der div. Verzeichnisse
                                               %% ins Inhaltsverzeichnis
                english,ngerman, %% Alternativspr. Englisch, Dokumentspr. Deutsch
 %               ngerman,english  %% Alternativspr. Deutsch, Dokumentspr. Englisch
-%               final,          %% Endversion; draft fuer schnelles Kompilieren
+               final,          %% Endversion; draft fuer schnelles Kompilieren
                ]{GAUBM}
 
 \usepackage{setspace}  %% Zur Setzung des Zeilenabstandes
-\usepackage{babel}     %% Sprachen-Unterstuetzung
+\usepackage[english,ngerman]{babel}     %% Sprachen-Unterstuetzung
 \usepackage{calc}      %% ermoeglicht Rechnen mit Laengen und Zaehlern
 \usepackage[T1]{fontenc}       %% Unterstutzung von Umlauten etc.
 %\usepackage[latin1]{inputenc}  %% 
 %% in aktuellem Linux & MacOS X wird standardmaessig UTF8 kodiert!
 \usepackage[utf8]{inputenc}    %% Wenn latin1 nicht geht ...
+
+\usepackage{emptypage} %% leere Seiten sind dann wirklich leer
 
 \usepackage{amsmath,amssymb} %% zusaetzliche Mathe-Symbole
 
@@ -41,7 +43,7 @@
 %\usepackage[comma,numbers,sort&compress]{natbib}
 \usepackage{babelbib}
 \selectbiblanguage{ngerman}
-\bibliographystyle{apalike}
+\bibliographystyle{apalikeGerman}
 
 \newcommand{\tabheadfont}[1]{\textbf{#1}} %% Tabellenkopf in Fett
 \usepackage{booktabs}                      %% Befehle fuer besseres Tabellenlayout
@@ -275,6 +277,7 @@ Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen S
 \end{figure}
 
 \section{Simulation}
+\label{sec:SimTheo}
 Die Auswirkungen der oben beschriebenen optischen Elemente auf das elektrische Feld im Resonator können mathematisch beschrieben werden.
 Dies resultiert in einer nichtlinearen partiellen Differentialgleichung vom Ginzburg-Landau-Typ.
 Das hier beschriebene Modell wurde von \cite{kalashnikov_multipulse_2003} entwickelt, um Multipulse zu simulieren und damit Aussagen zu deren Stabilität machen zu können.
@@ -493,28 +496,47 @@ Dadurch kann der Intensitätsunterschied der beiden Pulse überschätzt werden.
 Um dies zu untersuchen, wird ein Michelson-Interferometer in den Strahlengang eingebaut.
 Mit diesem können durch Variation einer Armlänge Pulspaare mit veränderlichem Abstand hergestellt werden.
 Diese Abstände finden sich in der Modulation des Spektrums wieder.
+Es wird verifiziert, dass beide Pulse die gleiche Energie haben.
+
+Aufgrund der Funktionsweise des verwendeten Strahlteilers findet die Reflexion nur an der Vorderseite statt (vgl. Abb.\ref{fig:Beamsplitter}).
+Dies führt dazu, dass der zuerst reflektierte Strahl einmal, aber der zuerst transmittierte Strahl zweimal den Strahlteiler passiert.
+Dieser sorgt für einen positiven Chirp der Pulse, dh. die niedrigen Frequenzen laufen den hohen Frequenzen voraus.
+Da der zuerst transmittierte Puls jedoch stärker gechirpt wird, ist der Pulsabstand   hinter dem Interferometer frequenzabhängig: Ist der stärker gechirpte Puls vor dem anderen, dann haben die niedrigeren Frequenzen einen größeren Abstand als die höheren. Ist die Pulsreihenfolge umgekehrt, so haben die niedrigeren Frequenzen einen kleineren Abstand.
+Die resultierende Modulationsfrequenz im Spektrum ist also nicht konstant.
+Mit einer entsprechenden Kompensationsplatte in einem der beiden Arme kann dies verhindert werden, hier wird dieser Chirp jedoch genutzt:
+So kann dieser die Abweichung von einem linearen Zusammenhang zwischen Frequenz und deren zeitlicher Verzögerung nach der Faser kompensieren oder verstärken.
+In Abbildung \ref{fig:calibration} ist nämlich zu erkennen, dass ein bestimmter Frequenzabstand bei niedrigen Frequenzen einen geringeren zeitlichen Abstand aufweist als bei höheren Frequenzen.
+Ist der Pulsabstand für niedrige Frequenzen geringer, haben die Frequenzen konstruktiver Interferenz einen größeren Abstand im Spektrum, der dann durch die Faser kompensiert wird, sodass das Signal nach der Faser nur eine bestimmte Modulationsfrequenz aufweist.
+Dies ist für die Charakterisierung der frequenzabhängigen Antwort der Photodiode nötig.
+Diese könnte man mit einem kontinuierlich modulierten Signal besser messen, benötigt dazu jedoch einen Modulator im 10\,GHz-Bereich.
 
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-   \subfloat[]
+   \subfloat[Spektrum als Signal nach der Faser in Abhängigkeit der Armlängendifferenz.]
    {\includegraphics[width=0.49\textwidth]{figures/PDBandbreite_DATA}}
    \hfill
-   \subfloat[]
+   \subfloat[Fouriertransformierte von a) logarithmiert \label{fig:PDBandbreite_FFT}]
    {\includegraphics[width=0.49\textwidth]{figures/PDBandbreite_FFT}}
-   \caption{Bandbreite}
+   \caption{Bandbreitenbestimmung der Photodiode durch ein Interferometer: Die Variation des Pulsabstandes ermöglicht verschiedene Modulationsfrequenzen des Signals nach der Faser (Doppelpulsspektren) und somit die Charakterisierung der Photodiode.}
    \label{fig:PDBandbreite}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/PDBandwidth}
-	\caption{XXX}
+	\caption{Relative Höhe der Nebenmaxima in Abhängigkeit der jeweiligen Modulationsfrequenz aus Abb.\ref{fig:PDBandbreite_FFT}.}
 	\label{fig:PDBandbreiteAusw}
 \end{figure}
 
-
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/multi_pass_beam_splitter.png}
+	\caption{Schematische Zeichnung eines Michelson-Interferometers\protect\footnotemark:
+	Bei beiden Armen wird der Strahl jeweils einmal reflektiert sowie einmal transmittiert, sodass die zwei Strahlengänge die gleiche Leistung aufweisen.
+	Die Reflexion an der Vorderkante des Strahlteilers führt jedoch zu verschiedenen Propagationslängen im Glas des Strahlteilers und somit zu etwas höherer Dispersion im Arm des zuerst transmittierten Strahls.}
+	\label{fig:Beamsplitter}
+\end{figure}
+\footnotetext{\url{http://www.tydexoptics.com/images/products/multi_pass_beam_splitter.gif}, abgerufen am 14.08.2016}
 
 \chapter{Ergebnisse}
 In diesem Kapitel wird zunächst erläutert, wie der Resonator justiert sein muss, um Multipulse erzeugen zu können.
@@ -782,20 +804,6 @@ Ist der Unterschied zu groß, beschleunigt sich die Änderung der Phase bis dies
 Der Intensitätsunterschied nimmt also kurzzeitig stark zu bis sich wieder ein annähernd stabiler Zustand eingestellt hat.
 Je geringer die Pumpleistung, desto größer der Intensitätsunterschied und instabiler dieser Zustand.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/jumpRT.pdf}
-	\caption{Anzahl an Roundtrips, innerhalb derer die relative Phase um $2\pi$ zunimmt, in Abängigkeit der Pumpleistung: Die relative Phase wächst bei niedrigen Pumpleistungen schneller an.}
-   \label{fig:jumpRT}
-\end{figure} 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/steps_relativ4.pdf}
-	\caption{Phasenentwicklung über 2 Perioden für verschiedene Pumpleistungen mit der in Abb. \ref{fig:jumpRT} berechneten Zeit skaliert.}
-   \label{fig:165014steps2}
-\end{figure}
-
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
@@ -830,6 +838,21 @@ Je geringer die Pumpleistung, desto größer der Intensitätsunterschied und ins
 \end{figure}
 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/jumpRT.pdf}
+	\caption{Anzahl an Roundtrips, innerhalb derer die relative Phase um $2\pi$ zunimmt, in Abängigkeit der Pumpleistung: Die relative Phase wächst bei niedrigen Pumpleistungen schneller an.}
+   \label{fig:jumpRT}
+\end{figure} 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/steps_relativ4.pdf}
+	\caption{Phasenentwicklung über 2 Perioden für verschiedene Pumpleistungen mit der in Abb. \ref{fig:jumpRT} berechneten Zeit skaliert.}
+   \label{fig:165014steps2}
+\end{figure}
+
+
 %\begin{figure}[!htb]
 %   \centering
 %   \captionsetup[subfigure]{labelformat=empty}
@@ -857,7 +880,7 @@ Je geringer die Pumpleistung, desto größer der Intensitätsunterschied und ins
 %   \label{fig:165014steps_scale}
 %\end{figure}
 
-\clearpage
+%\clearpage
 
 \subsection{Dreifach-Pulse}
 In Abbildung \ref{fig:Triplett} ist die spektrale Entwicklung sowie die Autokorrelation vier verschiedener Triplett-Zustände dargestellt, die sich nach mehrmaliger Störung aus dem cw-Betrieb einstellen.
@@ -903,68 +926,118 @@ Dieser neue Zustand ist also auch stabil und verdeutlicht noch einmal die nur di
    \label{fig:Triplett}
 \end{figure}
 
-\cleardoublepage
+\clearpage
 
-\section{Starts}
+\section{Startdynamiken}
+\label{sec:start}
+In diesem Abschnitt werden die zwei beobachteten Prozesse vorgestellt, die zur Entstehung stabiler Doppelpulszustände führen:
+Zwei Fluktuationen wachsen nahezu gleichzeitig zu Femtosekundenpulsen an, sind aber mehrere 100\,ps entfernt und nähern sich auf einer relativ langen Zeitskala an.
+Bei dem anderen Voragang wächst ein Puls so schnell an, dass die Selbstphasenmodulation dazu führt, dass sich dieser aufspaltet.
+Außerdem werden kurzlebige, sich so gebildete Doppelpulse beobachtet.
+
 \subsection{Getrennte Starts}
+In \cite{herink_resolving_2016} wird dargestellt, wie eine Pikosekunden-Fluktuation  spektral breiter, also kürzer wird und schließlich in einem Femtosekundenpuls endet.
+
+In Abbildung \ref{fig:StartGetrennt} ist sowohl das undispergierte als auch das dispergierte Signal während der Entstehung zweier, weit entfernter Femtosekundenpulse zu sehen.
+Das dispergierte Signal repräsentiert anfangs nicht das Spektrum, sondern stellt einen spektral-temporale Sicht dar.
+So kann man anfangs die vielen Fluktuationen erkennen, die durch den Resonator propagieren.
+
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-   \subfloat[]
+%   \captionsetup[subfigure]{labelformat=empty}
+%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[Undispergiertes Signal]
    {\includegraphics[width=0.49\textwidth]{figures/160518_205904_Doppelstart_undisp}}
    \hfill
-   \subfloat[]
+   \subfloat[Dispergiertes Signal]
    {\includegraphics[width=0.49\textwidth]{figures/160518_205904_Doppelstart_spec}}
-   \caption{2-facher Start.}
+   \caption{Innerhalb von etwa $10^4$ Laserumläufen wachsen zwei Pikosekunden-Fluktuationen zu modengekoppelten Pulsen an.
+   Der Pulsabstand beträgt anfangs ca. 430\,ps.}
    \label{fig:StartGetrennt}
 \end{figure}
+Das undispergierte Signal wird für die Ermittlung der wichtigsten Eigenschaften der beiden Pulse  verwendet: Die Entwicklung der Pulsenergien sowie des Pulsabstandes sind in Abbildung \ref{fig:StartGetrenntAusw} dargestellt.
+Dabei wird über 50 Laserumläufe geglättet.
+Zur Bestimmung der Pulsenergien wird für beide Puls die Höhe des Peaks im undispergierten Signal bestimmt.
+Dabei sollte beachtet werden, dass die Photodiode nach einem Puls noch nachschwingt bzw. langsamer abfällt.
+Dies bedeutet, dass die Energie des zweiten Pulses tendenziell überschätzt wird.
+Der bestimmte Energieunterschied könnte also noch etwas größer sein.
+
+Es kann beobachtet werden, dass die beiden Pulse sich näher kommen.
+Dies kann man darauf zurückführen, dass der hintere und somit schwächere Puls aufgrund des Kerr-Effektes schneller durch den Laserkristall propagiert und sich daher der Pulsabstand verringert.
 
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-   \subfloat[]
+%   \captionsetup[subfigure]{labelformat=empty}
+%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[Startphase der beiden Pulse.]
    {\includegraphics[scale=0.29]{figures/2fachStartPeak}}
    \hfill
-   \subfloat[]
+   \subfloat[Der zweite Puls ist etwas schwächer, sodass sich der Pulsabstand verringert.]
    {\includegraphics[scale=0.29]{figures/2fachStartPeakDist}}
-   \caption{2-facher Start.}
-   \label{fig:StartGetrennt}
+   \caption{Auswertung der 2 getrennt startenden Femtosekundenpulse aus Abb. \ref{fig:StartGetrennt}: Entwicklung der beiden Pulsenenergien sowie des Pulsabstandes.}
+   \label{fig:StartGetrenntAusw}
 \end{figure}
 
-
+\clearpage
 \subsection{Annäherung}
+Der Zeitpunkt, bei dem sich obige Pulse auf unter 1\,ps angenähert haben, kann leider nicht mehr aufgenommen werden, da dazu der Speicher des Oszilloskop nicht genügt.
+Stattdessen kann aber auf eine solche Annäherung getriggert werden.
+Dazu wird das dispergierte Signal verwendet, denn ein solcher Pulsabstand führt zu Modulationen im Spektrum, sodass die Peakspannung dieses Signals ansteigt und schließlich über dem eingestellten Grenzwert liegt.
+In Abbildung \ref{fig:StartAnnaeherung} wird das Spektrum sowie die daraus berechnete Autokorrelation einer solchen Annäherung dargestellt.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse2_Annaeherung_280500}
-	\caption{XXX}
+	\caption{Pulsannäherung bis ein stabiler Doppelpulszustand erreicht ist\\
+	(\textit{oben:} Spektrale Entwicklung, \textit{unten:} Autokorrelation).}
 	\label{fig:StartAnnaeherung}
 \end{figure}
 
+Der oben abgebildete Annäherunsprozess kann auch mit einer anderen Geschwindigkeit ablaufen:
+Die Autokorrelation der zwei Extremfälle sind in Abbildung \ref{fig:StartAnnaehrung2} zu sehen.
+Nähern sich die beiden Pulse sehr langsam an, können diskrete Pulsabstände beobachtet werden, die schon bei den Triplett-Zuständen beschrieben wurden.
+So verharren die beiden Pulse längere Zeit bei diesen Abständen, bevor sie sich weiter annähern und schließlich der stabile Zustand gefunden wird.
+Dies deutet darauf hin, dass die Pumpleistung für die größeren Pulsabstände zu niedrig ist.
+
+Im anderen Fall nähern sich die beiden Pulse sehr schnell an, der Intensitätsunterschied ist also sehr groß.
+Dabei kommt es zu einer Abstoßung, der Pulsabstand vergrößert sich also nochmal bevor er sich wieder verkleinert und ein stabiles Pulspaares gebildet wird.
+Dieser Prozess ähnelt der Abstoßung aus Abbildung \ref{fig:rBF457_autocorr_zoom}.
+Hier dient dies eventuell dem Energieaustausch, sodass die Bedingungen für einen stabilen Zustand hergestellt werden können.
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-   \subfloat[]
+%   \captionsetup[subfigure]{labelformat=empty}
+%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
+   \subfloat[Langsame Annäherung mit vielen semistabilen Pulsabständen.]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppel6_autoCorr_stepWiseCloser_188300.pdf}}
    \hfill
-   \subfloat[]
+   \subfloat[Schnelle Annäherung mit Abstoßung vor stabilem Doppelpulszustand.]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse_Annaeherung_248000.pdf}}
-   \caption{XXX}
+   \caption{Autokorrelation zweier beispielhafter Annäherungen.}
    \label{fig:StartAnnaehrung2}
 \end{figure}
 
-\subsection{Splitting}
+\clearpage
+\subsection{Aufspalten eines Pulses}
+Nachdem in den vorigen Abschnitten gezeigt wurde, wie sich zwei, anfangs weit entfernte Pulse annähern und schließlich einen stabilen Doppelpulszustand formen, soll hier nun das Gegenteil illustriert werden: das Aufspalten eines Pulses wie es beispielhaft in Abbildung \ref{fig:Splitting} dargestellt ist.
 
+Zu erkennen ist außerdem, dass die Änderungsrate der relativen Phase anfangs positiv ist. Wenn sich jedoch der stabile Pulsabstand einstellt, wird diese Rate leicht negativ.
+Dies lässt darauf schließen, dass zuerst der spätere Puls der stärkere ist und sich der erste aufgrund des Kerr-Effektes entfernt.
+Ist der Pulsabstand groß genug, findet ein Energieaustausch statt, der erste Puls erstarkt und ist schließlich stärker als der zweite Puls. 
+%Wenn eine Pikosekunden-Fluktuation 
 \begin{figure}[!htb]
    \centering
    \includegraphics[width=\textwidth]{figures/4ms_25GSA_400m_Mlstart_Doppelpulse4_Splitting_93800}
-   \caption{XXX}
+   \caption{Anwachsen einer Pikosekunden-Fluktuation und gleichzeitiges Aufspalten des sich ausbildenden Femtoesekundenpulses (\textit{oben:} Spektrale Entwicklung, \textit{unten:} Autokorrelation).}
    \label{fig:Splitting}
 \end{figure}
 
+\clearpage
 \subsection{Transiente Doppelpulse}
+Der hier vorgestellte Fall kurzlebiger Doppelpulse ist sehr selten, so konnte er bisher nur zweimal beobachtet werden.
+Der Resonator war dabei auf den Einzelpulsbetrieb justiert.
+In Abbildung \ref{fig:TransientDoppel} ist zu erkennen, dass sich der entstehende Puls aufspaltet und die beiden resultierenden Pulse über die gesamte Lebensdauer des Doppelpulszustandes einen konstanten Abstand von etwa 265\,fs aufweisen.
+Nach ca. 2000 Laserumläufen, also viel länger als die Lebensdauer des oberen Laserniveaus von $3.2\,\si{\micro\second}$, wird einer der beiden Pulse länger und stirbt aus.
+Es wird vermutet, dass dies der spätere Puls ist, da dieser eine geringere Besetzungsinversion im Kristall vorfindet.
+Da hier aber nur die Autokorrelation gemessen werden kann, kann dies nicht verifiziert werden.
 \begin{figure}[!htb]
    \centering
    \captionsetup[subfigure]{labelformat=empty}
@@ -980,30 +1053,50 @@ Dieser neue Zustand ist also auch stabil und verdeutlicht noch einmal die nur di
    \hfill
    \subfloat[]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp2e_Doppeltransient_autoCorr_zoom2}}
-   \caption{Transiente Doppelpulse}
+   \caption{Transiente Doppelpulse: Nach Aufspalten in zwei Pulse und mehr als 2000 Laserumläufen in einem semistabilen Doppelpulszustand stirbt einer der beiden Pulse aus (\textit{oben links:} Spektrale Entwicklung, \textit{oben rechts:} Autokorrelation, \textit{unten:} Entstehen und Aussterben als Ausschnitt der Autokorrelation).}
    \label{fig:TransientDoppel}
 \end{figure}
 
+Die Abbildung \ref{fig:TransientSplittingAusw} zeigt die zeitliche Entwicklung der emittierten Energie pro Roundtrip.
+Bei der Ausbildung der Femtosekundenpulse kommt es zu Relaxationsoszillationen.
+Danach ist die Energie beider Pulse konstant und liegt etwa 18.5\% über der des Einzelpulses, der nach dem Aussterben des anderen alleine durch den Laser propagiert.
+Die relative Phase wächst jedoch beschleunigt an.
+Dies deutet darauf hin, dass das Ungleichgewicht der beiden Pulse zunimmt: Der erste Puls gewinnt kontinuierlich an Energie, während der zweite langsam schwächer wird.
+Fällt die Pulsenergie unter einen bestimmten Wert, beschleunigt sich dieser Prozess dramatisch und der Puls stirbt aus.
+Der überlebende Puls kann nun spektral breiter und energiereicher werden.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/TransientSplittingAusw}
-	\caption{XXX}
-	\label{fig:TransientSplittingEnergy}
+	\caption{Transiente Doppelpulse: Während die Gesamtenergie beider Pulse lange konstant ist, lässt die Zunahme der Änderungsrate der relativen Phase auf ein Anstieg des Ungleichgewichts zwischen beiden Pulsen schließen.}
+	\label{fig:TransientSplittingAusw}
 \end{figure}
 
+\clearpage
+\section{Automodulationen}
+In diesem Abschnitt wird ein weiterer interessanter Betriebsmodus präsentiert.
+Dazu wird zuerst ein stabiler modengekoppelter Femtosekundenpuls erzeugt.
+Danach wird der Abstand der beiden Fokussierspiegel (Stabilität) verringert, sodass die Verluste im Resonator größer werden.
+Dies impliziert eine selbst erregte, starke Modulation der emittierten Leistung mit einer Modulationstiefe von mehr als 90\% (siehe Abb.\ref{fig:SelfQSwitch}).
+Ein solcher Zyklus dauert etwa 172 Roundtrips, ca. $2.21\,\si{\micro\second}$, ist also etwas kürzer als die Lebensdauer des oberen Laserniveaus von $3.2\,\si{\micro\second}$.
+Aufgrund des rapiden Leistungsanstiegs spaltet sich jedoch der gerade entstehende Puls oftmals auf, sodass für eine kurze Zeitspanne zwei Femtosekundenpulse im Laser propagieren.
+Sogar drei Pulse entstehen manchmal.
 
-\section{Self-Q-Switching}
-172 Roundtrips, also etwa $2.21\,\si{\mu\second}$
 \begin{figure}[!htb]
    \centering
-   \includegraphics[width=\textwidth]{figures/4ms_25GSA_400m_MLrun_ZitternHeftig_239100}
-   \caption{XXX}
+   \includegraphics[width=0.85\textwidth]{figures/4ms_25GSA_400m_MLrun_ZitternHeftig_239100}
+   \caption{Höhere Verluste im Resonator führen zu selbstverursachten Leistungsmodulationen auf einer Zeitskala der Lebensdauer des oberen Laserniveaus:
+   Dabei können sich hier sogar bis zu drei Pulse ausbilden -- gefolgt von einer Phase nahezu keiner Laseremission. 
+   (\textit{oben:} Spektrale Entwicklung, \textit{mitte:} Autokorrelation, \textit{unten:} Energie).}
    \label{fig:SelfQSwitch}
 \end{figure}
 
 
-\cleardoublepage
 \section{Simulation}
+Einige der oben beschriebenen Vorgänge können auch simuliert werden.
+Dazu wird das Modell aus Abschnitt \ref{sec:SimTheo} verwendet.
+Im folgenden werden 3 verschiedene Dynamiken präsentiert, die sich nur durch kleine Änderungen der Simulationsparameter bzw. Anfangsbedingungen ergeben.
+Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
+
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{|c|l|}
@@ -1034,83 +1127,91 @@ Dieser neue Zustand ist also auch stabil und verdeutlicht noch einmal die nur di
 		Pulsform & 2 Gaußförmige Pulse\\
 		Pulsamplitude & 1\\
 		Pulsbreite & 25\,fs\quad @ 1/e der Pulsamplitude\\
-		Pulsabstand & $100,200\,$fs\\
+		Pulsabstand & $\tau_0=100,200\,$fs\\
 		\hline
 	\end{tabular}
+	\caption{Simulationsparameter.}
+	\label{tab:SimParam}
 \end{table}
 
+\clearpage
 \subsection{Linear anwachsende Phase}
 
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}   
-   \subfloat[]
+%   \captionsetup[subfigure]{labelformat=empty}
+%   \captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}   
+   \subfloat[Entwicklung der zeitlichen Wellenform.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_200_time}}
    \hfill
-   \subfloat[]
+   \subfloat[Spektrale Entwicklung.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_200_freq}}
-   \caption{Simulation.}
-   \label{fig:Simulatin}
+   \caption{Simulation mit einem Anfangsabstand von $\tau_0=200\,$fs sowie einer Pumpleistung von $P_\text{Pump}=4.6\,$W. Die beiden Pulse  interagieren kaum, aufgrund leicht unterschiedlicher Pulsamplituden wächst die relative Phase zwischen beiden linear an.}
+   \label{fig:SimulationLinearPhase}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/SimRBLinear}
-	\caption{XXX}
+	\includegraphics[width=0.8\textwidth]{figures/SimRBLinear}
+	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationLinearPhase}: Energieverhältnis und Abstand der beiden Pulse ist nach einer kurzen Transiente nahezu konstant, sodass die relative Phase linear anwächst.}
+	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBLinear}
 \end{figure}
 
+\clearpage
 \subsection{Oszillatorisches Verhalten}
 
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
+   %\captionsetup[subfigure]{labelformat=empty}
    %\captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}
-   \subfloat[]
+   \subfloat[Entwicklung der zeitlichen Wellenform.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_100_time}}
    \hfill
-   \subfloat[]
+   \subfloat[Spektrale Entwicklung.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,6W_100_freq}}
-   \caption{Simulation.}
-   \label{fig:Simulatin}
+   \caption{Simulation ($\tau_0=100\,$fs, $P_\text{Pump}=4.6\,$W), bei der Abstand und relative Phase oszillieren, da sich die beiden Pulse immer wieder leicht abstoßen.}
+   \label{fig:SimulationOscillation}
 \end{figure}
 
 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/SimRBOszi}
-	\caption{XXX}
+	\includegraphics[width=0.8\textwidth]{figures/SimRBOszi}
+	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationOscillation}: Das Amplitudenverhältnis der Pulse ist stark mit dem Pulsabstand und der relativen Phase verknüpft.}
+	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBOszi}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
-	\caption{Interaction Plane}
+	\includegraphics[width=0.8\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
+	\caption{Oszillatorisches Verhalten in der Interaction Plane.}
 	\label{fig:SimRBOszi_IP}
 \end{figure}
 
+\clearpage
 \subsection{Fester Abstand und feste Phase}
 
 \begin{figure}[!htb]
    \centering
-   \captionsetup[subfigure]{labelformat=empty}
-   \captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}
-   \subfloat[]
+   %\captionsetup[subfigure]{labelformat=empty}
+   %\captionsetup[subfloat]{farskip=-13pt,captionskip=0pt}
+   \subfloat[Entwicklung der zeitlichen Wellenform.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,8W_100_time}}
    \hfill
-   \subfloat[]
+   \subfloat[Spektrale Entwicklung.]
    {\includegraphics[width=0.49\textwidth]{figures/SimulationRB_4,8W_100_freq}}
-   \caption{Simulation.}
-   \label{fig:Simulatin}
+   \caption{Simulation ($\tau_0=100\,$fs, $P_\text{Pump}=4.8\,$W), bei der die Pumpleistung höher ist, sodass die beiden Pulse ihren Abstand und ihre relative Phase locken können.}
+   \label{fig:SimulationFixed}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/SimRBFixed}
-	\caption{XXX}
+	\includegraphics[width=0.8\textwidth]{figures/SimRBFixed}
+	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationFixed}: Nach einer stufenförmigen Annäherung sind die Pulsamplituden, der Pulsabstand sowie die relative Phase schließlich konstant. Die Pulse sind dabei gegenphasig.}
+	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBFix}
 \end{figure}
 
@@ -1174,7 +1275,7 @@ Nun ist die Abstandsinformation auch wieder im Spektrum kodiert und der Abstand 
 \bibliography{test}
 
 \chapter*{Danksagung}
-Ganz besonders bedanke ich mich bei Prof. Dr. Claus Ropers.
+Ganz besonders bedanke ich mich bei Prof. Dr. Claus Ropers, der diese Arbeit möglich gemacht hat.
 
 Ein besonderes Dankeschön geht an Herrn Dr. Christoph Bollig von \textit{Abacus Laser} für seine schnelle, technische Unterstützung.
 
