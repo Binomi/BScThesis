@@ -1136,7 +1136,19 @@ Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
 
 \clearpage
 \subsection{Linear anwachsende Phase}
+Der erste Fall behandelt den Fall einer linear anwachsenden relativen Phase aufgrund ungleicher Pulsamplituden, da hier die Verringerung der Besetzungsinversion durch den ersten Puls in Betracht gezogen wird.
+In Abbildung \ref{fig:SimulationLinearPhase} ist die zeitliche sowie die spektrale Entwicklung dargestellt.
+In Abb.\ref{fig:SimRBLinear} werden die Simulationsdaten ausgewertet, also die Pulsamplituden, der Pulsabstand und die relative Phase bestimmt.
+So lässt sich die Simulation besser mit den Messdaten vergleichen.
 
+Das simulierte Verhalten hat starke Ähnlichkeiten zu Messungen wie in Abb.\ref{fig:165014steps} H, bei denen die Phase linear anwächst.
+Der große Unterschied besteht jedoch in der Wahl des Pulsabstandes:
+Während in den Messungen stets diskrete Abstände beobachtet wurden, wird in der Simulation der Anfangsabstand beibehalten.
+Wählt man einen anderen Pulsabstand von bsp. $\tau_0=225\,$fs, ändert sich auch dieser während der Simulation nicht grundlegend.
+Die beiden Pulse interagieren also nicht bzw. nur sehr schwach.
+Die hier simulierte Zeitdauer beträgt aber auch nur 3000 Laserumläufe, während eine Messung etwa zwei Größenordnungen länger ist.
+Eine längere Simulationsdauer ist also unter Umständen zur korrekten Beschreibung erforderlich, benötigt jedoch viel Speicherplatz.
+Eine andere Erklärung ist die Änderung der Pulsbreite während eines Laserumlaufes, welche stärker als angenommen sein könnte und somit im benutzen Modell keine Beachtung findet.
 \begin{figure}[!htb]
    \centering
 %   \captionsetup[subfigure]{labelformat=empty}
@@ -1160,7 +1172,8 @@ Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
 
 \clearpage
 \subsection{Oszillatorisches Verhalten}
-
+Der zweite simulierte Fall unterscheidet sich von obigem nur durch einen kleineren Anfangsabstand $\tau_0=100\,$fs.
+Nun können die beiden Pulse interagieren und es kommt zu Abstoßungs- und Anziehungseffekten, welche in einer oszillatorischen Bewegung enden.
 \begin{figure}[!htb]
    \centering
    %\captionsetup[subfigure]{labelformat=empty}
@@ -1183,7 +1196,7 @@ Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
 	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBOszi}
 \end{figure}
-
+Zu beachten ist, dass der innere Halbkreis sehr schnell durchlaufen wird.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
@@ -1193,7 +1206,13 @@ Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
 
 \clearpage
 \subsection{Fester Abstand und feste Phase}
-
+Der dritte Fall unterscheidet sich von den bereits diskutierten durch eine höhere Pumpleistung.
+Dies führt dazu, dass die beiden Pulse einen festen Abstand und eine feste Phase, also einen wirklichen Endzustand, annehmen.
+In Abbildung \ref{fig:SimulationFixed} ist dies sowohl im Spektrum als auch im Zeitsignal zu erkennen.
+Durch Auswerten der Simulation (Abb.\ref{fig:SimRBFix}) erkennt man, dass der erste Puls im Endzustand weniger als 1\% stärker als der andere ist.
+Außerdem lässt sich ablesen, dass die relative Phase etwa bei $\pi$ gelockt ist, die beiden Pulse sind also sehr ähnlich, aber gegenphasig.
+Die Simulation beginnt mit einem Annäherungsprozess, bei dem 10\,fs\,-\,Stufen beobachtet werden können.
+Diese sind also sehr viel kleiner als die gemessenen Abstandsdifferenzen von ungefähr $60-100\,$fs.
 \begin{figure}[!htb]
    \centering
    %\captionsetup[subfigure]{labelformat=empty}
