@@ -52,6 +52,7 @@
 
 %% umfangreiche Pakete fuer Symbole wie \micro, \ohm, \degree, \celsius etc.
 \usepackage{textcomp,gensymb}
+\usepackage{wasysym}
 
 %\usepackage{SIunits} %% Korrektes Setzen von Einheiten
 \usepackage{units}   %% Variante fuer Einheiten
@@ -356,7 +357,15 @@ Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, 
 \end{figure}
 \footnotetext{aus Femtolasers, \textit{Femtolaser Compact Pro CE Phase - Owners Manual v3.3}}
 \section{Detektions-Aufbau}
-Der experimentelle Aufbau zur Echtzeit-Spektroskopie soll in diesem Abschnitt erläutert werden.
+
+\begin{figure}[!htb]
+	\centering
+	\def\svgwidth{\columnwidth}
+	\input{DFTSetup2.pdf_tex}
+	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgewandelt.}
+	\label{fig:DFTSetup}
+\end{figure}
+Der experimentelle Aufbau zur Echtzeit-Spektroskopie basiert auf wenigen Bauteilen, die in diesem Abschnitt erläutert werden sollen.
 Wie in Abb.\ref{fig:DFTSetup} zu sehen, wird der Laserstrahl zunächst mittels einer $\lambda/2$-Platte und einem Polarisator variabel abgeschwächt und senkrecht zur Tischebene polarisiert.
 Danach passiert er einen optischen Isolator, welcher verhindert, dass Reflektionen an einer späteren Stelle bis in den Laser gelangen und dort zu unerwünschten Effekten bzw. Instabilitäten führen.
 Als nächstes wird der Strahl mit einem Beamsplitter aufgeteilt.
@@ -370,22 +379,14 @@ Am Ende der typischerweise 400 Meter langen Glasfaser wird der Strahl mit einem 
 
 Beide Photodioden sind an das Oszilloskop (Tektronix DP71604C) angeschlossen.
 Dieses kann z.B. im 2-Kanal-Betrieb bis zu $4\,$ms mit einer Samplingrate von $25\,$GSa/s aufnehmen.
-Aber auch 50\,GSa/s im 2-Kanal-Betrieb und 100\,GSa/s mit nur einem Channel sind möglich.
 Dies entspricht bei einer Pulswiederholrate des Lasers von $12.8\,$ns mehr als 300\,000 Pulsen.
-
+Aber auch 50\,GSa/s im 2-Kanal-Betrieb und 100\,GSa/s mit nur einem Channel sind möglich.
 
 Um diese Technik der dispersiven Fouriertransformation richtig nutzen zu können, müssen die wichtigsten Bauteile charakterisiert werden: die Glasfaser sowie die beiden Photodioden.
-
-\begin{figure}[!htb]
-	\centering
-	\def\svgwidth{\columnwidth}
-	\input{DFTSetup2.pdf_tex}
-	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgewandelt.}
-	\label{fig:DFTSetup}
-\end{figure}
+%\clearpage
 
 \section{Kalibration der Dispersiven Fouriertransformation}
-Zunächst muss die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerungen gemessen werden können und nicht direkt Frequenzen.
+Zunächst wird die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerungen gemessen werden können und nicht direkt Frequenzen.
 Dazu wird ein Etalon, hier ein Mikroskopie-Deckglas, und der Laser im stabilen Einzelpulsbetrieb genutzt.
 Aufgrund von Mehrfach-Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
 Wie in Ref. \cite[S.66]{lauterborn_coherent_2003} beschrieben, ergeben sich Frequenzabstände von
@@ -416,17 +417,16 @@ Dies bedeutet, dass pro Roundtrip, also 12.82\,ns, etwa 118\,THz aufgenommen wer
  \end{figure}
 
 \section{Charakterisierung der Photodioden}
-Als nächstes muss noch die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert werden.
+Als nächstes wird die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert.
 In Tabelle \ref{tab:PD} finden sich die wichtigsten Herstellerangaben zu diesem ultraschnellen Photodetektor.
 Diese sollen überprüft bzw. auf die experimentelle Situation hin getestet werden.
 Die beiden verwendeten Photodioden werden anhand ihrer Seriennummern \texttt{04336} und \texttt{04346} unterschieden.
 
 Zunächst wird getestet, in welchem Leistungsbereich die Photodioden linear reagieren, damit bei zukünftigen Messungen dieser Bereich nicht überschritten wird.
 Dies geschieht für die beiden Messmodi mit undispergiertem sowie dispergiertem Signal.
-Außerdem wird die Bandbreite der Photodiode abhängig von der eingestrahlten Leistung bestimmt, denn für die Beobachtung von relativ weit entfernten Pulsen (bis zu 1\,ps) ist es wichtig, dass die Photodiode schnell reagiert.
+Außerdem wird die Bandbreite der Photodiode bestimmt, denn für die Beobachtung von bis zu 1\,ps entfernten Pulsen ist es wichtig, dass die Photodiode schnell reagiert.
 Diese Pulse sind zu nah, um sie im zeitlichen Signal zu unterscheiden.
 So können sie nur als spektrale Interferenz detektiert werden.
-
 Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda/2$-Platte variabel abgeschwächt und mit einem Powermeter direkt vor der entsprechenden Photodiode gemessen.
 
 \begin{table}[!htb]
@@ -445,34 +445,16 @@ Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda
 	\label{tab:PD}
 \end{table}
 
-\subsection{Antwortverhalten auf das undispergierte Signal}
-In Abbildung \ref{fig:PDundisp} ist in Abhängigkeit der eingestrahlten Leistung die Photodiodenantwort auf das undispergierte Signal dargestellt.
-Hier ist  das optische Eingangssignal viel kürzer als die Risetime der Photodiode.
-Die Linse vor der Photodiode wird so positioniert, dass der Laserstrahl auf den sensitivsten Bereich der Photodiode trifft.
-Erkennbar ist, dass die Peakamplitude bis ca. 2\,mW linear ansteigt und in dieser Region die Pulsbreite (FWHM) etwas über 100\,ps liegt.
-Dies entspricht der angegebenen Risetime von 40\,ps.
-Außerdem ist je nach Justage ein Ringing nach dem Puls zu beobachten.
-
-\begin{figure}[!htb]
-	\centering
-	\subfloat[Antwortverhalten der beiden Photodioden: Bei steigender Leistung sättigt die Peakspannung und die Photodioden-Antwort wird länger.\label{fig:PDfwhmMaxI}]
-   {\includegraphics[width=0.49\textwidth]{figures/PDfwhmMaxI}}
-   \hfill
-   \subfloat[Vergleich der beiden Dioden bei 2\,mW: Unterschied kann auch auf Einstrahlung zurückzuführen sein. \label{fig:PD2mW}]
-   {\includegraphics[width=0.49\textwidth]{figures/PD2mW}}
-	\caption{Photodiodenantwort auf undispergiertes Signal.}
-	\label{fig:PDundisp}
-\end{figure}
-
-
 \subsection{Antwortverhalten auf das dispergierte Signal}
-Bis ca. 10\,mW wächst das Signal linear an.
-Danach wird die Photodiode übersteuert, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können, die Pulsform ändert sich stark.
+Als nächstes treffen Nanosekundenpulse auf die Photodiode, die sich durch die Dispersion in der Faser aus Femtosekundenpulsen ergeben.
+Das Signal ähnelt also einem kontinuierlichen Signal.
+So wächst bis ca. 10\,mW die Photodiodenantwort linear mit der eingestrahlten Leistung an.
+Danach wird die Photodiode übersteuert, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können, wobei sich die Pulsform stark ändert.
 Im linearen Bereich kann allerdings die Sensitivität der Photodiode bestimmt werden.
 Diese gibt an, welcher Strom bei einer bestimmten eingestrahlten Leistung von der Photodiode produziert wird.
 Um den geflossenen Strom zu erhalten, wird die am Oszilloskop anliegende Spannung durch den benutzen Widerstand von $50\,\si\ohm$ geteilt.
 Außerdem wird der Strom noch über einen Roundtrip gemittelt, denn die eingestrahlte Leistung ist nur als Mittlung messbar.
-In Abb. \ref{fig:PDdispMeanA} wird dies für beide Photodioden bestimmt und beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{04336} und  0.1120(5) für \texttt{04346}.
+In Abb. \ref{fig:PDdispMeanA} wird all dies für beide Photodioden bestimmt und beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{04336} und  0.1120(5) für \texttt{04346}.
 Der kleine Unterschied kann auch durch eine leicht unterschiedliche Fokussierung bedingt sein.
 Insgesamt sind beide Werte aber in gutem Einklang mit der aus dem Datenblatt\footnote{\url{http://www.alphalas.com/images/stories/products/laser_diagnostic_tools/Ultrafast_Photodetectors_UPD_ALPHALAS.pdf}, abgerufen am 08.02.2016} entnommenen Sensitvitätskurve in Abb.\ref{fig:PDsensDB}
 
@@ -488,15 +470,51 @@ Insgesamt sind beide Werte aber in gutem Einklang mit der aus dem Datenblatt\foo
 	\label{fig:PDsens}
 \end{figure}
 
-\subsection{Bandbreite}
+\subsection{Antwortverhalten auf das undispergierte Signal}
+In Abbildung \ref{fig:PDfwhmMaxI} ist in Abhängigkeit der eingestrahlten Leistung die Photodiodenantwort auf das undispergierte Signal dargestellt.
+Hier ist  das optische Eingangssignal viel kürzer als die Risetime der Photodiode.
+Erkennbar ist, dass die Peakamplitude bis ca. 2\,mW linear ansteigt und in dieser Region die Pulslänge (FWHM) etwas über 100\,ps liegt.
+Dies entspricht der angegebenen Risetime von 40\,ps.
+Um also die besten Ergebnisse zu erzielen, sollte die Photodiode in diesem Betriebsmodus nicht mit mehr als 2\,mW bestrahlt werden.
+Je nach Justage ist ein Ringing nach dem Puls zu beobachten (vgl. Abb.\ref{fig:PD2mW}).
+
+Auffällig ist, dass die Halbwertsbreite sowie die Peakspannung für die Diode mit der Seriennummer \texttt{04346} schneller anwächst.
+Dies würde auf eine höhere Sensitivität hindeuten.
+Im obigen Abschnitt werden aber ähnliche Sensitivitäten für beide Photodioden gemessen.
+So ist der Unterschied wahrscheinlich auf ungleiche Bestrahlungsverhältnisse zurückzuführen.
+Dies wird auch durch den Unterschied in der Sättigungsspannung untermauert.
+Eventuell war bei Messung von \texttt{04336} die Linse vor der Photodiode nicht so positioniert, dass der Laserstrahl nur auf den sensitivsten Bereich der Photodiode trifft.
+\clearpage
+\begin{figure}[!htb]
+	\centering
+	\subfloat[Antwortverhalten der beiden Photodioden: Bei steigender Leistung sättigt die Peakspannung und die Photodioden-Antwort wird länger.\label{fig:PDfwhmMaxI}]
+   {\includegraphics[width=0.49\textwidth]{figures/PDfwhmMaxI}}
+   \hfill
+   \subfloat[Vergleich der beiden Dioden bei 2\,mW: Unterschied kann auch auf Einstrahlung zurückzuführen sein. \label{fig:PD2mW}]
+   {\includegraphics[width=0.49\textwidth]{figures/PD2mW}}
+	\caption{Photodiodenantwort auf undispergiertes Signal.}
+	\label{fig:PDundisp}
+\end{figure}
+
+\subsection{Bandbreite der Photodiode}
 Das Spektrum sollte voll durchmoduliert sein, wenn beide Pulse gleich stark sind.
 Die Photodiode wird jedoch ab einer bestimmten Modulationfrequenz, also einem bestimmten Abstand der Doppelpulse, nicht so schnell reagieren können.
 Daher reduziert sich die Modulationstiefe für hohe Frequenzen.
 Dadurch kann der Intensitätsunterschied der beiden Pulse überschätzt werden.
-Um dies zu untersuchen, wird ein Michelson-Interferometer in den Strahlengang eingebaut.
+Um dies zu untersuchen, wird ein Michelson-Interferometer in den Strahlengang eingebaut (vgl. Abb.\ref{fig:Beamsplitter}).
 Mit diesem können durch Variation einer Armlänge Pulspaare mit veränderlichem Abstand hergestellt werden.
 Diese Abstände finden sich in der Modulation des Spektrums wieder.
-Es wird verifiziert, dass beide Pulse die gleiche Energie haben.
+Mit einem Powermeter wird außerdem verifiziert, dass beide Pulse die gleiche Energie haben.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.55\textwidth]{figures/multi_pass_beam_splitter.png}
+	\caption{Schematische Zeichnung eines Michelson-Interferometers\protect\footnotemark:
+	Bei beiden Armen wird der Strahl jeweils einmal reflektiert sowie einmal transmittiert, sodass die zwei Strahlengänge die gleiche Leistung aufweisen.
+	Die Reflexion an der Vorderkante des Strahlteilers führt jedoch zu verschiedenen Propagationslängen im Glas des Strahlteilers und somit zu etwas höherer Dispersion im Arm des zuerst transmittierten Strahls.}
+	\label{fig:Beamsplitter}
+\end{figure}
+\footnotetext{\url{http://www.tydexoptics.com/images/products/multi_pass_beam_splitter.gif}, abgerufen am 14.08.2016}
 
 Aufgrund der Funktionsweise des verwendeten Strahlteilers findet die Reflexion nur an der Vorderseite statt (vgl. Abb.\ref{fig:Beamsplitter}).
 Dies führt dazu, dass der zuerst reflektierte Strahl einmal, aber der zuerst transmittierte Strahl zweimal den Strahlteiler passiert.
@@ -527,16 +545,6 @@ Diese könnte man mit einem kontinuierlich modulierten Signal besser messen, ben
 	\caption{Relative Höhe der Nebenmaxima in Abhängigkeit der jeweiligen Modulationsfrequenz aus Abb.\ref{fig:PDBandbreite_FFT}.}
 	\label{fig:PDBandbreiteAusw}
 \end{figure}
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figures/multi_pass_beam_splitter.png}
-	\caption{Schematische Zeichnung eines Michelson-Interferometers\protect\footnotemark:
-	Bei beiden Armen wird der Strahl jeweils einmal reflektiert sowie einmal transmittiert, sodass die zwei Strahlengänge die gleiche Leistung aufweisen.
-	Die Reflexion an der Vorderkante des Strahlteilers führt jedoch zu verschiedenen Propagationslängen im Glas des Strahlteilers und somit zu etwas höherer Dispersion im Arm des zuerst transmittierten Strahls.}
-	\label{fig:Beamsplitter}
-\end{figure}
-\footnotetext{\url{http://www.tydexoptics.com/images/products/multi_pass_beam_splitter.gif}, abgerufen am 14.08.2016}
 
 \chapter{Ergebnisse}
 In diesem Kapitel wird zunächst erläutert, wie der Resonator justiert sein muss, um Multipulse erzeugen zu können.
@@ -603,19 +611,33 @@ Die eine Dimension entspricht den Roundtrips, die andere entspricht der schnelle
 
 Zuletzt muss noch die Änderung der Repetitionsrate bzw. die Abweichung vom richtigen Wert korrigiert werden.
 Dies kann auf zwei Arten geschehen:
-Ist der Anteil an der Messung, bei der der Laser gemodelockt ist, groß, wird ein Polynom durch die Peakpositionen des undispergierten, gemodelockten Signals gelegt. Der Definitionsbereichs des Polynoms wird auf die gesamte Messung ausgedehnt und dann wird jeder Roundtrip so verschoben, dass diese Peakpositionen zu gleichen Zeitpunkten im Roundtrip liegen.
+Dazu wird ein Polynom durch die Peakpositionen des undispergierten, gemodelockten Signals gelegt. Der Definitionsbereichs des Polynoms wird auf die gesamte Messung ausgedehnt und dann wird jeder Roundtrip so verschoben, dass diese Peakpositionen zu gleichen Zeitpunkten im Roundtrip liegen.
 Mit diesem Polynom (evtl. mit anderem Offset) wird auch die dispergierte Messung verschoben.
 
-Ist der Anteil an der Messung, bei der der Laser gemodelockt ist, jedoch deutlich kleiner, sodass ein großer Fehler gemacht wird, wenn das wie oben gefittete Polynom auch auf den nicht-gemodelockten Bereich ausgedehnt wird, muss sich einer anderen Methode bedient werden, um die Änderung der Repetitionsrate zu korrigieren.
-Dies basiert auf der Korrelation zwischen zwei Roundtrips, immer davon ausgehend, dass sich zwischen zwei aufeinanderfolgenden Roundtrips kaum etwas ändert.
-Man beginnt mit einem gemodelockten Spektrum und geht von diesem Spektrum zu früheren Roundtrips und bestimmt die Korrelation zu diesem.
-Sollte der maximale Wert nicht der Verschiebung $\tau=0$ der beiden Signale entsprechen, verschiebt man diesen Roundtrip um eben diesen Wert.
-Nun wird dieser Roundtrip (allerdings unverschoben) als neue Referenz genommen.
-Das Spiel beginnt von vorne, es wird wieder die Korrelation zwischen diesem und vorigen Roundtrips gebildet, etc.
-Allerdings wird die benötigte Verschiebung logischerweise aufsummiert.
-Es hat sich als sinnvoll erwiesen, als Referenz nicht nur einen Roundtrip zu wählen, sondern die Mittlung über mehrere.
-Das macht das Verfahren unsensibel gegenüber Rauschen in den Messdaten, die zu zu starken Verschiebungen führen.
+\begin{figure}[!htb]
+   \centering
+   \subfloat[Die gemessene Zeitreihe wird in Laserumläufe unterteilt. Diese können dann zu einer 2D-Matrix zusammengesetzt werden -- wie in b) und c) geschehen.
+   \label{fig:plainData}]
+   {\includegraphics[width=\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp1_plainDATA.pdf}}
+   
+   \subfloat[Matrix des undispergierten Signals.\label{fig:rBF463}]
+   {\includegraphics[width=0.5\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp1_Ch2_krumm.pdf}}
+   \hfill
+   \subfloat[Matrix des dispergierten Signals.\label{fig:rBF464}]
+   {\includegraphics[width=0.5\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp1_Ch1_krumm.pdf}}
+   
+   \subfloat[Matrix des undispergierten Signals,\protect\\ Änderung der Repitionsrate korrigiert.\label{fig:rBF463}]
+   {\includegraphics[width=0.5\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp1_Ch2_glatt.pdf}}
+   \hfill
+   \subfloat[Matrix des dispergierten Signals,\protect\\ Änderung der Repitionsrate korrigiert.\label{fig:rBF464}]
+   {\includegraphics[width=0.5\textwidth]{figures/4ms_25GSA_400m_MLstart_negDisp1_Ch1_glatt.pdf}}
+   \caption{Darstellung der Messdaten: Die gemessene Zeitreihe wird in Laserumläufe aufgetrennt, dann wird die Auswirkung der Änderung der Resonatorlänge während der Messung korrigiert.}
+   \label{fig:MessdatenDarstellung}
+\end{figure}
+ 
 
+
+\clearpage
 \section{Doppelpulse Messreihe 1}
 Wie zuvor beschrieben, wird der Laser bei geeigneter Justage durch zweimaliges Stören in den Doppelpuls-Betrieb überführt.
 Durch anschließendes Variieren der Pumpleistung lassen sich drei verschiedene Regime beobachten.
@@ -677,7 +699,7 @@ Außerdem nimmt die Phase langfristig ab, der hintere Puls ist also durchschnitt
 	Während sich bei niedriger (blau) und hoher Pumpleistung (gelb) ein Kreis/Halbkreis-ähnliches Verhalten zeigt, ist die Dynamik bei einer mittleren Pumpleistung (rot) deutlich komplexer. Trotzdem ergibt sich ein geschlossener Orbit.}
 	\label{fig:interactionPlane}
 \end{figure}
-
+\clearpage
 \subsection{Kollidierende Pulse (mittlere Pumpleistung)}
 \label{sec:bounce}
 Dieser Zustand ist dadurch gekennzeichnet, dass es ständig zu Kollisionen zwischen den beiden Pulsen kommt, wie in Abbildung \ref{fig:rBF456} gut zu erkennen ist.
@@ -942,6 +964,9 @@ In Abbildung \ref{fig:StartGetrennt} ist sowohl das undispergierte als auch das 
 Das dispergierte Signal repräsentiert anfangs nicht das Spektrum, sondern stellt einen spektral-temporale Sicht dar.
 So kann man anfangs die vielen Fluktuationen erkennen, die durch den Resonator propagieren.
 
+Neu ist hier, dass einige Fluktuationen nach der Ausbildung des ersten Femtosekundenpulses nicht aussterben, sodass eine von diesen auch in die Modenkopplung übergehen kann.
+Erst dann propagieren nur diese beiden Pulse durch den Resonator.
+
 \begin{figure}[!htb]
    \centering
 %   \captionsetup[subfigure]{labelformat=empty}
@@ -981,9 +1006,14 @@ Dies kann man darauf zurückführen, dass der hintere und somit schwächere Puls
 \clearpage
 \subsection{Annäherung}
 Der Zeitpunkt, bei dem sich obige Pulse auf unter 1\,ps angenähert haben, kann leider nicht mehr aufgenommen werden, da dazu der Speicher des Oszilloskop nicht genügt.
+Nimmt man obige Rate von ca. 20\,ps auf 3\,ms an, würde dies mehr als 60\,ms dauern.
 Stattdessen kann aber auf eine solche Annäherung getriggert werden.
 Dazu wird das dispergierte Signal verwendet, denn ein solcher Pulsabstand führt zu Modulationen im Spektrum, sodass die Peakspannung dieses Signals ansteigt und schließlich über dem eingestellten Grenzwert liegt.
 In Abbildung \ref{fig:StartAnnaeherung} wird das Spektrum sowie die daraus berechnete Autokorrelation einer solchen Annäherung dargestellt.
+Auffällig ist, dass der Pulsabstand nicht linear abnimmt, sondern leicht stufenförmig.
+Die relative Phase nimmt beschleunigend zu, bis die nächste Stufe erreicht ist.
+Die stabileren Abstände sind vergleichbar mit den diskreten Pulsabständen, die bei den Triplett-Zuständen auftreten.
+Ein Endabstand von ca. 170\,fs sowie eine feste relative Phase stellen sich schließlich ein.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse2_Annaeherung_280500}
@@ -1018,10 +1048,12 @@ Hier dient dies eventuell dem Energieaustausch, sodass die Bedingungen für eine
 \clearpage
 \subsection{Aufspalten eines Pulses}
 Nachdem in den vorigen Abschnitten gezeigt wurde, wie sich zwei, anfangs weit entfernte Pulse annähern und schließlich einen stabilen Doppelpulszustand formen, soll hier nun das Gegenteil illustriert werden: das Aufspalten eines Pulses wie es beispielhaft in Abbildung \ref{fig:Splitting} dargestellt ist.
-
+Während das Spektrum breiter wird, sind gleichzeitig schon Modulationen auf diesem zu sehen.
+Es handelt sich also um Doppelpulse, die sich voneinander entfernen.
 Zu erkennen ist außerdem, dass die Änderungsrate der relativen Phase anfangs positiv ist. Wenn sich jedoch der stabile Pulsabstand einstellt, wird diese Rate leicht negativ.
 Dies lässt darauf schließen, dass zuerst der spätere Puls der stärkere ist und sich der erste aufgrund des Kerr-Effektes entfernt.
-Ist der Pulsabstand groß genug, findet ein Energieaustausch statt, der erste Puls erstarkt und ist schließlich stärker als der zweite Puls. 
+Ist der Pulsabstand groß genug, findet ein Energieaustausch statt, der erste Puls erstarkt und ist schließlich stärker als der zweite Puls.
+Der Abstand stabilisiert sich.
 %Wenn eine Pikosekunden-Fluktuation 
 \begin{figure}[!htb]
    \centering
@@ -1078,7 +1110,7 @@ Dazu wird zuerst ein stabiler modengekoppelter Femtosekundenpuls erzeugt.
 Danach wird der Abstand der beiden Fokussierspiegel (Stabilität) verringert, sodass die Verluste im Resonator größer werden.
 Dies impliziert eine selbst erregte, starke Modulation der emittierten Leistung mit einer Modulationstiefe von mehr als 90\% (siehe Abb.\ref{fig:SelfQSwitch}).
 Ein solcher Zyklus dauert etwa 172 Roundtrips, ca. $2.21\,\si{\micro\second}$, ist also etwas kürzer als die Lebensdauer des oberen Laserniveaus von $3.2\,\si{\micro\second}$.
-Aufgrund des rapiden Leistungsanstiegs spaltet sich jedoch der gerade entstehende Puls oftmals auf, sodass für eine kurze Zeitspanne zwei Femtosekundenpulse im Laser propagieren.
+Aufgrund des rapiden Leistungsanstiegs spaltet sich jedoch in vielen Fällen der gerade entstehende Puls auf, sodass für eine kurze Zeitspanne zwei Femtosekundenpulse im Laser propagieren.
 Sogar drei Pulse entstehen manchmal.
 
 \begin{figure}[!htb]
@@ -1096,7 +1128,7 @@ Einige der oben beschriebenen Vorgänge können auch simuliert werden.
 Dazu wird das Modell aus Abschnitt \ref{sec:SimTheo} verwendet.
 Im folgenden werden 3 verschiedene Dynamiken präsentiert, die sich nur durch kleine Änderungen der Simulationsparameter bzw. Anfangsbedingungen ergeben.
 Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
-
+Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs auf.
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{|c|l|}
@@ -1126,7 +1158,7 @@ Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
 		\hline		
 		Pulsform & 2 Gaußförmige Pulse\\
 		Pulsamplitude & 1\\
-		Pulsbreite & 25\,fs\quad @ 1/e der Pulsamplitude\\
+		Pulslänge & 25\,fs\quad @ 1/e der Pulsamplitude\\
 		Pulsabstand & $\tau_0=100,200\,$fs\\
 		\hline
 	\end{tabular}
@@ -1140,15 +1172,15 @@ Der erste Fall behandelt den Fall einer linear anwachsenden relativen Phase aufg
 In Abbildung \ref{fig:SimulationLinearPhase} ist die zeitliche sowie die spektrale Entwicklung dargestellt.
 In Abb.\ref{fig:SimRBLinear} werden die Simulationsdaten ausgewertet, also die Pulsamplituden, der Pulsabstand und die relative Phase bestimmt.
 So lässt sich die Simulation besser mit den Messdaten vergleichen.
-
+Eine leichte Oszillation der Pulsamplituden und somit auch des Abstandes ist zu erkennen.
 Das simulierte Verhalten hat starke Ähnlichkeiten zu Messungen wie in Abb.\ref{fig:165014steps} H, bei denen die Phase linear anwächst.
 Der große Unterschied besteht jedoch in der Wahl des Pulsabstandes:
 Während in den Messungen stets diskrete Abstände beobachtet wurden, wird in der Simulation der Anfangsabstand beibehalten.
-Wählt man einen anderen Pulsabstand von bsp. $\tau_0=225\,$fs, ändert sich auch dieser während der Simulation nicht grundlegend.
 Die beiden Pulse interagieren also nicht bzw. nur sehr schwach.
 Die hier simulierte Zeitdauer beträgt aber auch nur 3000 Laserumläufe, während eine Messung etwa zwei Größenordnungen länger ist.
 Eine längere Simulationsdauer ist also unter Umständen zur korrekten Beschreibung erforderlich, benötigt jedoch viel Speicherplatz.
-Eine andere Erklärung ist die Änderung der Pulsbreite während eines Laserumlaufes, welche stärker als angenommen sein könnte und somit im benutzen Modell keine Beachtung findet.
+Eine andere Erklärung ist die Änderung der Pulslänge während eines Laserumlaufes, welche stärker als angenommen sein könnte und somit im benutzen Modell keine Beachtung findet.
+Dann wäre evtl. die Interaktion zwischen beiden Pulsen größer, sodass nur bestimmte Abstände stabil wären.
 \begin{figure}[!htb]
    \centering
 %   \captionsetup[subfigure]{labelformat=empty}
@@ -1166,14 +1198,25 @@ Eine andere Erklärung ist die Änderung der Pulsbreite während eines Laserumla
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/SimRBLinear}
 	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationLinearPhase}: Energieverhältnis und Abstand der beiden Pulse ist nach einer kurzen Transiente nahezu konstant, sodass die relative Phase linear anwächst.}
-	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBLinear}
 \end{figure}
 
-\clearpage
+%\clearpage
 \subsection{Oszillatorisches Verhalten}
 Der zweite simulierte Fall unterscheidet sich von obigem nur durch einen kleineren Anfangsabstand $\tau_0=100\,$fs.
-Nun können die beiden Pulse interagieren und es kommt zu Abstoßungs- und Anziehungseffekten, welche in einer oszillatorischen Bewegung enden.
+Nun können die beiden Pulse interagieren und es kommt zu Abstoßungs- und Anziehungseffekten, welche in einer oszillatorischen Bewegung mit einer Periodendauer von 330 Laserumläufen enden (vgl. Abb.\ref{fig:SimulationOscillation}).
+Dieses Verhalten führt auch dazu, dass sich die beiden Pulse im Simulationsfenster immer weiter nach vorne bewegen, also schneller durch den Resonator propagieren als  ein einzelner Puls.
+Absolut gesehen ist dieser Effekt jedoch gering: So sind die Pulse bei 3000 Laserumläufen, also ca. 40\,\si{\micro\second}, etwa 300\,fs schneller.
+
+In Abbildung \ref{fig:SimRBOszi} sind die beiden Pulsamplituden, die relative Phase und der Pulsabstand während der Oszillationszyklen dargestellt.
+Zu erkennen ist, dass der zweite Puls in einem Fünftel des Zykluses stärker als der erste ist.
+Etwa zeitgleich vergrößert sich der Pulsabstand.
+Pro Zyklus gibt es zwei Punkte, an denen beide Pulse gleich stark sind und die Phase ein lokales Extremum hat.
+Außerdem ändert sich die Phase bei einem hohen Intensitätsunterschied zwischen beiden Pulsen sehr schnell.
+Beides zeigt klar, dass die Änderung der relativen Phase stark mit den Pulsamplituden verknüpft ist.
+Ähnlich verhält es sich mit dem Abstand.
+Gleiche Pulsamplituden haben jedoch keinen festen Pulsabstand zu Folge, die Änderung des Abstandes lässt sich also nicht nur durch den Kerr-Effekt erklären.
+
 \begin{figure}[!htb]
    \centering
    %\captionsetup[subfigure]{labelformat=empty}
@@ -1187,32 +1230,37 @@ Nun können die beiden Pulse interagieren und es kommt zu Abstoßungs- und Anzie
    \label{fig:SimulationOscillation}
 \end{figure}
 
-
-
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/SimRBOszi}
+	\includegraphics[width=0.83\textwidth]{figures/SimRBOszi1}
 	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationOscillation}: Das Amplitudenverhältnis der Pulse ist stark mit dem Pulsabstand und der relativen Phase verknüpft.}
-	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBOszi}
 \end{figure}
-Zu beachten ist, dass der innere Halbkreis sehr schnell durchlaufen wird.
+
+In Abbildung \ref{fig:SimRBOszi_IP} ist diese Oszillationsdynamik in die \textit{Interaction Plane} eingezeichnet, es ergibt sich ein geschlossener Orbit.
+Zu beachten ist, dass der innere Halbkreis und der Abschnitt, in dem sich die beiden Pulse voneinander entfernen, sehr schnell durchlaufen wird.
+Nur in einem Viertel der Oszillationsperiode wächst der Abstand an.
+Vergleicht man den Pulsabstand, welcher stets zwischen 60 und 80 Femtosekunden liegt, mit dem aus ähnlichen Messungen wie in Abb.\ref{fig:interactionPlane}, ist er  in der Simulation kleiner und ändert sich prozentual stärker. 
+
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
+	\includegraphics[width=0.75\textwidth]{figures/SimRB_4,6W_InteractionPlane_matlab.pdf}
 	\caption{Oszillatorisches Verhalten in der Interaction Plane.}
 	\label{fig:SimRBOszi_IP}
 \end{figure}
 
-\clearpage
+%\clearpage
 \subsection{Fester Abstand und feste Phase}
 Der dritte Fall unterscheidet sich von den bereits diskutierten durch eine höhere Pumpleistung.
 Dies führt dazu, dass die beiden Pulse einen festen Abstand und eine feste Phase, also einen wirklichen Endzustand, annehmen.
 In Abbildung \ref{fig:SimulationFixed} ist dies sowohl im Spektrum als auch im Zeitsignal zu erkennen.
-Durch Auswerten der Simulation (Abb.\ref{fig:SimRBFix}) erkennt man, dass der erste Puls im Endzustand weniger als 1\% stärker als der andere ist.
-Außerdem lässt sich ablesen, dass die relative Phase etwa bei $\pi$ gelockt ist, die beiden Pulse sind also sehr ähnlich, aber gegenphasig.
+Durch Auswerten der Simulation (Abb.\ref{fig:SimRBFix}) erkennt man, dass der erste Puls im Endzustand nur ca. $2.5\permil$ stärker als der andere ist.
+Außerdem lässt sich ablesen, dass die relative Phase etwa bei $\pi$ gelockt ist. 
+Die beiden Pulse sind also sehr ähnlich, aber gegenphasig.
 Die Simulation beginnt mit einem Annäherungsprozess, bei dem 10\,fs\,-\,Stufen beobachtet werden können.
 Diese sind also sehr viel kleiner als die gemessenen Abstandsdifferenzen von ungefähr $60-100\,$fs.
+Der Endabstand beträgt ca. 64\,fs, ist also nur etwa doppelt so groß wie die Pulslänge von 28\,fs (FWHM).
+In den Messungen aus den Abbildungen \ref{fig:165014steps} A+B beträgt der Pulsabstand jedoch ca. 170\,fs bei vergleichbarer Pulslänge.
 \begin{figure}[!htb]
    \centering
    %\captionsetup[subfigure]{labelformat=empty}
@@ -1228,7 +1276,7 @@ Diese sind also sehr viel kleiner als die gemessenen Abstandsdifferenzen von ung
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/SimRBFixed}
+	\includegraphics[width=0.75\textwidth]{figures/SimRBFixed}
 	\caption{Auswertung der Simulation aus Abb.\ref{fig:SimulationFixed}: Nach einer stufenförmigen Annäherung sind die Pulsamplituden, der Pulsabstand sowie die relative Phase schließlich konstant. Die Pulse sind dabei gegenphasig.}
 	%Zeitliche Entwicklung der Pulsamplituden sowie des Pulsabstandes und der relativen Phase.}
 	\label{fig:SimRBFix}
