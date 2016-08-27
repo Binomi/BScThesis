@@ -269,13 +269,13 @@
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
           \dateselectlanguage{ngerman}\setdatebynumber{\the@countbegin}\datedate\ 
           bis \setdatebynumber{\the@countend}\datedate\end{minipage}\\&\\
-        \if@ExtraSupervisor\bfseries Betreuer/in:&
+        \if@ExtraSupervisor\bfseries Betreuer:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
           \@ExtraSupervisor\end{minipage}\\&\\\fi
-        \bfseries Erstgutachter/in:&
+        \bfseries Erstgutachter:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
           \@FirstReferee\end{minipage}\\&\\
-        \bfseries Zweitgutachter/in:&
+        \bfseries Zweitgutachter:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
           \@SecondReferee\end{minipage}\\
       \end{tabular}

@@ -254,8 +254,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-        { ", editors" * }
-        { ", editor" * }
+        { ", Hrsg." * }
+        { ", Hrsg." * }
       if$
     }
   if$
