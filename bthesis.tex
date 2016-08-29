@@ -231,14 +231,14 @@ Aber auch andere transiente Dynamiken lassen sich erstmals beobachten.
 \subsection{Modelocking}
 Damit ein Laser Femtosekundenpulse erzeugen kann, müssen viele Longitudinal-Moden im Resonator in fester Phasenbeziehung zueinander stehen (vgl. Abb.\ref{fig:ML_RP}).
 Dieses \emph{Modelocking} wird dadurch erreicht, dass hohe Intensitäten im Laser nichtlinear verstärkt werden.
-Im hier untersuchten System wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes \cite[S.165]{agrawal_nonlinear_2001}
+Im hier untersuchten System wird das durch den \textbf{Kerr-Effekt} erreicht, also den intensitätsabhängigen Teil des Brechungsindizes $n$ \cite[S.165]{agrawal_nonlinear_2001}
 \begin{align}
 	n(I)=n_0+n_2\cdot I\,.
 	\label{eq:kerr}
 \end{align}
 Typische Lasermedien wie Titan:Saphir besitzen einen nichtlinearen Brechungsindex von $n_2\sim 10^{-19}-10^{-20}\,\si{\meter^2\per\watt}$.
 Für einen messbaren Effekt muss der Puls also intensiver als $10^{15}\,\si{\watt\per\meter^2}$ sein.
-Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan-Saphir-Kristall wie eine Linse.
+Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan:Saphir-Kristall wie eine Linse.
 Die Strahlmitte hat nämlich den längsten optischen Weg, während die äußeren Bereiche schneller durch den Kristall propagieren.
 
 Höhere Intensitäten führen zu einer stärkeren Fokussierung des Strahls in das Laser-Medium.
@@ -289,23 +289,25 @@ Dies kann jedoch nicht im Limit keiner Dispersion gelten, da die Formel eine imm
 \footnotetext{\url{https://en.wikipedia.org/wiki/Kerr-lens_modelocking}, abgerufen am 13.06.2016}
 
 \subsection{Dissipative Solitonen}
-Solitonen sind sehr stabile Pulse.
-Sie beruhen auf einer Balance zwischen Dispersion, welches den Puls länger werden lässt, und einer Nichtlinearität, die den gegenteiligen Effekt hat.
-So stellt sich eine sehr stabile Pulsform ein.
-Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
-Dies wird in Abbildung \ref{fig:DissipativeSoliton} illustriert.
-Sie können auch stabile Multipulsformationen bilden.
-
-\cite{grelu_dissipative_2012}
-\cite{ankiewicz_dissipative_2008}
-
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/dissipativeSoliton2}
 	\caption{Dissipative Solitonen sind im Gleichgewicht zwischen Gewinnen und Verlusten sowie Dispersion und einer Nichtlinearität. Grafik aus \cite{grelu_dissipative_2012} entnommen.}
 	\label{fig:DissipativeSoliton}
 \end{figure}
+
+Solitonen sind sehr stabile Pulse.
+Sie beruhen auf einer Balance zwischen Dispersion, welches den Puls länger werden lässt, und einer Nichtlinearität, die den gegenteiligen Effekt hat.
+So stellt sich eine sehr stabile Pulsform ein.
+Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
+Dies wird in Abbildung \ref{fig:DissipativeSoliton} illustriert.
+Sie können auch stabile Multipulsformationen, sogenannte \textit{Solitonen-Moleküle} bilden.
+
+\cite{grelu_dissipative_2012}
+\cite{ankiewicz_dissipative_2008}
+
+
+
 
 \subsubsection{Faserlaser}
 
@@ -321,6 +323,7 @@ Sie können auch stabile Multipulsformationen bilden.
 \cite{grelu_group_2004}
 \cite{rohrmann_two-soliton_2013}
 
+\clearpage
 \section{Dispersive Fourier-Transformation}
 \cite{goda_dispersive_2013}
 
@@ -353,12 +356,21 @@ Für Fasern wird oft deren \textit{Dispersionsparameter} $D_\lambda$ angegeben, 
 mit der Group Velocity Dispersion verknüpft ist.
 Typischerweise wird sie in $\si[per-mode=fraction]{\pico\second\per\nano\meter\per\kilo\meter}$ angegeben.
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{figures/DFTSkizze}
+	\caption{Skizze der dispersiven Fouriertransformation, aus \cite{herink_resolving_2016} entnommen.}
+	\label{fig:DFTskizze}
+\end{figure}
+
 \subsection{Spektrale Interferenz und Doppelpulse}
 Das Spektrum zweier zueinander kohärenter Pulse mit einem bestimmten zeitlichen Abstand weist eine Modulation auf, die invers zum Abstand ist.
 Dies lässt sich damit erklären, dass bestimmte Wellenlängen in Phase, andere aber außer Phase sind.
 Die genaue Lage der konstruktiv interferierenden Wellenlängen bezüglich der Einhüllenden des Spektrums wird durch die relative Phase zwischen beiden Pulsen festgelegt.
+Die beiden Pulse interferieren also spektral.
 Mathematisch kann dies über folgende Eigenschaft begründet werden:
 Die Fouriertransformation des Spektrums ist die Autokorrelation des zeitlichen Signals.
+Da in der Autokorrelation zwei weiterere Peaks beim positiven/negativen Pulsabstand auftreten, muss dieser invers im Spektrum kodiert sein.
 In Abbildung \ref{fig:PulsBsp} wird der Zusammenhang zwischen zeitlichem Signal, zugehörigem Spektrum sowie Autokorrelation eines Pulspaars schematisch dargestellt.
 
 \begin{figure}[!htb]
@@ -367,7 +379,7 @@ In Abbildung \ref{fig:PulsBsp} wird der Zusammenhang zwischen zeitlichem Signal,
 	\caption{Beispielhafte Doppelpulse: zeitlicher Intensitätsverlauf, Spektrum und Autokorrelation.}
 	\label{fig:PulsBsp}
 \end{figure}
-
+\clearpage
 \section{Simulation}
 \label{sec:SimTheo}
 Die Effekte der oben beschriebenen optischen Elemente auf das elektrische Feld im Laseresonator werden im Rahmen der Mastergleichung \cite{haus_mode-locking_2000} mathematisch beschrieben.
@@ -377,55 +389,115 @@ Im Rahmen dieser Arbeit wird es jedoch um eine explizitere Berücksichtigung der
 
 
 \subsection{Pulsformende Gleichung}
-Es werden zwei Zeitachsen genutzt: die Zeit $t$ während eines Laserumlaufes sowie die Laserumlaufskoordinate $z$.
+Für die Zeitentwicklung werden zwei Zeitachsen genutzt: die Zeit $t$ während eines Laserumlaufes sowie die Laserumlaufskoordinate $z$.
 Eine komplexe Funktion $A(z,t)$ repräsentiert dabei die Einhüllende des Pulses bzw. der Pulse. 
+Im Folgenden soll erläutert werden, welche Effekte auf die Pulsform $A(z,t)$ wirken:
 
+Neben linearer Verstärkung $\alpha$ sowie Verlusten $\rho$ beeinflusst die Kerr-Linse noch die Pulsamplitude.
+Diese wird als schneller sättigbarer Absorber moduliert, dh. höhere Intensitäten erfahren weniger Verluste.
+Mit zwei Parametern lässt sich das Verhalten dieses instantanen Absorbers kontrollieren: 
+Die Modulationstiefe $\gamma$ gibt den Verlust an, den ein kleines Eingangssignal erfahren würde, während sich die Verluste bei der Sättigungsintensität $1/\sigma$ halbieren.
+Zugleich sorgt die Kerr-Linse für einen intensitätsabhängigen Phasenschub, die Selbstphasenmodulation $\beta$ gibt die Stärke dieses Effekts an.
+Das Spektrum des Pulses wird auf durch das spektrale Verstärkungsprofil beeinflusst.
+Dabei wird angenommen, dass dieses Profil gaußförmig ist und eine Breite von $1/t_f$ besitzt.
+Außerdem verursacht die Dispersion $D$ einen frequenzabhängigen Phasenschub.\\
+Fasst man alles zu einer Differential-Gleichung zusammen, ergibt sich
 \begin{align}
-	\frac{\partial A(z,t)}{\partial z}=\left[\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}+(t_f^2+iD)\frac{\partial^2}{\partial t^2}-i\beta |A(z,t)|^2\right]A(z,t)
+	\frac{\partial A(z,t)}{\partial z}=\left[\alpha-\rho-\frac{\gamma}{1+\sigma|A(z,t)|^2}+(t_f^2+iD)\frac{\partial^2}{\partial t^2}-i\beta |A(z,t)|^2\right]A(z,t) \,.
 	\label{eq:ginzburgLandau}
 \end{align}
-Hierbei ist $\alpha$ die (zeitabhängige) lineare Verstärkung, $\rho$ der Verlust, $\gamma$ die Modulationstiefe des sättigbaren Absorbers, $\sigma$ die inverse Sättigungs-Intensität, $t_f$ die inverse Bandbreite der spektralen Verstärkung, $D$ die Dispersion und $\beta$ die Selbstphasenmodulation.
 
 In der Simulation wird diese Gleichung numerisch per Split-Step-Verfahren gelöst.
 Zeitliche Manipulationen werden im Realraum durchgeführt, während Dispersion und spektrale Verstärkung im Fourierraum angewendet werden.
 
 \subsection{Gaindynamik}
-Der lineare Gain $\alpha$ ist zeitabhängig, da er proportional zur Besetzungsinversion im Laserkristall ist.
+Die lineare Verstärkung $\alpha$ ist zeitabhängig, da sie proportional zur Besetzungsinversion im Laserkristall ist.
 Es gibt drei Terme, die diese ändern:
-Das Pumpen, der Abbau durch stimulierte sowie durch spontane Emission, wobei die Änderung durch die beiden letzteren proportional zur aktuellen Besetzungsinversion sind, während die Änderung durch Pumpen proportional zur Differenz zwischen maximal erreichbarer Besetzungsversion $\alpha_\text{max}$ und dem aktuellen Wert ist.
-
+Das Pumpen, der Abbau durch stimulierte sowie durch spontane Emission.
 %\begin{align*}
 %	\frac{\dif \alpha(t)}{\dif t}_\text{pump}&\propto \alpha_\text{max}-\alpha(t)\\
 %	\frac{\dif \alpha(t)}{\dif t}_\text{stimuliert}&\propto \alpha(t)\\
 %\end{align*}
-Dies lässt sich mit einem quasi 2-Level-System modellieren:
+Mit einem quasi 2-Level-System lässt sich dies modellieren:
 \begin{align}
 	\frac{\dif \alpha(t)}{\dif t}=\frac{I_p\sigma_a}{h\nu_a}(\alpha_\text{max}-\alpha(t))-\frac{\sigma_g|A(z,t)|^2}{h\nu}\alpha(t)-\frac{\alpha(t)}{T_r}\,,
 \end{align}
 wobei $I_p$ die Pumpintensität, $\sigma_a$ der Absorptionsquerschnitt bei der Pumpfrequenz $\nu_a$ ist.
 Weiter ist $\sigma_g$ der Verstärkungsquerschnitt bei der Laserfrequenz $\nu$ und $T_r$ die Lebensdauer des oberen Laserniveaus.
 
-Ist das Pulspaar viel kürzer als die Resonatorlänge $T_\text{cav}$ und die Änderung der Verstärkung $\alpha$ während der Pulse vernachlässigbar, kann die obige Gleichung mit der Umlaufzeit $T_\text{cav}$ multipliziert und anschließend integriert werden:
+Ist das Pulspaar viel kürzer als die Resonatorlänge $T_\text{cav}$ und die Änderung der Verstärkung $\alpha$ während der Pulse vernachlässigbar, kann die obige Gleichung mit der Umlaufzeit $T_\text{cav}$ multipliziert und anschließend integriert werden.
+Der Übersichtlichkeit halber werden neue einheitenlose Größen definiert.
+So gibt $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ die Pumpstärke an, $E_s=h\nu/\sigma_g$ ist die Sättigungsenergie des Kristalls und $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$ die Gesamtenergie pro Laserumlauf.
+Es ergibt sich also:
 \begin{align}
 	\alpha(z)&=\alpha(z-1)\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right) \notag \\
 	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]\,.
 \end{align}
-Hier ist $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ und $E_s=h\nu/\sigma_g$ sowie $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$.
 
 Der erste Puls eines Pulspaars baut jedoch die Besetzungsinversion zumindest teilweise ab, während Pumpen und spontane Emission auf dieser Zeitskala vernachlässigbar sind.
 Die Berücksichtigung dieses Effekts stellt eine Erweiterung des Modells von \cite{kalashnikov_multipulse_2003} dar.
-In erster Näherung ist
+In erster Näherung verringert stimulierte Emission den linearen Gain um einen Korrekturterm
 \begin{align}
-	\alpha_\text{corr}(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2
+	\alpha_\text{corr}(z,t)&=-\frac{\alpha(z)}{E_s}\int_{t_1}^{t} \dif t'\, |A(z,t')|^2\,.
 \end{align}
-
+So ändert sich der Gain auch während eines Roundtrips im Simulationsfenster:
 \begin{align}
-	\alpha(z,t)&=\alpha(z)+\alpha_\text{corr}(z,t)
+	\alpha(z,t)&=\alpha(z)+\alpha_\text{corr}(z,t)\,.
 \end{align}
-So ändert sich der Gain auch während eines Roundtrips im Simulationsfenster.
-Dies hat zur Folge, dass für zwei nicht-interagierende Pulse die Phasendifferenz linear durchläuft, denn der hintere ist immer ein wenig schwächer als der vordere.
+Dies hat zur Folge, dass der hintere Puls eines Pulspaares meistens etwas schwächer ist als der erste.
 
 \subsection{Experimentelle Parameter}
+Einige der zuvor beschriebenen Parameter sind Materialkonstanten für Titan:Saphir.
+Diese werden in Tabelle \ref{tab:TiSaProp} aufgeführt.
+Andere werden durch den Laserresonator determiniert (Tabelle \ref{tab:RB_Prop}).
+So verbleiben nur wenige Parameter, die experimentell kontrolliert werden können.
+Dazu zählt die Sättigungsintensität und die Modulationstiefe des sättigbaren Absorbers.
+Durch Justage des Lasers (Kristallposition sowie Spiegelpositionen) wird beides gleichzeitig geändert.
+Außerdem können sie nicht direkt abgelesen werden und es ist sehr schwierig, diese im Experiment zu kontrollieren.
+Dies bedeutet auch, dass beide Werte für die Simulation geschätzt bzw. getestet werden müssen.
+Als weiterer Parameter kann die Dispersion in gewissen Maßen geregelt werden.
+Der am besten zu kontrollierende Parameter ist jedoch die Pumpleistung.
+
+In Abschnitt \ref{sec:SimPrax} werden drei verschiedene simulierte Dynamiken gezeigt.
+Dort wird deutlich, dass auch die Anfangsbedingungen bei der folgenden Entwicklung eine große Rolle spielen.
+
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		Größe & Wert\\
+		\hline
+		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
+		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
+		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
+		Emissionsquerschnitt & $\sigma_g=41\,\si{\pico\meter^2}$\\
+		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\
+		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
+		Maximale Verstärkung & $\alpha_\text{max}=0.33$\\
+		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
+		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
+		\hline
+	\end{tabular}
+	\caption{Eigenschaften eines Titan:Saphir-Kristalls.}
+	\label{tab:TiSaProp}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		Größe & Wert\\
+		\hline
+		Kristalllänge & $x=2\,$mm\\
+		Verluste & $\rho=3.3\%$\\
+		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
+		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
+		Pumpleistung & $P_\text{Pump}=4.6\,$W (typ.)\\
+		\hline
+	\end{tabular}
+	\caption{Eigenschaften des Laseroszillators.}
+	\label{tab:RB_Prop}
+\end{table}
 
 \chapter{Experimentelle Vorgehensweise}
 \section{Laserquelle Femtolasers Rainbow}
@@ -603,6 +675,7 @@ Dies ist kompatibel zur Kalibration.
 In Abbildung \ref{fig:PDBandbreiteAusw} wird die Fouriertransformation ausgewertet.
 Dazu wird die Summe der beiden Nebenmaxima mit der des Hauptmaximums verglichen und gegen die Lage der Nebenmaxima, also der zugehörigen Frequenz, aufgetragen.
 Wie schon in der Fouriertransformation ist ein Unterschied zwischen negativen und positiven Armlängendifferenzen zu erkennen.
+Dies kann dem verwendeten Interferometer zugeschrieben werden und soll im folgenden Absatz erklärt werden.
 \begin{figure}[!htb]
    \centering
    \subfloat[Spektrum als Signal nach der Faser in Abhängigkeit der Armlängendifferenz.]
@@ -616,7 +689,7 @@ Wie schon in der Fouriertransformation ist ein Unterschied zwischen negativen un
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/PDBandwidth}
+	\includegraphics[width=0.65\textwidth]{figures/PDBandwidth}
 	\caption{Relative Höhe der Nebenmaxima in Abhängigkeit der jeweiligen Modulationsfrequenz aus Abb.\ref{fig:PDBandbreite_FFT}.}
 	\label{fig:PDBandbreiteAusw}
 \end{figure}
@@ -878,6 +951,7 @@ In beiden Fällen ist beim Annähern eine Interaktion bzgl. der relativen Phase 
 \end{figure}
 
 \subsection{Durchlaufende Pulse (niedrige Pumpleistung)}
+\label{sec:running}
 In diesem Zustand ist die Pumpleistung so gering, dass zwar zwei Pulse durch den Laser laufen, diese aber einen großen Intensitätsunterschied haben, so dass sie unterschiedliche optische Weglängen haben und sich so auf einer 100\,ms-Skala gegeneinander verschieben.
 In Abb. \ref{fig:rBF441} ist eine \textit{FastFrame}-Aufnahme dieses Betriebs zu sehen.
 Dabei wird auf den stärkeren Puls getriggert.
@@ -911,6 +985,7 @@ In diesem Abschnitt wird jedoch das Verhalten von 170\,fs entfernten Doppelpulse
 Darüber hinaus stehen Tripletts im Fokus.
 
 \subsection{Stufenweise Phasenentwicklung gebundener Doppelpulse}
+\label{sec:steps}
 Hier beginnt die Messreihe mit Doppelpulsen, deren Phase und relativer Abstand fest sind (Abb. \ref{fig:165014steps} A+B).
 Der Abstand liegt etwa bei 170 \,fs.
 Dann wird die Pumpleistung verringert.
@@ -1176,6 +1251,7 @@ Der Abstand stabilisiert sich.
 
 \clearpage
 \subsection{Transiente Doppelpulse}
+\label{sec:startTransient}
 Der hier vorgestellte Fall kurzlebiger Doppelpulse ist sehr selten, so konnte er bisher nur zweimal beobachtet werden.
 Der Resonator war dabei auf den Einzelpulsbetrieb justiert.
 In Abbildung \ref{fig:TransientDoppel} ist zu erkennen, dass sich der entstehende Puls aufspaltet und die beiden resultierenden Pulse über die gesamte Lebensdauer des Doppelpulszustandes einen konstanten Abstand von etwa 265\,fs aufweisen.
@@ -1217,6 +1293,7 @@ Der überlebende Puls kann jetzt spektral breiter und energiereicher werden.
 
 \clearpage
 \section{Automodulationen}
+\label{sec:automod}
 In diesem Abschnitt wird ein weiterer interessanter Betriebsmodus präsentiert.
 Dazu wird zuerst ein stabiler modengekoppelter Femtosekundenpuls erzeugt.
 Danach wird der Abstand der beiden Fokussierspiegel (Stabilität) verringert, sodass die Verluste im Resonator größer werden.
@@ -1236,85 +1313,48 @@ Sogar drei Pulse entstehen manchmal.
 
 
 \section{Simulation}
+\label{sec:SimPrax}
 Einige der oben beschriebenen Vorgänge können auch simuliert werden.
 Dazu wird das Modell aus Abschnitt \ref{sec:SimTheo} verwendet.
 Im folgenden werden 3 verschiedene Dynamiken präsentiert, die sich nur durch kleine Änderungen der Simulationsparameter bzw. Anfangsbedingungen ergeben.
-Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam} wieder.
+Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam2} und \ref{tab:SimParamStart} wieder.
 Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs auf.
-\begin{table}[!htb]
-	\centering
-	\begin{tabular}{|c|l|}
-		\hline
-		Größe & Wert\\
-		\hline
-		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
-		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
-		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
-		Kristalllänge & $x=2\,$mm\\
-		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
-		Selbstamplitudenmodulation & $\sigma=60$\\
-		Modulationstiefe des sättigbaren Absorbers & $\gamma=0.24$\\
-		Verluste & $\rho=3.3\%$\\
-		Dispersion & $D_0=-50\,\si{\femto\second^2}$\\
-		Wirkungsquerschnitt Emission & $\sigma_g=41\,\si{\pico\meter^2}$\\
-		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\	
-		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
-		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
-		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
-		maximale Verstärkung & $\alpha_\text{max}=0.33$\\
-		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
-		Pumpleistung & $P_\text{Pump}=4.6\,$W\\
-		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
-		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
-		& $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
-		\hline		
-		Pulsform & 2 Gaußförmige Pulse\\
-		Pulsamplitude & 1\\
-		Pulslänge & 25\,fs\quad @ 1/e der Pulsamplitude\\
-		Pulsabstand & $\tau_0=100,200\,$fs\\
-		\hline
-	\end{tabular}
-	\caption{Simulationsparameter.}
-	\label{tab:SimParam}
-\end{table}
-
-\begin{table}[!htb]
-	\centering
-	\begin{tabular}{|c|l|}
-		\hline
-		Größe & Wert\\
-		\hline
-		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
-		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
-		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
-		Emissionsquerschnitt & $\sigma_g=41\,\si{\pico\meter^2}$\\
-		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\
-		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
-		Maximale Verstärkung & $\alpha_\text{max}=0.33$\\
-		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
-		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
-		\hline
-	\end{tabular}
-	\caption{Eigenschaften eines Titan:Saphir-Kristalls.}
-	\label{tab:TiSaProp}
-\end{table}
-
-\begin{table}[!htb]
-	\centering
-	\begin{tabular}{|c|l|}
-		\hline
-		Größe & Wert\\
-		\hline
-		Kristalllänge & $x=2\,$mm\\
-		Verluste & $\rho=3.3\%$\\
-		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
-		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
-		Pumpleistung & $P_\text{Pump}=4.6\,$W (typ.)\\
-		\hline
-	\end{tabular}
-	\caption{Eigenschaften des Laseroszillators.}
-	\label{tab:RB_Prop}
-\end{table}
+%\begin{table}[!htb]
+%	\centering
+%	\begin{tabular}{|c|l|}
+%		\hline
+%		Größe & Wert\\
+%		\hline
+%		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
+%		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
+%		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
+%		Kristalllänge & $x=2\,$mm\\
+%		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
+%		Selbstamplitudenmodulation & $\sigma=60$\\
+%		Modulationstiefe des sättigbaren Absorbers & $\gamma=0.24$\\
+%		Verluste & $\rho=3.3\%$\\
+%		Dispersion & $D_0=-50\,\si{\femto\second^2}$\\
+%		Wirkungsquerschnitt Emission & $\sigma_g=41\,\si{\pico\meter^2}$\\
+%		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\	
+%		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
+%		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
+%		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
+%		maximale Verstärkung & $\alpha_\text{max}=0.33$\\
+%		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
+%		Pumpleistung & $P_\text{Pump}=4.6\,$W\\
+%		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
+%		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
+%		& $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
+%		\hline		
+%		Pulsform & 2 Gaußförmige Pulse\\
+%		Pulsamplitude & 1\\
+%		Pulslänge & 25\,fs\quad @ 1/e der Pulsamplitude\\
+%		Pulsabstand & $\tau_0=100,200\,$fs\\
+%		\hline
+%	\end{tabular}
+%	\caption{Simulationsparameter.}
+%	\label{tab:SimParam}
+%\end{table}
 
 \begin{table}[!htb]
 	\centering
@@ -1468,44 +1508,47 @@ In den Messungen aus den Abbildungen \ref{fig:165014steps} A+B beträgt der Puls
 	\label{fig:SimRBFix}
 \end{figure}
 
-\chapter{Diskussion und Ausblick}
-Mit Echtzeit-Methoden  konnten in dieser Arbeit bisher verborgene Dynamiken in Ultrakurzpuls-Lasern enthüllt werden.
-Dazu zählen unter anderem Phasen- und Abstandsentwicklungen von Solitonen-Molekülen.
+\chapter{Zusammenfassung und Ausblick}
+Mit Echtzeit-Methoden  konnten in dieser Arbeit eine Vielzahl bisher verborgener Dynamiken in Ultrakurzpuls-Lasern enthüllt werden.
+Dazu zählen unter anderem Phasen- und Abstandsentwicklungen von \textbf{Solitonen-Molekülen}.
 Für diese stabilen Doppelpuls-Konfigurationen konnten zuvor nur deren diskrete Pulsabstände beobachtet werden.
-Hier konnte für den kleinsten dieser Abstände ein oszillatorisches Verhalten detektiert werden, welches stark von der Pumpleistung beeinflusst wird.
-Außerdem wurde für den nächstgrößeren Abstand beobachtet, wie anfangs phasengelockte Pulse durch Reduktion der Pumpleistung zunächst eine stufenförmige Zunahme der relativen Phase erfahren, bis diese schließlich kontinuierlich zunimmt.
-Diese beiden Dynamiken können nur schwer mit herkömmlichen Methoden gemessen werden, da diese in der Mittlung über viele Laserumläufe verschwinden.
+Hier konnte für den kleinsten dieser Abstände ein oszillatorisches Verhalten detektiert werden, welches stark von der Pumpleistung beeinflusst wird (vgl. Abschnitt \ref{sec:oscillatingSolitons}).
+Außerdem wurde für den nächstgrößeren Abstand beobachtet, wie anfangs phasengelockte Pulse durch Reduktion der Pumpleistung zunächst eine stufenförmige Zunahme der relativen Phase erfahren, bis diese schließlich kontinuierlich zunimmt (vgl. Abschnitt \ref{sec:steps}).
+Diese beiden faszinierenden Dynamiken können nur schwer mit herkömmlichen Methoden gemessen werden, da diese in der Mittlung über viele Laserumläufe verschwinden.
 
+Außerdem wurde mit den \textbf{wiederkehrend kollidierenden Pulsen} (vgl. Abschnitt \ref{sec:bounce}) ein neuer Zustand beobachtet, der sich nur mit Echtzeit-Methoden messen lässt.
+So lässt das gemittelte Spektrum keinerlei Modulationen erkennen, und auch durch eine mittelnde Messung der Autokorrelation hätte dieser Zustand nicht entdeckt werden können, da der Pulsabstand zu stark variiert.
+Mit der Pumpleistung lässt sich grob kontrollieren, wie weit sich die beiden Pulse entfernen.
+Die Vorgeschichte beeinflusst jedoch auch, wann die Abstandsverringerung eintritt.
 
-Außerdem wurde mit den wiederkehrend kollidierenden Pulsen (vgl. Abschnitt \ref{sec:bounce}) ein neuer Zustand beobachtet, der sich überhaupt nur mit Echtzeit-Methoden messen lässt.
-Der Zustand zweier Einzelpulse, die nahezu unabhängig voneinander durch den Resonator laufen, lässt sich durch unterschiedliche Pulsamplituden erklären, wurde jedoch zuvor -- nach bestem Wissen und Gewissen des Autors -- noch nie beschrieben.
+In Abschnitt \ref{sec:running} wurde hingegen ein Zustand entdeckt, der auch mit Photodioden beobachtet werden hätte können, welche für die Analyse und Justage gepulster Oszillatoren verwendet werden.
+Dort propagieren zwei \textbf{Einzelpulse mit verschiedenen Geschwindigkeiten} durch den Resonator.
+Dies lässt sich durch unterschiedliche Pulsamplituden erklären, wurde jedoch zuvor -- nach bestem Wissen und Gewissen des Autors -- noch nie beschrieben.
 
+Die Stärke von Echtzeit-Methoden liegt vor allem im Enthüllen von \textbf{transienten Dynamiken}, welche hier z.B. während der Pulsentstehung (Abschnitt \ref{sec:startTransient}) sowie durch Automodulationen der Laserleistung (Abschnitt \ref{sec:automod}) beobachtet wurden.
+Durch große Messkampagnen wie das oftmalige Starten in den Pulsbetrieb unter immer den gleichen Bedingungen könnten diese seltenen Ereignisse besser verstanden werden.
+
+Viele der beobachteten Dynamiken lassen sich mit dem \textbf{Kerr-Effekt} und der daraus resultierenden, von der Intensität abhängigen Pulsgeschwindigkeit erklären.
 Trotzdem sind noch viele Fragen offen.
 Für ein besseres Verständnis der verschiedenen Regime ist es nützlich, wenn die Simulation in Einklang mit den Messdaten gebracht werden kann.
-Zudem sind weitere Dynamiken nicht undenkbar.
-
 In den nächsten beiden Abschnitten werden zwei weitere wichtige Fragen diskutiert, die sich vor allem mit dieser Echtzeit-Methode beantworten lassen:
 Woher stammen die beobachteten Multipulse? Und was passiert, wenn sich zwei Pulse im Kristall begegnen?
-
-\section{Ursprung der Doppelpulse}
-In Abschnitt \ref{sec:start} wurden die beiden Prozesse vorgestellt, die zur Bildung eines Pulspaares führen:
-Aufspalten eines Pulses sowie das getrennte Starten eines zweiten Pulses.
-Welche Parameter legen nun aber den vorherrschenden Prozess fest?
-In den Messungen konnte das Aufspalten nur selten beobachtet werden, bei bestimmten Justagen schien es unmöglich.
 
 \section{Begegnung von Pulsen im Kristall}
 \label{sec:cpml}
 Während der Messungen konnte das sogennante \textit{Colliding Pulse Modelocking} beobachtet werden.
-Dabei laufen zwei Pulse im Laser umher, die sich im Laserkristall treffen und so den Kerr-Effekt beider Pulse sehen, sodass beide eine höhere Verstärkung erfahren.
+Dabei propagieren zwei Pulse durch den Resoantor, die sich im Laserkristall treffen und so den gemeinsamen Kerr-Effekt ausnutzen können, sodass beide eine höhere Verstärkung erfahren.
 Dieser Zustand ist sehr stabil und wurde zuerst von \cite{lai_multiple_1997} in einem Ti:Sa-Laser beschrieben.
-Interessant ist aber der Prozess bevor dieser stabile Zustand erreicht wird.
+Interessant ist aber der Prozess, bevor dieser stabile Zustand erreicht wird.
 Typischerweise modelockt eine Fluktuation, während die anderen Fluktuationen aber nicht völlig aussterben.
-Eine weitere Fluktuation wächst nun an, sodass auch diese modelockt.
+Eine weitere Fluktuation wächst nun an, sodass auch diese modelockt (vgl. Abb.\ref{fig:StartGetrennt}).
 Daraufhin bewegen sich die beiden Pulse relativ zueinander, da sie nicht gleich stark sind und aufgrund des Kerr-Effektes unterschiedliche optische Weglängen im Laser haben.
 Dies geschieht auf einer relativ langen Zeitskala (Größenordnung $~100\,$ms), ist also mit einer normalen Messung (nur 4\,ms) nicht aufzunehmen.
 Dazu müsste in den \textit{FastFrame}-Mode gewechselt werden, mit dem jedoch nicht jeder Puls aufgenommen werden kann.
 Außerdem ist bei solch großen Pulsabständen das undispergierte Signal das aussagekräftigere.
-Die Genauigkeit liegt dort aber nur bei ca. $10\,$ps.
+Die Genauigkeit liegt dort aber nur bei ca. $40\,$ps.
+Durch Mittlung über mehrere Umläufe kann dies erhöht werden.
+Dabei verschwinden jedoch schnelle Dynamiken.
 
 Interessant zu beobachten wäre nun, wie beide Pulse ihre Relativbewegung beenden.
 Gleichen sich beide Pulse nur in ihrer Intensität an, dass sie beide genau dann gleich stark sind, wenn sie den perfekten Abstand zueinander haben?
@@ -1515,6 +1558,18 @@ Ist dieser Abstand stabil oder gibt es auch später noch Oszillationen?
 Um all diese Fragen zu beantworten, könnte man den Strahl aufspalten und den einen Teil so verzögern, dass der erste Puls in diesem Arm zeitgleich mit dem zweiten Puls im kürzeren Abschnitt überlappt.
 Dann ist die Abstandsinformation auch wieder im Spektrum kodiert und der Abstand zwischen beiden Pulsen kann genau gemessen werden.
 
+\section{Ursprung der Doppelpulse}
+In Abschnitt \ref{sec:start} wurden die beiden Prozesse vorgestellt, die zur Bildung eines Pulspaares führen:
+Aufspalten eines Pulses sowie das getrennte Starten eines zweiten Pulses.
+Welche Parameter legen nun aber den vorherrschenden Prozess fest?
+In den Messungen konnte das Aufspalten nur selten beobachtet werden, bei bestimmten Justagen schien es unmöglich.
+Dies deutet darauf hin, dass die Selbstamplitudenmodulation gering ist und der Puls in seiner Entstehungsphase nur langsam kürzer und intensiver wird.
+Das Ziel weiterer Messungen muss es also sein, diese Selbstamplitudenmodulation auch experimentell kontrollieren zu können.
+Es wird vermutet, dass dieser Parameter auch die beobachteten Dynamiken der Solitonen-Moleküle beeinflusst, sodass weitere Zustände enthüllt werden könnten.
+
+Es konnte beobachtet werden, dass im Entstehungsprozess von Femtosekundenpulsen auch die Begegnung der Fluktuationen bzw. Pulse im Kristall eine große Rolle spielt.
+So könnte ein bereits modengekoppelter Puls eine Pikosekunden-Fluktuation beim Anwachsen unterstützen, statt sich selbst aufzuspalten.
+Die genaue Analyse von verschiedenen Entstehungsprozessen rückt somit in den Fokus weiterer Untersuchungen.
 
 \appendix
 \chapter{Femtolasers Rainbow CEP HP}
