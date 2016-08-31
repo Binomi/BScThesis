@@ -149,7 +149,7 @@
     Darüberhinaus erkläre ich, dass diese Abschlussarbeit nicht, auch nicht
     auszugsweise, im Rahmen einer nichtbestandenen Prüfung an dieser oder
     einer anderen Hochschule eingereicht wurde.\\[1em]
-    &\begin{center}Göttingen, den \today\end{center}\\[1.5cm]
+    &\begin{center}Göttingen, den 29. August 2016\end{center}\\[1.5cm]
     &\begin{center}(\@ThesisAuthor)\end{center}
     %\begin{minipage}[t]{0.76\textwidth-4\tabcolsep}
     %  \@author\end{minipage}

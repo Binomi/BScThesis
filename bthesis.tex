@@ -113,27 +113,37 @@
 \cleardoublepage
 %% Zusammenfassung. Falls nicht gewuenscht, bitte auskommentieren.
 \begin{abstract}
-In dieser Arbeit wird das Spektrum eines 80\,MHz-Ti:Sa-Oszillators in Echtzeit gemessen.
+In dieser Arbeit werden Spektren eines 80\,MHz-Ti:Sa-Oszillators in Echtzeit gemessen.
 Dazu wird mit Hilfe einer dispersiven Faser spektrale Information in zeitliche Information übersetzt, die dann mit Hochgeschwindigkeitselektronik aufgezeichnet wird.
-Dies wird genutzt, um Multipuls-Dynamiken zu enthüllen, die sich bei bestimmten Justagen des Laserresonators einstellen.
+Hiermit gelingt es uns, Multipuls-Dynamiken zu enthüllen, die sich bei bestimmten Justagen des Laserresonators einstellen.
 Vor allem Doppelpulse stehen hierbei im Fokus.
 Aus dem zugehörigen Spektrum lässt sich der Abstand sowie die relative Phase beider Pulse bestimmen.
 So werden unterschiedlichste Dynamiken beobachtet: 
-Abstand und relative Phase oszillieren, die relative Phase wächst stufenweise an, die Pulse kollidieren unentwegt, aber auch unterschiedlich schnelle Pulse, die annähernd unabhängig durch den Resonator laufen.
+Abstand und relative Phase oszillieren, die relative Phase wächst stufenweise an, die Pulse kollidieren kontinuierlich, wir beobachten aber auch Pulse mit unterschiedlicher Geschwindigkeit, die annähernd unabhängig durch den Resonator propagieren.
 Darüber hinaus werden diskrete Werte für stabile Pulsabstände identifiziert.
-Mit Simulationen werden einige Dynamiken nachvollzogen.
+Die Messmethode bietet auch die Möglichkeit zur Beobachtung von transienten Vorgängen wie der Entstehung von Femtosekundenpuls-Paaren.
+Mit Simulationen können verschiedene experimentelle Beobachtungen nachvollzogen werden.
 %% Optional: Stichwoerter. Wenn nicht gewuenscht, koennen die beiden
 %% folgenden Zeilen geloescht werden
   \bigskip\par
-  \textbf{Stichwörter:} Physik, Bachelorarbeit
+  \textbf{Stichwörter:} Physik, Bachelorarbeit, Echtzeitspektoskopie, Optische Solitonen, Multipulse
 \end{abstract}
 %% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
 \begin{otherlanguage}{english}
 \begin{abstract}
-  Here the key results of the thesis can be presented in about
-  half a page.
+  In this paper the spectra of an 80\,MHz Ti:sapph oscillators are measured in real-time.
+  For that purpose, a dispersive fiber is used which maps spectral information to temporal information.
+  The latter can be recorded with high-speed electronics.
+  Hereby we can reveal multipulse dynamics which arise at certain adjustments of the laser cavity.
+  Especially double pulses are spotlighted.
+  Their spectrum contains information about the pulse spacing and relative phase.
+  Various types of dynamics are observed:
+  spacing and relative phase are oscillating, the relative phase increases stepwise, periodically colliding pulses and pulses with different velocities propagating almost independently through the cavity.
+  Beyond, we notice discrete values for stable pulse spacings.
+  The used measurement technique allows observations of transient processes like the build-up of a femtosecond pulse pair.
+  Some of the experimental observations are related to simulations.
   \bigskip\par
-  \textbf{Keywords:} Physics, Bachelor thesis
+  \textbf{Keywords:} Physics, Bachelor thesis, real-time spectroscopy, optical solitons, multipulses
 \end{abstract}
 \end{otherlanguage}
 
@@ -197,8 +207,9 @@ Damit dies aber nicht geschieht und sich eine stabile Pulsform ausbildet, muss e
 Die sich ausbildende Pulsformen werden \textbf{Solitonen} genannt.
 Ein Titan:Saphir-Laser eignet sich also hervorragend, um deren Dynamik und Interaktionsmechanismen zu studieren.
 
-Dazu müssen aber mehrerer Solitonen im Laser-Resonator umherlaufen.
-Dieser Zustand wird typischerweise in der Entwicklung von Ultrakurzpulslasern vermieden, da die dabei entstehenden Pulse länger sind als der mögliche Einzelpuls, durch eine höhere Pumpleistung sowie eine leichte Dejustage vom Einzelpulszustand lassen sich solche \textbf{Multipuls-Zustände} jedoch erzielen.
+Dazu müssen aber mehrere Solitonen durch den Laser-Resonator propagieren.
+Dieser Zustand wird typischerweise in der Entwicklung von Ultrakurzpulslasern vermieden, da die dabei entstehenden Pulse länger sind als der mögliche Einzelpuls.
+Durch eine höhere Pumpleistung sowie eine leichte Dejustage vom Einzelpulszustand lassen sich solche \textbf{Multipuls-Zustände} jedoch erzielen.
 Davon berichtete zuerst \cite{lai_multiple_1997}.
 Wie auch in den meisten späteren Beobachtungen wurde dort jedoch über viele Laserumläufe gemittelt.
 Typische Ti:Sa-Oszillatoren haben nämlich eine Pulswiederholrate von etwa 80\,MHz.
@@ -217,7 +228,7 @@ Auch mit dieser Methode kann der Abstand der Pulse nicht in Echtzeit bestimmt we
 Mit Hilfe dieser beiden Techniken konnten aber schon eine Reihe interessanter Beobachtungen gemacht werden:
 So haben \cite{wang_pulse_1997} und \cite{kitano_stable_1998} diskrete Pulsabstände  gemessen.
 
-Dynamisches Verhalten, welches sich maximal auf einer Mikrosekunden-Skala abspielt, konnte allerdings noch nicht beobachtet werden, während einige Simulationen auf oszillatorische Zustände, etc. hinweisen.
+Dynamisches Verhalten, welches sich auf einer Mikrosekunden-Skala abspielt, konnte allerdings noch nicht beobachtet werden, während einige Simulationen auf oszillatorische Zustände, etc. hinweisen.
 Mit der hier genutzten Methode der \textit{dispersiven Fouriertransformation} sowie Hochgeschwindigkeitselektronik bestehend aus schnellen Photodetektoren und den schnellsten, kommerziell erhältlichen AD-Wandlern ist es nun möglich, das Spektrum jedes Pulspaares aufzunehmen und daraus den Abstand sowie die Phase zwischen den beiden Pulsen zu bestimmen.
 Dazu wird die spektrale Information durch eine \textbf{dispersive Faser} in zeitliche Information übersetzt.
 Dieses Verfahren eröffnet ganz neue Einblicke in die Welt der Laserdynamik.
@@ -237,7 +248,7 @@ Im hier untersuchten System wird das durch den \textbf{Kerr-Effekt} erreicht, al
 	\label{eq:kerr}
 \end{align}
 Typische Lasermedien wie Titan:Saphir besitzen einen nichtlinearen Brechungsindex von $n_2\sim 10^{-19}-10^{-20}\,\si{\meter^2\per\watt}$.
-Für einen messbaren Effekt muss der Puls also intensiver als $10^{15}\,\si{\watt\per\meter^2}$ sein.
+Für einen messbaren Effekt muss der Puls somit intensiver als $10^{15}\,\si{\watt\per\meter^2}$ sein.
 Da der Laserstrahl ein gaussförmiges Modenprofil hat, also exponentiell von der Strahlmitte in der Intensität abfällt, wirkt der Titan:Saphir-Kristall wie eine Linse.
 Die Strahlmitte hat nämlich den längsten optischen Weg, während die äußeren Bereiche schneller durch den Kristall propagieren.
 
@@ -247,14 +258,7 @@ So wird dieser intensive Puls gegenüber dem cw-Signal bevorzugt.
 Dieses Verfahren wird \textbf{Soft aperture Kerr-lens modelocking} (Abb.\ref{fig:softApKLM}) genannt, während beim \textit{Hard aperture Kerr-lens modelocking} ein Schlitz oder ähnliches benötigt wird.
 Diese Apertur lässt den fokussierten, intensiven Strahl ohne Verlust passieren, während der cw-Anteil teilweise abgeschnitten wird und so höhere Verluste erfährt.
 Dies wird in Abbildung \ref{fig:hardApKLM} schematisch dargestellt.
-
-Für die minimal erreichbare Pulsdauer spielt die Dispersion im Resonator eine große Rolle.
-In \cite{spielmann_ultrabroadband_1994} wird
-\begin{align}
-	\tau_s=\frac{3.53 |D|}{\phi W}
-\end{align}
-hergeleitet.
-Dies kann jedoch nicht im Limit keiner Dispersion gelten, da die Formel eine immer geringere Pulsdauer impliziert.
+\\
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/ML_pulse_train_synthesis2.png}
@@ -276,10 +280,10 @@ Dies kann jedoch nicht im Limit keiner Dispersion gelten, da die Formel eine imm
 
 \begin{figure}[!htb]
    \centering
-   \subfloat[Soft aperture KLM\label{fig:softApKLM}]
+   \subfloat[Soft aperture KLM: Großer Überlapp zwischen gepulstem Strahl und Pumpstrahl.\label{fig:softApKLM}]
    {\includegraphics[width=0.49\textwidth]{figures/softApKLM.png}}
    \hfill
-   \subfloat[Hard aperture KLM\label{fig:hardApKLM}]
+   \subfloat[Hard aperture KLM: Gepulster Strahl passiert Apertur ungehindert. \label{fig:hardApKLM}]
    {\includegraphics[width=0.49\textwidth]{figures/hardApKLM}}
    \caption{Die zwei Arten des Kerr-lens Modelocking\protect\footnotemark: In beiden Fällen erfährt das cw-Signal höhere Verluste als der modengekoppelte, intensivere Puls.}
    \label{fig:KLM}
@@ -287,74 +291,70 @@ Dies kann jedoch nicht im Limit keiner Dispersion gelten, da die Formel eine imm
 %\footnotetext{\url{https://en.wikipedia.org/wiki/File:Kerr-lens_modelocking.svg}}
 %\footnotetext{\url{https://en.wikipedia.org/wiki/File:Kerr-lens_modelocking.png}
 \footnotetext{\url{https://en.wikipedia.org/wiki/Kerr-lens_modelocking}, abgerufen am 13.06.2016}
-
+\clearpage
 \subsection{Dissipative Solitonen}
+\label{sec:soliton}
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/dissipativeSoliton2}
 	\caption{Dissipative Solitonen sind im Gleichgewicht zwischen Gewinnen und Verlusten sowie Dispersion und einer Nichtlinearität. Grafik aus \cite{grelu_dissipative_2012} entnommen.}
 	\label{fig:DissipativeSoliton}
 \end{figure}
+Ein \textit{Soliton} ist ein lokalisiertes Wellenpaket, welches sich ähnlich wie ein Teilchen durch ein dispersives, nichtlineares Medium bewegt.
+Seine Form ändert sich also nicht, Dispersion und Nichtlinearität kompensieren sich.
+Dies determiniert auch die Pulsdauer.
+Außerdem ist die Propagationsgeschwindigkeit konstant.
+Bei einer Kollision zweier Solitonen gibt es keinen Energie- sowie Impulsaustausch.
+Sollte dies nicht der Fall sein, handelt es sich um eine \textit{solitäre Welle}.
 
-Solitonen sind sehr stabile Pulse.
-Sie beruhen auf einer Balance zwischen Dispersion, welches den Puls länger werden lässt, und einer Nichtlinearität, die den gegenteiligen Effekt hat.
-So stellt sich eine sehr stabile Pulsform ein.
-Dissipative Solitonen hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
+\textit{Dissipative Solitonen} hingegen werden von einer weiteren Balance, nämlich zwischen Gewinnen und Verlusten, gehalten.
 Dies wird in Abbildung \ref{fig:DissipativeSoliton} illustriert.
-Sie können auch stabile Multipulsformationen, sogenannte \textit{Solitonen-Moleküle} bilden.
-
-\cite{grelu_dissipative_2012}
-\cite{ankiewicz_dissipative_2008}
-
-
-
+Während es also in einem Hamiltonschen System eine Familie an Soliton-Lösungen gibt, die sich nur hinsichtlich ihrer Energie unterscheiden, fixiert die zweite Balance in Dissipativen Systemen auch die Pulsenergie.
+Dies bedeutet, dass mit ihnen die Pulse in modengekoppelten Lasern \cite{grelu_dissipative_2012} beschrieben werden können.
+Im Unterschied zu herkömmlichen Solitonen können diese auch stabile Multipulsformationen bilden \cite{ankiewicz_dissipative_2008}, sogenannte \textit{Solitonen-Moleküle}.
 
 \subsubsection{Faserlaser}
+In den letzten Jahren wurden bei der Entwicklung von Faserlasern große Fortschritte gemacht.
+Einige Arbeiten fokussierten sich dabei auch auf Solitonen-Moleküle in diesen Lasern.
+Im Folgenden sollen die wichtigsten Ergebnisse kurz vorgestellt werden.
+In \cite{grelu_group_2004} konnte beispielsweise die Interaktion eines Einzelpulses mit einem Doppelpuls beobachtet werden.
+Durch Variieren der Auskopplung kann zwischen elastischer Kollision und dem inelastische Fall, welcher zur Ausbildung eines stabilen Triplett-Zustandes führt, geschaltet werden. 
 
-\cite{ortac_observation_2010}
-\cite{zaviyalov_impact_2012}
-\cite{zavyalov_dissipative_2009}
-\cite{zavyalov_discrete_2009}
+In mehreren Messungen wurde entdeckt, dass die beobachteten Doppelpuls-Spektren nicht vollständig durchmoduliert sind.
+Verschiedene Erklärungsversuche basieren auf Simulationen. 
+So diskutieren \cite{grapinet_vibrating_2006} den Fall eines vibrierenden Pulspaares.
+Dessen Pulsabstand und relative Phase oszillieren auf einem Grenzzyklus, sodass die Mittelung über einen Zyklus zu einem weniger stark modulierten Spektrum führt.
+In \cite{zavyalov_discrete_2009} werden durch numerische Simulationen diskrete, äquidistante Pulsabstände gebundener Solitonen gefunden.
+Währenddessen wird in \cite{zavyalov_dissipative_2009} und \cite{ortac_observation_2010} von einer unabhängig anwachsenden Phase sowie flippenden Phase berichtet.
+Die Berücksichtigung der zeitabhängigen Verstärkungsdynamik in \cite{zaviyalov_impact_2012} führt zur Abstandsstabilisation eines Triplets.
 
-\cite{grelu_multisoliton_2004}
-\cite{grelu_nonlinear_2007}
-\cite{grapinet_vibrating_2006}
+%\subsubsection{Titan:Saphir-Laser}
 
-\cite{grelu_group_2004}
-\cite{rohrmann_two-soliton_2013}
-
-\clearpage
+%\clearpage
 \section{Dispersive Fourier-Transformation}
-\cite{goda_dispersive_2013}
-
+\label{sec:DFT}
 Um das Spektrum jedes einzelnen Pulses vermessen zu können, wird die dispersive Fourier-Transformation genutzt.
-Dazu wird die Gruppengeschwindigkeitsdispersion einer lange Glasfaser genutzt, in die der Laserstrahl eingekoppelt wird.
-Da ihr Brechungsindex frequenzabhängig ist, benötigen die unterschiedlichen Frequenzen des Femtosekunden-Pulses unterschiedlich lange, um durch die Glasfaser zu propagieren.
-Die Länge der Glasfaser wird so angepasst, dass das ausgehende Signal etwas kürzer als die Puls-Wiederholrate des Lasers ist.
-Dann kann das Spektrum am Ende der Faser mit einer schnellen Photodiode und einem schnellen Echtzeit-Oszilloskop vermessen werden.
-Da nur der Zeitunterschied zwischen zwei Frequenzen gemessen werden kann, muss dieser noch den richtigen Frequenzen zugeordnet werden.
-Dazu ist jedoch entweder die Kenntnis der Dispersion in der Glasfaser nötig oder die Kalibration geschieht mittels bekannter, stabiler Spektren.
-Im letzten Fall wird das Spektrum auch mit einem herkömmlichen, zeitlich mittelnden Gitter-Spektrometer gemessen und mit der Oszilloskop-Messung verglichen.
-Bei dieser konventionellen Messmethode wird der Strahl mit einem Gitter räumlich in seine spektralen Anteile zerlegt und diese dann mit einem CCD-Detektor aufgenommen.
-Da letzter relativ zur Pulswiederholrate nur langsam reagiert, wird somit automatisch über viele Pulse gemittelt und kann nur zur Kalibration genutzt werden.
-Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen und schnellen Prozessen, die sich nicht exakt wiederholen.
-
-Eine zeitliche Verschiebung des Signals nach der dispersiven Faser kann zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
-Deshalb wird mit einer zweiten Photodiode zusätzlich das undispergierte Zeitsignal aufgenommen, also die undispergierten Pulse.
-
-
-Formeln:\\
-\textit{Group Velocity Dispersion} in der Einheit \si{\femto\second^2\per\meter}
+Dazu wird die Gruppengeschwindigkeitsdispersion einer lange Glasfaser ausgenutzt, in die der Laserstrahl eingekoppelt wird.
+Da ihr Brechungsindex frequenzabhängig ist, benötigen die verschiedenen Frequenzen des Femtosekundenpulses unterschiedlich lange, um durch die Glasfaser zu propagieren.
+Ist $\frac{\dif n}{\dif \lambda}<0$, wird dies als normale Dispersion bezeichnet.
+Für die im Experiment verwendete Glasfaser sowie den genutzten Wellenlängenbereich ist dies der Fall, d.h. niedrige Frequenzen haben einen geringeren Brechungsindex und propagieren schneller durch die Faser als die höherfrequenten Anteile.
+Die \textit{Group Velocity Dispersion} (GVD), also die zweifache Ableitung der Kreiswellenzahl $k$ nach der Kreisfrequenz $\omega$, führt zu einer linearen Beziehung zwischen der zeitlichen Verzögerung $\Delta t$ nach der Faser und der Frequenz $\nu$:
 \begin{align}
 	\text{GVD}&=\frac{\partial}{\partial \omega}\frac{1}{v_\text{g}}=\frac{\partial}{\partial \omega}\frac{\partial k}{\partial \omega}=\frac{\partial^2 k}{\partial\omega^2}\\
 	\Delta t&=\text{GVD} \cdot s \cdot 2\pi\Delta\nu
 \end{align}
-Für Fasern wird oft deren \textit{Dispersionsparameter} $D_\lambda$ angegeben, welcher über
-\begin{align}
-	D_\lambda=-\frac{2\pi c}{\lambda^2}\cdot\text{GVD}=-\frac{2\pi c}{\lambda^2}\cdot\frac{\partial^2 k}{\partial\omega^2}
-\end{align}
-mit der Group Velocity Dispersion verknüpft ist.
-Typischerweise wird sie in $\si[per-mode=fraction]{\pico\second\per\nano\meter\per\kilo\meter}$ angegeben.
+Hierbei ist $s$ die Länge der Glasfaser, welche so angepasst wird, dass das ausgehende Signal etwas kürzer als die Puls-Wiederholrate des Lasers ist.
+Dann kann das Spektrum am Ende der Faser mit einer schnellen Photodiode und einem schnellen Echtzeit-Oszilloskop vermessen werden \cite{goda_dispersive_2013}.
+Da nur der Zeitunterschied zwischen zwei Frequenzen gemessen werden kann, muss dieser noch den richtigen Frequenzen zugeordnet werden.
+Dazu ist jedoch entweder die Kenntnis der Dispersion in der Glasfaser nötig oder die Kalibration geschieht mittels bekannter, stabiler Spektren.
+Im letzten Fall wird das Spektrum auch mit einem herkömmlichen, zeitlich mittelnden Gitter-Spektrometer gemessen und mit der Oszilloskop-Messung verglichen.
+Bei dieser konventionellen Messmethode wird der Strahl mit einem Gitter räumlich in seine spektralen Anteile zerlegt und diese dann mit einem CCD-Detektor aufgenommen.
+Da letzter relativ zur Pulswiederholrate nur langsam reagiert, wird somit über viele Pulse gemittelt und kann nur zur Kalibration genutzt werden.
+Der Vorteil der obigen Methode ist nämliche die Beobachtung von sehr kurzen und schnellen Prozessen, die sich nicht exakt wiederholen.
+
+Eine zeitliche Verschiebung des Signals nach der dispersiven Faser kann zwei Ursachen haben: eine zeitliche oder eine spektrale Verschiebung.
+Deshalb wird mit einer zweiten Photodiode zusätzlich das undispergierte Zeitsignal aufgenommen, also die undispergierten Pulse.
+In Abbildung \ref{fig:DFTskizze} wird der Unterschied zwischen beiden Kanälen deutlich.
 
 \begin{figure}[!htb]
 	\centering
@@ -362,6 +362,13 @@ Typischerweise wird sie in $\si[per-mode=fraction]{\pico\second\per\nano\meter\p
 	\caption{Skizze der dispersiven Fouriertransformation, aus \cite{herink_resolving_2016} entnommen.}
 	\label{fig:DFTskizze}
 \end{figure}
+Für Fasern wird oft deren \textit{Dispersionsparameter} $D_\lambda$ angegeben, welcher über
+\begin{align}
+	D_\lambda=-\frac{2\pi c}{\lambda^2}\cdot\text{GVD}
+\end{align}
+mit der Group Velocity Dispersion verknüpft ist.
+Für die im Experiment verwendete Faser ist $D_\lambda(\lambda=800\,\si{\nano\meter})=-139.2\,\si[per-mode=fraction]{\pico\second\per\nano\meter\per\kilo\meter}$.
+Somit ist die $\text{GVD}=47.3\,\si{\pico\second^2\per\kilo\meter}$.
 
 \subsection{Spektrale Interferenz und Doppelpulse}
 Das Spektrum zweier zueinander kohärenter Pulse mit einem bestimmten zeitlichen Abstand weist eine Modulation auf, die invers zum Abstand ist.
@@ -379,11 +386,12 @@ In Abbildung \ref{fig:PulsBsp} wird der Zusammenhang zwischen zeitlichem Signal,
 	\caption{Beispielhafte Doppelpulse: zeitlicher Intensitätsverlauf, Spektrum und Autokorrelation.}
 	\label{fig:PulsBsp}
 \end{figure}
-\clearpage
+
+%\clearpage
 \section{Simulation}
 \label{sec:SimTheo}
-Die Effekte der oben beschriebenen optischen Elemente auf das elektrische Feld im Laseresonator werden im Rahmen der Mastergleichung \cite{haus_mode-locking_2000} mathematisch beschrieben.
-Dies resultiert in einer nichtlinearen partiellen Differentialgleichung vom Ginzburg-Landau-Typ.\\
+Die Effekte aller optischen Elemente auf das elektrische Feld im Laseresonator werden im Rahmen der Mastergleichung \cite{haus_mode-locking_2000} mathematisch beschrieben.
+Dies resultiert in einer nichtlinearen partiellen Differentialgleichung vom Ginzburg-Landau-Typ.
 Das hier genutzte Modell wurde in \cite{kalashnikov_multipulse_2003} beschrieben, um Einzel- und Multipulsbetrieb zu simulieren und damit Aussagen zur Stabilität der Multipulse machen zu können.
 Im Rahmen dieser Arbeit wird es jedoch um eine explizitere Berücksichtigung der Gaindynamik auf der Zeitskala des Simulationsfensters erweitert.
 
@@ -393,12 +401,12 @@ Für die Zeitentwicklung werden zwei Zeitachsen genutzt: die Zeit $t$ während e
 Eine komplexe Funktion $A(z,t)$ repräsentiert dabei die Einhüllende des Pulses bzw. der Pulse. 
 Im Folgenden soll erläutert werden, welche Effekte auf die Pulsform $A(z,t)$ wirken:
 
-Neben linearer Verstärkung $\alpha$ sowie Verlusten $\rho$ beeinflusst die Kerr-Linse noch die Pulsamplitude.
-Diese wird als schneller sättigbarer Absorber moduliert, dh. höhere Intensitäten erfahren weniger Verluste.
+Neben linearer Verstärkung $\alpha$ sowie Verlusten $\rho$ (vor allem durch die Auskopplung) beeinflusst noch die Kerr-Linse die Pulsamplitude.
+Diese wird als schneller sättigbarer Absorber moduliert, d.h. höhere Intensitäten erfahren weniger Verluste.
 Mit zwei Parametern lässt sich das Verhalten dieses instantanen Absorbers kontrollieren: 
 Die Modulationstiefe $\gamma$ gibt den Verlust an, den ein kleines Eingangssignal erfahren würde, während sich die Verluste bei der Sättigungsintensität $1/\sigma$ halbieren.
 Zugleich sorgt die Kerr-Linse für einen intensitätsabhängigen Phasenschub, die Selbstphasenmodulation $\beta$ gibt die Stärke dieses Effekts an.
-Das Spektrum des Pulses wird auf durch das spektrale Verstärkungsprofil beeinflusst.
+Das Spektrum des Pulses wird auch durch das spektrale Verstärkungsprofil beeinflusst.
 Dabei wird angenommen, dass dieses Profil gaußförmig ist und eine Breite von $1/t_f$ besitzt.
 Außerdem verursacht die Dispersion $D$ einen frequenzabhängigen Phasenschub.\\
 Fasst man alles zu einer Differential-Gleichung zusammen, ergibt sich
@@ -426,12 +434,16 @@ wobei $I_p$ die Pumpintensität, $\sigma_a$ der Absorptionsquerschnitt bei der P
 Weiter ist $\sigma_g$ der Verstärkungsquerschnitt bei der Laserfrequenz $\nu$ und $T_r$ die Lebensdauer des oberen Laserniveaus.
 
 Ist das Pulspaar viel kürzer als die Resonatorlänge $T_\text{cav}$ und die Änderung der Verstärkung $\alpha$ während der Pulse vernachlässigbar, kann die obige Gleichung mit der Umlaufzeit $T_\text{cav}$ multipliziert und anschließend integriert werden.
-Der Übersichtlichkeit halber werden neue einheitenlose Größen definiert.
-So gibt $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ die Pumpstärke an, $E_s=h\nu/\sigma_g$ ist die Sättigungsenergie des Kristalls und $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$ die Gesamtenergie pro Laserumlauf.
-Es ergibt sich also:
+Der Übersichtlichkeit halber werden neue Größen definiert.
+So gibt $P=(I_p\sigma_a/h\nu_a)T_\text{cav}$ die Pumpstärke an, $E_s=h\nu/\sigma_g$ korrespondiert zur Sättigungsenergie des Kristalls und $E=\int_0^{T_\text{cav}}\dif t \,|A(z,t)|^2$ zur Gesamtenergie pro Laserumlauf.
+So kann die Verstärkung iterativ, also immer für den folgenden Laserumlauf, berechnet werden:
 \begin{align}
 	\alpha(z)&=\alpha(z-1)\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right) \notag \\
 	&+\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\left[1-\exp\left(-\frac{E}{E_s}-\frac{T_\text{cav}}{T_r}-P\right)\right]\,.
+\end{align}
+Für den stationären Fall ergibt sich somit eine Verstärkung von
+\begin{align}
+	\alpha_\text{stat}=\frac{\alpha_\text{max}P}{\frac{E}{E_s}+\frac{T_\text{cav}}{T_r}+P}\,.
 \end{align}
 
 Der erste Puls eines Pulspaars baut jedoch die Besetzungsinversion zumindest teilweise ab, während Pumpen und spontane Emission auf dieser Zeitskala vernachlässigbar sind.
@@ -447,7 +459,7 @@ So ändert sich der Gain auch während eines Roundtrips im Simulationsfenster:
 Dies hat zur Folge, dass der hintere Puls eines Pulspaares meistens etwas schwächer ist als der erste.
 
 \subsection{Experimentelle Parameter}
-Einige der zuvor beschriebenen Parameter sind Materialkonstanten für Titan:Saphir.
+Einige der zuvor beschriebenen Parameter sind Materialkonstanten für das Verstärkungsmedium Titan:Saphir.
 Diese werden in Tabelle \ref{tab:TiSaProp} aufgeführt.
 Andere werden durch den Laserresonator determiniert (Tabelle \ref{tab:RB_Prop}).
 So verbleiben nur wenige Parameter, die experimentell kontrolliert werden können.
@@ -495,7 +507,7 @@ Dort wird deutlich, dass auch die Anfangsbedingungen bei der folgenden Entwicklu
 		Pumpleistung & $P_\text{Pump}=4.6\,$W (typ.)\\
 		\hline
 	\end{tabular}
-	\caption{Eigenschaften des Laseroszillators.}
+	\caption{Eigenschaften des verwendeten Laseroszillators.}
 	\label{tab:RB_Prop}
 \end{table}
 
@@ -525,7 +537,7 @@ Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, 
 	\centering
 	\def\svgwidth{\columnwidth}
 	\input{DFTSetup2.pdf_tex}
-	\caption{Setup Echtzeit-Spektroskopie: Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgewandelt.}
+	\caption{Setup Echtzeit-Spektroskopie: Der Laserstrahl wird mit einem Beamsplitter geteilt. Der eine Teil trifft direkt auf die Photodiode, der andere hingegen wird in einer dispersiven Faser auf Nanosekunden gestreckt und somit wird spektrale Information  in zeitliche  umgewandelt.}
 	\label{fig:DFTSetup}
 \end{figure}
 Der experimentelle Aufbau zur Echtzeit-Spektroskopie basiert auf wenigen Bauteilen, die in diesem Abschnitt erläutert werden sollen.
@@ -552,10 +564,7 @@ Um diese Technik der dispersiven Fouriertransformation richtig nutzen zu können
 Zunächst wird die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerungen gemessen werden können und nicht direkt Frequenzen.
 Dazu wird ein Etalon, hier ein Mikroskopie-Deckglas, und der Laser im stabilen Einzelpulsbetrieb genutzt.
 Aufgrund von Mehrfach-Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
-Wie in Ref. \cite[S.66]{lauterborn_coherent_2003} beschrieben, ergeben sich Frequenzabstände von
-\begin{align*}
-	\Delta \nu=\frac{c}{2Ln}\,,
-\end{align*}
+Wie in Ref. \cite[S.66]{lauterborn_coherent_2003} beschrieben, ergeben sich Frequenzabstände von $\Delta \nu=\frac{c}{2Ln}\,$,
 wobei $c$ die Lichtgeschwindigkeit, $n$ der Brechungsindex und $L$ die Länge des Materials ist.
 Wird das Spektrum sowohl mit dem herkömmlichen Gitter-Spektrometer  sowie mit dem Oszilloskop aufgenommen, kann den Frequenzen anhand des spektralen Interferenzmusters eine Verzögerung nach der Glasfaser zugeordnet werden (Abb.\ref{fig:caliEtalon}).
 Trotz des breiten Spektrums ergibt sich im gesamten Messbereich ein etwa linearer Zusammenhang
@@ -563,9 +572,9 @@ Trotz des breiten Spektrums ergibt sich im gesamten Messbereich ein etwa lineare
   \frac{\Delta t}{\Delta \nu}=0.1082(8)\,\si{\nano\second\per\tera\hertz}
 \end{empheq}
 mit einer leichten Krümmung aufgrund von Dispersion höherer Ordnung.
-Dies bedeutet, dass pro Roundtrip, also 12.82\,ns, etwa 118\,THz aufgenommen werden und so eine zeitliche Auflösung von 8.44\,fs möglich ist.
-
- \begin{figure}[!htb]
+Der ermittelte Wert weicht etwa $10\,\%$ vom erwarteten Wert $\Delta t /\Delta \nu=0.119\,\si{\nano\second\per\tera\hertz}$ ab, welcher sich mit einer Faserlänge  von $s=400\,$m und einer GVD von $47.3\,\si{\pico\second^2\per\kilo\meter}$ aus Abschnitt \ref{sec:DFT} ergibt.
+Pro Laserumlauf, also 12.82\,ns, können etwa 118\,THz aufgenommen werden, so ist über die Fouriertransformation des Spektrums eine zeitliche Auflösung von 8.44\,fs möglich.
+\begin{figure}[!htb]
    \centering
    \subfloat[Spektrometer\label{fig:gratingEtalon}]
    {\includegraphics[width=0.49\textwidth]{figures/gratingEtalon}}
@@ -577,7 +586,7 @@ Dies bedeutet, dass pro Roundtrip, also 12.82\,ns, etwa 118\,THz aufgenommen wer
    {\includegraphics[width=0.6\textwidth]{figures/calibration}}
    \caption{Kalibration durch ein Etalon: Verzögerung nach der Faser wird Frequenzen zugeordnet.}
    \label{fig:caliEtalon}
- \end{figure}
+\end{figure}
 
 \section{Charakterisierung der Photodioden}
 Als nächstes wird die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert.
@@ -616,8 +625,8 @@ Danach wird die Photodiode übersteuert, sodass nicht genug Ladungsträger zwisc
 Im linearen Bereich kann allerdings die Sensitivität der Photodiode bestimmt werden.
 Diese gibt an, welcher Strom bei einer bestimmten eingestrahlten Leistung von der Photodiode produziert wird.
 Um den geflossenen Strom zu erhalten, wird die am Oszilloskop anliegende Spannung durch den benutzen Widerstand von $50\,\si\ohm$ geteilt.
-Außerdem wird der Strom noch über einen Roundtrip gemittelt, denn die eingestrahlte Leistung ist nur als Mittlung messbar.
-In Abb. \ref{fig:PDdispMeanA} wird all dies für beide Photodioden bestimmt und beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{04336} und  0.1120(5) für \texttt{04346}.
+Außerdem wird der Strom noch über einen Roundtrip gemittelt, denn die eingestrahlte Leistung ist nur als Mittelung messbar.
+In Abb. \ref{fig:PDdispMeanA} sind alle Messungen für beide Photodioden aufgetragen, beide liefern sehr ähnliche Sensitivitäten: 0.1154(8)\,A/W für  \texttt{04336} und  0.1120(5) für \texttt{04346}.
 Der kleine Unterschied kann auch durch eine leicht unterschiedliche Fokussierung bedingt sein.
 Insgesamt sind beide Werte aber in gutem Einklang mit der aus dem Datenblatt\footnote{\url{http://www.alphalas.com/images/stories/products/laser_diagnostic_tools/Ultrafast_Photodetectors_UPD_ALPHALAS.pdf}, abgerufen am 08.02.2016} entnommenen Sensitvitätskurve in Abb.\ref{fig:PDsensDB}
 
@@ -706,22 +715,21 @@ Dies kann dem verwendeten Interferometer zugeschrieben werden und soll im folgen
 
 Aufgrund der Funktionsweise des verwendeten Strahlteilers findet die Reflexion nur an der Vorderseite statt (vgl. Abb.\ref{fig:Beamsplitter}).
 Dies führt dazu, dass der zuerst reflektierte Strahl einmal, aber der zuerst transmittierte Strahl dreimal den Strahlteiler passiert.
-Dieser sorgt für einen positiven Chirp der Pulse, dh. die niedrigen Frequenzen laufen den hohen Frequenzen voraus.
+Dieser sorgt für einen positiven Chirp der Pulse, d.h. die niedrigen Frequenzen laufen den hohen Frequenzen voraus.
 Da der zuerst transmittierte Puls stärker gechirpt wird, ist der Pulsabstand   hinter dem Interferometer frequenzabhängig: Ist der stärker gechirpte Puls vor dem anderen, dann haben die niedrigeren Frequenzen einen größeren Abstand als die höheren. Ist die Pulsreihenfolge umgekehrt, so haben die niedrigeren Frequenzen einen kleineren Abstand.
 Die resultierende Modulationsfrequenz im Spektrum ist also nicht konstant.
-Mit einer entsprechenden Kompensationsplatte in einem der beiden Arme kann dies verhindert werden, hier wird dieser Chirp jedoch genutzt:
-So kann dieser die Abweichung von einem linearen Zusammenhang zwischen Frequenz und deren zeitlicher Verzögerung nach der Faser kompensieren oder verstärken.
-In Abbildung \ref{fig:calibration} ist nämlich zu erkennen, dass ein bestimmter Frequenzabstand bei niedrigen Frequenzen einen geringeren zeitlichen Abstand aufweist als bei höheren Frequenzen.
-Ist der Pulsabstand für niedrige Frequenzen geringer, haben die Frequenzen konstruktiver Interferenz einen größeren Abstand im Spektrum, der dann durch die Faser kompensiert wird, sodass das Signal nach der Faser nur eine bestimmte Modulationsfrequenz aufweist.
-Dies ist für die Charakterisierung der frequenzabhängigen Antwort der Photodiode nötig.
-Diese könnte man mit einem kontinuierlich modulierten Signal besser messen, benötigt dazu jedoch einen Modulator im 10\,GHz-Bereich.
+Mit einer entsprechenden Kompensationsplatte in einem der beiden Arme kann dies verhindert werden.
+Dies ist hier aber nicht der Fall und führt in der Kalibrationsmessung zu einer Vorkompensation der leicht nicht-linearen Gruppengeschwindigkeitsdispersion (vgl. Abb.\ref{fig:calibration}), sodass die Fouriertransformation für negative Verzögerungen schärfer erscheint -- und für positive breiter.
+
+
+Die Bestimmung der Bandbreite könnte man mit einem kontinuierlich modulierten Signal besser messen, benötigt dazu jedoch einen Modulator im 10\,GHz-Bereich.
 
 \chapter{Ergebnisse}
 In diesem Kapitel wird zunächst erläutert, wie der Resonator justiert sein muss, um Multipulse erzeugen zu können.
-Danach wird erklärt, wie die Messdaten bearbeitet werden, damit man aus ihnen Pulsabstände bestimmen kann.
+Danach wird erklärt, wie die Messdaten verarbeitet werden, damit man aus ihnen Pulsabstände bestimmen kann.
 Mit diesem Vorwissen werden dann die beobachteten Multipulse dargestellt.
 Dabei wird sich hier auf Multipulse mit geringen Pulsabständen ($< 1\,$ps) beschränkt.
-Wie schon von \cite{lai_multiple_1997} beschrieben, gibt es aber auch Multipulszustände mit langen Abständen.
+Wie schon von \cite{lai_multiple_1997} beschrieben, gibt es aber auch Multipulszustände mit langen (Nanosekunden) Abständen.
 Im Abschnitt \ref{sec:cpml} wird auf diese und deren Interaktionsmechanismus genauer eingegangen.
 
 Zuerst werden zwei verschiedene Messreihen präsentiert, bei denen durch Variation der Pumpleistung bzw. durch verschiedene Startstörungen unterschiedlichste Multipuls-Zustände auftreten.
@@ -732,7 +740,7 @@ Zuletzt werden die Ergebnisse der Simulation vorgestellt.
 \section{Kartierung des Resonators}
 Für das Einstellen von Multipulsen ist die Kenntnis der wichtigsten Resonatorparameter nötig.
 Dazu gehört die Kristallposition und der Abstand zwischen den beiden fokussierenden Spiegeln.
-Diese Abstände können jedoch aufgrund der Gegebenheiten momentan nur mit einer Genauigkeit von ca. $20\,\si{\micro\meter}$ gemessen werden.
+Diese Abstände können aufgrund der Gegebenheiten momentan nur mit einer Genauigkeit von ca. $20\,\si{\micro\meter}$ gemessen werden.
 
 In Abbildung \ref{fig:map} wird der Abstand der fokussierenden Spiegel bei verschiedenen Kristallpositionen variiert.
 In Abhängigkeit dessen wird mit einem Powermeter direkt am Laserausgang die cw-Leistung und -- wenn möglich -- auch die gemodelockte Leistung gemessen.
@@ -749,8 +757,8 @@ Zum anderen ist zu erkennen, dass eine größere Kristallposition (kleinerer Abs
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/map.pdf}
-	\caption{Abhängigkeit der Leistung (cw \& modengekoppelt) von der Position des fokussierenden Spiegels (Stabilität) bei verschiedenen Kristallpositionen.
-	Die Positionen werden von außen gemessen, dh. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
+	\caption{Abhängigkeit der Leistung (cw und modengekoppelt) von der Position des fokussierenden Spiegels (Stabilität) bei verschiedenen Kristallpositionen.
+	Die Positionen werden von außen gemessen, d.h. dass größere Werte einer Verringerung des Abstandes zum festen Fokussierspiegel entsprechen.}
 	\label{fig:map}
 \end{figure}
 
@@ -759,7 +767,7 @@ In Abbildung \ref{fig:map2} wird die Leistungsabhängigkeit von der Stabilitäts
 Wieder ist das gleiche Verhalten für den cw-Fall (schwarz) zu erkennen.
 Die Einzelpuls-Leistung (rot) ist etwas größer, die Doppelpuls-Leistung (blau) noch größer.
 Zu beachten ist aber, dass die Leistung im Doppelpulsbetrieb nicht annähernd doppelt so groß ist wie die Einzelpuls-Leistung.
-Also sind die beiden Pulse des Paares jeweils nicht so energiereich (und wahrscheinlich nicht so kurz) wie der Puls im Einzelpulsbetrieb.
+Also sind die beiden Pulse des Paares jeweils nicht so energiereich (und möglicherweise nicht so kurz) wie der Puls im Einzelpulsbetrieb.
 Vom Einzelpulsbetrieb ausgehend, können Doppelpulse durch Verringerung der Stabilitätsposition eingestellt werden.
 Meist befindet sich der Laser nach der ersten Störung durch Bewegen des Endspiegels  im Einzelpuls-Zustand.
 Das Spektrum dieses Zustands ist aber mit einem hohen cw-Anteil behaftet.
@@ -769,7 +777,7 @@ Wird der Laser durch Bewegen des Endspiegels ein zweites Mal gestört, können s
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/map2.pdf}
-	\caption{Abhängigkeit der Ausgangsleistung (cw \& modengekoppelt) von der Position des fokussierenden Spiegels (Stabilität) bei fester Kristallposition.
+	\caption{Abhängigkeit der Ausgangsleistung (cw und modengekoppelt) von der Position des fokussierenden Spiegels (Stabilität) bei fester Kristallposition.
 	Etwas andere Justage als in Abbildung \ref{fig:map}.}
 	\label{fig:map2}
 \end{figure}
@@ -822,7 +830,7 @@ Bei einer hohen Pumpleistung von $P_\text{Pump}=4.57\dots 4.81\,$W sind die Puls
 Es lässt sich eine interessante Phasen-Abstandsdynamik beobachten.
 Bei einer mittleren Pumpleistung von $P_\text{Pump}=4.48\dots 4.57\,$W kommt es zu wiederkehrenden Kollisionen zwischen den beiden Pulsen.
 Wird die Pumpleistung weiter auf $P_\text{Pump}=4.39\dots 4.47\,$W verringert, laufen die beiden Pulse mit etwas unterschiedlichen Repetitionsraten nahezu unabhängig durch den Resonator.
-Zu beachten ist, dass dieses Verhalten 
+
 \clearpage
 \subsection{Gebundene Pulse (hohe Pumpleistung)}
 \label{sec:oscillatingSolitons}
@@ -844,7 +852,7 @@ Es gibt jedoch ein oszillatorisches Verhalten der Phase und des Abstandes.
    \subfloat[\label{fig:rBF468}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,68W_Ch_PWwithCB}}
    \vspace*{-3mm}   
-   \caption{Gebundene Pulse: Zeitaufgelöste Spektren in Abh. der Pumpleistung.}
+   \caption{Gebundene Pulse: Zeitaufgelöste Spektren in Abhängigkeit der Pumpleistung. Relative Phase und Pulsabstand oszillieren.}
    \label{fig:boundSpectro}
 \end{figure}
  
@@ -963,7 +971,7 @@ Dies lässt sich auch in der Peak-Spannung des undispergierten Signals erkennen,
 So wird der schwache Puls die meiste Zeit schwächer, während der starke stärker wird.
 Dies führt zu einer Zunahme der Relativgeschwindigkeit.
 Es gibt jedoch zwei Zeitpunkte zwischen zwei aufeinanderfolgenden Kollisionen, bei denen sich dieses Verhalten genau umgekehrt: Es findet ein Energietransfer vom stärkeren zum schwächeren Puls statt und die Relativgeschwindigkeit nimmt ab.
-Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Laserkristall begegnen und so der schwächere Puls vom Kerr-Effekt durch den stärkeren profitiert.
+Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Laserkristall begegnen und so der schwächere Puls vom Kerr-Effekt des stärkeren profitiert.
 
 \begin{figure}[!htb]
    \centering   
@@ -991,7 +999,7 @@ Der Abstand liegt etwa bei 170 \,fs.
 Dann wird die Pumpleistung verringert.
 Dabei wird beobachtet, dass der Abstand der beiden Pulse immer noch sehr konstant ist, während die Phase jedoch beginnt, in $2\pi$-Sprüngen durchzulaufen (vgl. Abb. \ref{fig:165014steps} C-F).
 Verringert sich die Pumpleistung weiter, geschieht dieser Prozess schneller, bis die Phase annähernd linear anwächst (vgl. Abb. \ref{fig:165014steps} G+H).
-Je geringer die Pumpleistung ist, desto schneller wächst die relative Phase zwischen beiden Pulsen an.
+Je geringer die Pumpleistung ist, desto schneller das Wachstum.
 Um dies zu verdeutlichen, ist in Abbildung \ref{fig:jumpRT} in Abhängigkeit der Pumpleistung die Anzahl der Roundtrips aufgetragen, innerhalb deren sich die Phase um $2\pi$ ändert.
 Wird die Entwicklung der Phase wie in Abbildung \ref{fig:165014steps2} mit dieser Zeit skaliert, lässt sich der Übergang von einer nahezu stufenförmigen Entwicklung zum linearen Drift der Phase durch Verringerung der Pumpleistung noch besser beobachten.
 
@@ -999,7 +1007,7 @@ Für dieses Verhalten lässt sich eine  mögliche Erklärung finden:
 Ist die Pumpleistung gering, ist der Intensitätsunterschied zwischen beiden Pulsen konstant.
 Der hintere erfährt weniger Verstärkung und ist deshalb schwächer.
 Die Phase ändert sich linear.
-Für hohe Pumleistungen hingegen kann es zu einem Locken der Phase kommen (siehe Abb. \ref{fig:165014steps} A,B).
+Für hohe Pumleistungen hingegen kann es zu einer Kopplung der Phasen (Locken) kommen (siehe Abb. \ref{fig:165014steps} A,B).
 Bei einer leicht geringeren Pumpleistung driftet die Phase langsam von der gelockten Position weg.
 Ist der Unterschied zu groß, beschleunigt sich die Änderung der Phase bis diese sich wieder in der Nähe der gelockten Position befindet.
 Der Intensitätsunterschied nimmt also kurzzeitig stark zu bis sich wieder ein annähernd stabiler Zustand eingestellt hat.
@@ -1088,7 +1096,7 @@ In Abbildung \ref{fig:Triplett} ist die spektrale Entwicklung sowie die Autokorr
 In der Autokorrelation zeigen sich drei Abstände: der Abstand zwischen dem ersten und zweiten, zweiten und dritten sowie dem ersten und dritten Puls.
 Auffällig ist, dass nur bestimmte Pulsabstände vorkommen: 110\,fs, 165\,fs, 265\,fs sowie 320\,fs.
 Diese Abstände sind etwas größer als die in \cite{kitano_stable_1998} für zwei 15\,fs-Pulse gemessenen Abstände von 98\,fs, 164\,fs, 259\,fs sowie 312\,fs.
-Die hier betrachteten Pulse sind daher wahrscheinlich ein wenig länger.
+Die hier betrachteten Pulse sind daher wahrscheinlich geringfügig länger.
 Im Spektrum lässt sich erkennen, dass die relativen Phasen oszillatorisches Verhalten sowie kontinuierliches Anwachsen aufweisen.
 Wird die Pumpleistung verringert, stirbt einer der Pulse aus.
 Die verbleibenden Beiden ändern ihren Abstand nicht grundlegend.
@@ -1161,7 +1169,7 @@ Erst dann propagieren nur diese beiden Pulse durch den Resonator.
 \end{figure}
 Das undispergierte Signal wird für die Ermittlung der wichtigsten Eigenschaften der beiden Pulse  verwendet: Die Entwicklung der Pulsenergien sowie des Pulsabstandes sind in Abbildung \ref{fig:StartGetrenntAusw} dargestellt.
 Dabei wird über 50 Laserumläufe geglättet.
-Zur Bestimmung der Pulsenergien wird für beide Puls die Höhe des Peaks im undispergierten Signal bestimmt.
+Zur Bestimmung der Pulsenergien wird für beide Pulse die Höhe des Peaks im undispergierten Signal bestimmt.
 Dabei sollte beachtet werden, dass die Photodiode nach einem Puls noch nachschwingt bzw. langsamer abfällt.
 Dies bedeutet, dass die Energie des zweiten Pulses tendenziell überschätzt wird.
 Der bestimmte Energieunterschied könnte also noch etwas größer sein.
@@ -1191,7 +1199,7 @@ Der Abstand könnte der Abweichung vom 2:1-Verhältnis zwischen langem und kurze
 \end{figure}
 
 \clearpage
-\subsection{Annäherung}
+\subsection{Annäherung zweier Pulse}
 Der Zeitpunkt, bei dem sich obige Pulse auf unter 1\,ps angenähert haben, kann leider nicht mehr aufgenommen werden, da dazu der Speicher des Oszilloskop nicht genügt.
 Nimmt man obige Rate von ca. 20\,ps auf 3\,ms an, würde dies mehr als 60\,ms dauern.
 Stattdessen kann aber auf eine solche Annäherung getriggert werden.
@@ -1314,8 +1322,7 @@ Sogar drei Pulse entstehen manchmal.
 
 \section{Simulation}
 \label{sec:SimPrax}
-Einige der oben beschriebenen Vorgänge können auch simuliert werden.
-Dazu wird das Modell aus Abschnitt \ref{sec:SimTheo} verwendet.
+Einige der oben beschriebenen Vorgänge lassen sich mit dem vorgestellten numerischen Modell aus Abschnitt \ref{sec:SimTheo} nachvollziehen.
 Im folgenden werden 3 verschiedene Dynamiken präsentiert, die sich nur durch kleine Änderungen der Simulationsparameter bzw. Anfangsbedingungen ergeben.
 Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam2} und \ref{tab:SimParamStart} wieder.
 Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs auf.
@@ -1363,11 +1370,11 @@ Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs au
 		Größe & Wert\\
 		\hline
 		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
-		Selbstamplitudenmodulation & $\sigma=60$\\
+		Selbstamplitudenmodulation & $\sigma=60 \beta$\\
 		Modulationstiefe des sätt. Absorbers & $\gamma=0.24$\\
 		Dispersion & $D_0=-50\,\si{\femto\second^2}$\\
 		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
-		& $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
+		Pumpparameter & $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
 		\hline
 	\end{tabular}
 	\caption{Weitere Simulationsparameter.}
@@ -1514,7 +1521,7 @@ Dazu zählen unter anderem Phasen- und Abstandsentwicklungen von \textbf{Soliton
 Für diese stabilen Doppelpuls-Konfigurationen konnten zuvor nur deren diskrete Pulsabstände beobachtet werden.
 Hier konnte für den kleinsten dieser Abstände ein oszillatorisches Verhalten detektiert werden, welches stark von der Pumpleistung beeinflusst wird (vgl. Abschnitt \ref{sec:oscillatingSolitons}).
 Außerdem wurde für den nächstgrößeren Abstand beobachtet, wie anfangs phasengelockte Pulse durch Reduktion der Pumpleistung zunächst eine stufenförmige Zunahme der relativen Phase erfahren, bis diese schließlich kontinuierlich zunimmt (vgl. Abschnitt \ref{sec:steps}).
-Diese beiden faszinierenden Dynamiken können nur schwer mit herkömmlichen Methoden gemessen werden, da diese in der Mittlung über viele Laserumläufe verschwinden.
+Diese beiden faszinierenden Dynamiken können nur schwer mit herkömmlichen Methoden gemessen werden, da diese in der Mittelung über viele Laserumläufe verschwinden.
 
 Außerdem wurde mit den \textbf{wiederkehrend kollidierenden Pulsen} (vgl. Abschnitt \ref{sec:bounce}) ein neuer Zustand beobachtet, der sich nur mit Echtzeit-Methoden messen lässt.
 So lässt das gemittelte Spektrum keinerlei Modulationen erkennen, und auch durch eine mittelnde Messung der Autokorrelation hätte dieser Zustand nicht entdeckt werden können, da der Pulsabstand zu stark variiert.
@@ -1524,9 +1531,16 @@ Die Vorgeschichte beeinflusst jedoch auch, wann die Abstandsverringerung eintrit
 In Abschnitt \ref{sec:running} wurde hingegen ein Zustand entdeckt, der auch mit Photodioden beobachtet werden hätte können, welche für die Analyse und Justage gepulster Oszillatoren verwendet werden.
 Dort propagieren zwei \textbf{Einzelpulse mit verschiedenen Geschwindigkeiten} durch den Resonator.
 Dies lässt sich durch unterschiedliche Pulsamplituden erklären, wurde jedoch zuvor -- nach bestem Wissen und Gewissen des Autors -- noch nie beschrieben.
+Ähnliches wurde zwar in \cite{grelu_group_2004} berichtet:
+Dort propagiert ein Einzelpuls und ein Doppelpuls durch den Resonator.
+Das Pulspaar ist dabei jedoch schneller, während hier der Kerr-Effekt zu einer geringeren Geschwindigkeit des intensiveren Pulses führt.
 
-Die Stärke von Echtzeit-Methoden liegt vor allem im Enthüllen von \textbf{transienten Dynamiken}, welche hier z.B. während der Pulsentstehung (Abschnitt \ref{sec:startTransient}) sowie durch Automodulationen der Laserleistung (Abschnitt \ref{sec:automod}) beobachtet wurden.
+Die Stärke von Echtzeit-Methoden liegt vor allem im Enthüllen von \textbf{transienten Dynamiken}, welche hier z.B. während der Pulsentstehung (Abschnitt \ref{sec:startTransient}) beobachtet wurden.
 Durch große Messkampagnen wie das oftmalige Starten in den Pulsbetrieb unter immer den gleichen Bedingungen könnten diese seltenen Ereignisse besser verstanden werden.
+Außerdem konnte in Echtzeit beobachtet werden, wie sich die Pulse bei Automodulationen der Laserleistung (Abschnitt \ref{sec:automod}) verhalten. 
+Diese Leistungsmodulation wurde in \cite{jasapara_automodulations_2000} beschrieben.
+Dabei wurde angenommen, dass nur ein Puls durch den Resonator propagiert.
+Hier konnte jedoch auch die Entstehung von Multipulsen beobachtet werden.
 
 Viele der beobachteten Dynamiken lassen sich mit dem \textbf{Kerr-Effekt} und der daraus resultierenden, von der Intensität abhängigen Pulsgeschwindigkeit erklären.
 Trotzdem sind noch viele Fragen offen.
@@ -1547,7 +1561,7 @@ Dies geschieht auf einer relativ langen Zeitskala (Größenordnung $~100\,$ms), 
 Dazu müsste in den \textit{FastFrame}-Mode gewechselt werden, mit dem jedoch nicht jeder Puls aufgenommen werden kann.
 Außerdem ist bei solch großen Pulsabständen das undispergierte Signal das aussagekräftigere.
 Die Genauigkeit liegt dort aber nur bei ca. $40\,$ps.
-Durch Mittlung über mehrere Umläufe kann dies erhöht werden.
+Durch Mittelung über mehrere Umläufe kann dies erhöht werden.
 Dabei verschwinden jedoch schnelle Dynamiken.
 
 Interessant zu beobachten wäre nun, wie beide Pulse ihre Relativbewegung beenden.
@@ -1587,7 +1601,7 @@ Die genaue Analyse von verschiedenen Entstehungsprozessen rückt somit in den Fo
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.
 %% Ein Beispiel fuer eine solche Datenbank finden Sie in bthesis_datenbank.bib
-\bibliography{test}
+\bibliography{bthesis_datenbank}
 
 \chapter*{Danksagung}
 \parindent0mm
@@ -1595,7 +1609,7 @@ Die genaue Analyse von verschiedenen Entstehungsprozessen rückt somit in den Fo
 Ganz besonders bedanke ich mich bei Prof. Dr. Claus Ropers, der diese Arbeit ermöglicht hat.
 Er hatte immer ein offenes Ohr für meine Probleme und die Gespräche mit ihm waren sehr konstruktiv.
 
-Bei Dr. Georg Herink müchte ich mich für die gute Betreuung und Zusammenarbeit bedanken.
+Bei Dr. Georg Herink möchte ich mich für die gute Betreuung und Zusammenarbeit bedanken.
 Ich habe sehr viel von ihm gelernt.
 Außerdem bleibt mir der gemeinsame Besuch des Labors von Hauke Bensch (Institut für Quantenoptik, Universität Hannover) in guter Erinnerung.
 
