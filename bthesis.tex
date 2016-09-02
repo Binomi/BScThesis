@@ -131,7 +131,7 @@ Mit Simulationen können verschiedene experimentelle Beobachtungen nachvollzogen
 %% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
 \begin{otherlanguage}{english}
 \begin{abstract}
-  In this paper the spectra of an 80\,MHz Ti:sapph oscillators are measured in real-time.
+  In this paper the spectra of an 80\,MHz Ti:sapph oscillator are measured in real-time.
   For that purpose, a dispersive fiber is used which maps spectral information to temporal information.
   The latter can be recorded with high-speed electronics.
   Hereby we can reveal multipulse dynamics which arise at certain adjustments of the laser cavity.
@@ -140,7 +140,7 @@ Mit Simulationen können verschiedene experimentelle Beobachtungen nachvollzogen
   Various types of dynamics are observed:
   spacing and relative phase are oscillating, the relative phase increases stepwise, periodically colliding pulses and pulses with different velocities propagating almost independently through the cavity.
   Beyond, we notice discrete values for stable pulse spacings.
-  The used measurement technique allows observations of transient processes like the build-up of a femtosecond pulse pair.
+  The used measurement technique allows also observations of transient processes like the build-up of a femtosecond pulse pair.
   Some of the experimental observations are related to simulations.
   \bigskip\par
   \textbf{Keywords:} Physics, Bachelor thesis, real-time spectroscopy, optical solitons, multipulses
@@ -325,7 +325,7 @@ Verschiedene Erklärungsversuche basieren auf Simulationen.
 So diskutieren \cite{grapinet_vibrating_2006} den Fall eines vibrierenden Pulspaares.
 Dessen Pulsabstand und relative Phase oszillieren auf einem Grenzzyklus, sodass die Mittelung über einen Zyklus zu einem weniger stark modulierten Spektrum führt.
 In \cite{zavyalov_discrete_2009} werden durch numerische Simulationen diskrete, äquidistante Pulsabstände gebundener Solitonen gefunden.
-Währenddessen wird in \cite{zavyalov_dissipative_2009} und \cite{ortac_observation_2010} von einer unabhängig anwachsenden Phase sowie flippenden Phase berichtet.
+Währenddessen wird in \cite{zavyalov_dissipative_2009} von einer unabhängig anwachsenden Phase sowie flippenden Phase berichtet.
 Die Berücksichtigung der zeitabhängigen Verstärkungsdynamik in \cite{zaviyalov_impact_2012} führt zur Abstandsstabilisation eines Triplets.
 
 %\subsubsection{Titan:Saphir-Laser}
@@ -334,11 +334,11 @@ Die Berücksichtigung der zeitabhängigen Verstärkungsdynamik in \cite{zaviyalo
 \section{Dispersive Fourier-Transformation}
 \label{sec:DFT}
 Um das Spektrum jedes einzelnen Pulses vermessen zu können, wird die dispersive Fourier-Transformation genutzt.
-Dazu wird die Gruppengeschwindigkeitsdispersion einer lange Glasfaser ausgenutzt, in die der Laserstrahl eingekoppelt wird.
+Dazu wird die Gruppengeschwindigkeitsdispersion einer langen Glasfaser ausgenutzt, in die der Laserstrahl eingekoppelt wird.
 Da ihr Brechungsindex frequenzabhängig ist, benötigen die verschiedenen Frequenzen des Femtosekundenpulses unterschiedlich lange, um durch die Glasfaser zu propagieren.
 Ist $\frac{\dif n}{\dif \lambda}<0$, wird dies als normale Dispersion bezeichnet.
 Für die im Experiment verwendete Glasfaser sowie den genutzten Wellenlängenbereich ist dies der Fall, d.h. niedrige Frequenzen haben einen geringeren Brechungsindex und propagieren schneller durch die Faser als die höherfrequenten Anteile.
-Die \textit{Group Velocity Dispersion} (GVD), also die zweifache Ableitung der Kreiswellenzahl $k$ nach der Kreisfrequenz $\omega$, führt zu einer linearen Beziehung zwischen der zeitlichen Verzögerung $\Delta t$ nach der Faser und der Frequenz $\nu$:
+Die \textit{Group Velocity Dispersion} (GVD), also die Ableitung der inversen Gruppengeschwindigkeit $v_g$ bzw. die zweifache Ableitung der Kreiswellenzahl $k$ nach der Kreisfrequenz $\omega$, führt zu einer linearen Beziehung zwischen der zeitlichen Verzögerung $\Delta t$ nach der Faser und der Frequenz $\nu$ \cite[S. 9 ff.]{agrawal_nonlinear_2001}:
 \begin{align}
 	\text{GVD}&=\frac{\partial}{\partial \omega}\frac{1}{v_\text{g}}=\frac{\partial}{\partial \omega}\frac{\partial k}{\partial \omega}=\frac{\partial^2 k}{\partial\omega^2}\\
 	\Delta t&=\text{GVD} \cdot s \cdot 2\pi\Delta\nu
@@ -366,7 +366,7 @@ Für Fasern wird oft deren \textit{Dispersionsparameter} $D_\lambda$ angegeben, 
 \begin{align}
 	D_\lambda=-\frac{2\pi c}{\lambda^2}\cdot\text{GVD}
 \end{align}
-mit der Group Velocity Dispersion verknüpft ist.
+mit der Group Velocity Dispersion verknüpft ist \cite[S. 10 f.]{agrawal_nonlinear_2001}.
 Für die im Experiment verwendete Faser ist $D_\lambda(\lambda=800\,\si{\nano\meter})=-139.2\,\si[per-mode=fraction]{\pico\second\per\nano\meter\per\kilo\meter}$.
 Somit ist die $\text{GVD}=47.3\,\si{\pico\second^2\per\kilo\meter}$.
 
@@ -523,7 +523,7 @@ Mit kleinen Prismen, sogenannten Wedges, wird die Netto-Dispersion feingetunt.
 
 Der Laser läuft zunächst im cw-Betrieb.
 Um in den Puls-Betrieb zu gelangen, wird der Endspiegel mit einem dafür vorgesehenen Knopf schnell bewegt.
-Dadurch kommt es zu Intensitätsschwankungen, wovon eine stark genug sein muss, um genügend Verstärkung zu erfahren und damit das Modelocking zu starten.
+Dadurch kommt es zu Intensitätsschwankungen, unter denen eine stark genug sein muss, um genügend Verstärkung zu erfahren und damit das Modelocking zu starten.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rainbow2.JPG}
@@ -561,7 +561,7 @@ Um diese Technik der dispersiven Fouriertransformation richtig nutzen zu können
 %\clearpage
 
 \section{Kalibration der Dispersiven Fouriertransformation}
-Zunächst wird die Dispersion in der Glasfaser gemessen werden, da mit dem Oszilloskop nur Zeitverzögerungen gemessen werden können und nicht direkt Frequenzen.
+Zunächst wird die Dispersion in der Glasfaser gemessen, da mit dem Oszilloskop nur Zeitverzögerungen gemessen werden können und nicht direkt Frequenzen.
 Dazu wird ein Etalon, hier ein Mikroskopie-Deckglas, und der Laser im stabilen Einzelpulsbetrieb genutzt.
 Aufgrund von Mehrfach-Reflexionen an der Vorder- sowie Rückseite interferieren bestimmte Frequenzen konstruktiv, andere destruktiv.
 Wie in Ref. \cite[S.66]{lauterborn_coherent_2003} beschrieben, ergeben sich Frequenzabstände von $\Delta \nu=\frac{c}{2Ln}\,$,
@@ -573,7 +573,8 @@ Trotz des breiten Spektrums ergibt sich im gesamten Messbereich ein etwa lineare
 \end{empheq}
 mit einer leichten Krümmung aufgrund von Dispersion höherer Ordnung.
 Der ermittelte Wert weicht etwa $10\,\%$ vom erwarteten Wert $\Delta t /\Delta \nu=0.119\,\si{\nano\second\per\tera\hertz}$ ab, welcher sich mit einer Faserlänge  von $s=400\,$m und einer GVD von $47.3\,\si{\pico\second^2\per\kilo\meter}$ aus Abschnitt \ref{sec:DFT} ergibt.
-Pro Laserumlauf, also 12.82\,ns, können etwa 118\,THz aufgenommen werden, so ist über die Fouriertransformation des Spektrums eine zeitliche Auflösung von 8.44\,fs möglich.
+Pro Laserumlauf, also 12.82\,ns, können etwa 118\,THz aufgenommen werden.
+So ist über die Fouriertransformation des Spektrums eine zeitliche Auflösung von 8.44\,fs möglich.
 \begin{figure}[!htb]
    \centering
    \subfloat[Spektrometer\label{fig:gratingEtalon}]
@@ -591,7 +592,7 @@ Pro Laserumlauf, also 12.82\,ns, können etwa 118\,THz aufgenommen werden, so is
 \section{Charakterisierung der Photodioden}
 Als nächstes wird die Photodiode (Alphalas UPD-40-UVIR-P) charakterisiert.
 In Tabelle \ref{tab:PD} finden sich die wichtigsten Herstellerangaben zu diesem ultraschnellen Photodetektor.
-Diese sollen überprüft bzw. auf die experimentelle Situation hin getestet werden.
+Diese werden überprüft bzw. für die experimentelle Situation getestet.
 Die beiden verwendeten Photodioden werden anhand ihrer Seriennummern \texttt{04336} und \texttt{04346} unterschieden.
 
 Zunächst wird getestet, in welchem Leistungsbereich die Photodioden linear reagieren, damit bei zukünftigen Messungen dieser Bereich nicht überschritten wird.
@@ -618,7 +619,7 @@ Um die Leistungsabhängigkeiten zu messen, wird der Laserstrahl mit der $\lambda
 \end{table}
 
 \subsection{Antwortverhalten auf das dispergierte Signal}
-Als nächstes treffen Nanosekundenpulse auf die Photodiode, die sich durch die Dispersion in der Faser aus Femtosekundenpulsen ergeben.
+Hier treffen Nanosekundenpulse auf die Photodiode, die sich durch die Dispersion in der Faser aus Femtosekundenpulsen ergeben.
 Das Signal ähnelt also einem kontinuierlichen Signal.
 So wächst bis ca. 10\,mW die Photodiodenantwort linear mit der eingestrahlten Leistung an.
 Danach wird die Photodiode übersteuert, sodass nicht genug Ladungsträger zwischen zwei Pulsen nachfließen können, wobei sich die Pulsform stark ändert.
@@ -776,7 +777,7 @@ Wird der Laser durch Bewegen des Endspiegels ein zweites Mal gestört, können s
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/map2.pdf}
+	\includegraphics[width=0.69\textwidth]{figures/map2.pdf}
 	\caption{Abhängigkeit der Ausgangsleistung (cw und modengekoppelt) von der Position des fokussierenden Spiegels (Stabilität) bei fester Kristallposition.
 	Etwas andere Justage als in Abbildung \ref{fig:map}.}
 	\label{fig:map2}
@@ -789,18 +790,9 @@ Modelockt der Laser, entspricht jeder Laserumlauf des dispergierten Signals dem 
 Es wird daher zunächst die Pulswiederholrate bestimmt.
 Dies geschieht über eine Fouriertransformation des gesamten Signals.
 Die Frequenz des höchsten Peaks entspricht der Wiederholrate, das Inverse also dem Pulsabstand $t_\text{rep}$ bzw. der optischen Resonatorlänge des Lasers.
-Da diese während des Startvorgangs durch Bewegen eines Endspiegels geändert wird, ist die bestimmte Wiederholrate nur für einen kurzen Ausschnitt der Messung korrekt.
-
 Danach werden die Daten auf einem Gitter interpoliert, dessen eine Achse die Zeit bezüglich eines Laserumlaufs darstellt, während die andere die Umläufe zählt.
 Anschließend kann die Messung als 2D-Matrix dargestellt werden: Abbildung \ref{fig:DarstM_undisp_krumm} und \ref{fig:DarstM_disp_krumm}.
 Nun sind Änderungen über viele Laserumläufe sichtbar.
-
-
-Daher muss noch die Änderung der Repetitionsrate bzw. die Abweichung vom richtigen Wert korrigiert werden.
-Dazu wird ein Polynom durch die Peakpositionen des undispergierten, gemodelockten Signals gelegt. Der Definitionsbereichs des Polynoms wird auf die gesamte Messung ausgedehnt und dann wird jeder Roundtrip so verschoben, dass diese Peakpositionen zu gleichen Zeitpunkten im Roundtrip liegen.
-Mit diesem Polynom (evtl. mit anderem Offset) wird auch die dispergierte Messung verschoben.
-Das Resultat ist in Abbildung \ref{fig:DarstM_undisp_gerade} sowie \ref{fig:DarstM_disp_gerade} dargestellt.
-Gut zu erkennen ist, dass der modengekoppelte Puls im undispergierten Fall nun immer zur gleichen Zeit bezüglich eines Laserumlaufs registriert wird.
 
 \begin{figure}[!htb]
    \centering
@@ -822,6 +814,13 @@ Gut zu erkennen ist, dass der modengekoppelte Puls im undispergierten Fall nun i
    \caption{Darstellung der Messdaten: Die gemessene Zeitreihe wird in Laserumläufe aufgetrennt, dann wird die Auswirkung der Änderung der Resonatorlänge während der Messung korrigiert.}
    \label{fig:MessdatenDarstellung}
 \end{figure}
+\clearpage
+Da die Resonatorlänge während des Startvorgangs durch Bewegen eines Endspiegels geändert wird, ist die bestimmte Wiederholrate nur für einen kurzen Ausschnitt der Messung korrekt.
+Daher muss noch die Änderung der Repetitionsrate bzw. die Abweichung vom richtigen Wert korrigiert werden.
+Dazu wird ein Polynom durch die Peakpositionen des undispergierten, gemodelockten Signals gelegt. Der Definitionsbereichs des Polynoms wird auf die gesamte Messung ausgedehnt und dann wird jeder Roundtrip so verschoben, dass diese Peakpositionen zu gleichen Zeitpunkten im Roundtrip liegen.
+Mit diesem Polynom (evtl. mit anderem Offset) wird auch die dispergierte Messung verschoben.
+Das Resultat ist in Abbildung \ref{fig:DarstM_undisp_gerade} sowie \ref{fig:DarstM_disp_gerade} dargestellt.
+Gut zu erkennen ist, dass der modengekoppelte Puls im undispergierten Fall nun immer zur gleichen Zeit bezüglich eines Laserumlaufs registriert wird.
 
 \section{Doppelpulse Messreihe 1}
 Wie zuvor beschrieben, wird der Laser bei geeigneter Justage durch zweimaliges Stören in den Doppelpuls-Betrieb überführt.
@@ -879,7 +878,7 @@ Dieser folgt teilweise den beiden anderen Dynamiken, besitzt jedoch 6 Umkehrpunk
 Außerdem nimmt die Phase langfristig ab, der hintere Puls ist also durchschnittlich schwächer als der vordere.
  \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.73\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows_final2.pdf}
+	\includegraphics[width=0.79\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_InteractionPlaneArrows_final2.pdf}
 	\caption{Gebundene Pulse: Phasendynamik in der Interaction Plane  in Abhängigkeit der Pumpleistung.
 	Während sich bei niedriger (blau) und hoher Pumpleistung (gelb) ein Kreis/Halbkreis-ähnliches Verhalten zeigt, ist die Dynamik bei einer mittleren Pumpleistung (rot) deutlich komplexer. Trotzdem ergibt sich ein geschlossener Orbit.}
 	\label{fig:interactionPlane}
@@ -916,7 +915,7 @@ Interessant wäre jedoch, ob sich auch bei anderen Pumpleistungen Häufungen des
    \hfill
    \subfloat[Autokorrelation \label{fig:bounceZyklusAutocorr}]
    {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_runBounceFix_4,56W_Ch1_141000_144000_autocorr}}
-   \caption{Kollisionszyklus ($P_\text{Pump}=4.56\,$W)}
+   \caption{Kollisionszyklus bei einer Pumpleistung von $P_\text{Pump}=4.56\,$W\,.}
    \label{fig:bounceZyklus}
 \end{figure}
  
@@ -980,7 +979,7 @@ Dies lässt sich damit erklären, dass die beiden Pulse sich gerade dann im Lase
    \hfill
    \subfloat[Zeitliche Entwicklung der beiden Puls\-energien und der Differenz der Umlaufzeit\label{fig:rBF441peakTau}]
    {\includegraphics[width=0.48\textwidth]{figures/runningPeakTau}}
-   \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen vorfinden und sich so gegeneinander verschieben.}
+   \caption{Zwei unterschiedlich starke Pulse im Laser, die aufgrund des Kerr-Effekts verschiedene optische Weglängen haben und sich so gegeneinander verschieben.}
    \label{fig:running441}
  \end{figure}
 
@@ -1061,34 +1060,6 @@ Je geringer die Pumpleistung, desto größer der Intensitätsunterschied und ins
    \label{fig:165014steps2}
 \end{figure}
 
-
-%\begin{figure}[!htb]
-%   \centering
-%   \captionsetup[subfigure]{labelformat=empty}
-%   \captionsetup[subfloat]{farskip=-10pt,captionskip=0pt}   
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,51W_Ch_PWnoCB_scale}}
-%   \hfill
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,49W_Ch_PWnoCB_scale}}
-%   %\hfill
-%   
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,45W_2_Ch_PWnoCB_scale}}
-%   \hfill
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,34W_Ch_PWnoCB_scale}}
-%   %\hfill
-%   
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,3W_Ch_PWnoCB_scale}}
-%   \hfill
-%   \subfloat[]
-%   {\includegraphics[width=0.49\textwidth]{figures/4ms_25GSA_400m_MLrun_Doppel4,2W_Ch_PWnoCB_scale}}
-%   \caption{Verringerung der Pumpleistung: Von einer festen Phase über Stufen zu einer annähernd linear durchlaufenden Phase.}
-%   \label{fig:165014steps_scale}
-%\end{figure}
-
 \clearpage
 
 \subsection{Dreifach-Pulse}
@@ -1144,7 +1115,7 @@ Zwei Fluktuationen wachsen nahezu gleichzeitig zu Femtosekundenpulsen an, sind a
 Bei dem anderen Voragang wächst ein Puls so schnell an, dass die Selbstphasenmodulation dazu führt, dass sich dieser aufspaltet.
 Außerdem werden kurzlebige, sich so gebildete Doppelpulse beobachtet.
 
-\subsection{Getrennte Starts}
+\subsection{Getrennte Starts zweier Pulse}
 In \cite{herink_resolving_2016} wird dargestellt, wie eine Pikosekunden-Fluktuation  spektral breiter, also kürzer wird und schließlich in einem Femtosekundenpuls endet.
 Im Unterschied dazu kann im Doppelpuls-Regime beobachtet werden, wie zwei verschiedene Fluktuationen anwachsen.
 In Abbildung \ref{fig:StartGetrennt} ist sowohl das undispergierte als auch das dispergierte Signal während der Entstehung dieser beiden Femtosekundenpulse zu sehen.
@@ -1170,7 +1141,7 @@ Erst dann propagieren nur diese beiden Pulse durch den Resonator.
 Das undispergierte Signal wird für die Ermittlung der wichtigsten Eigenschaften der beiden Pulse  verwendet: Die Entwicklung der Pulsenergien sowie des Pulsabstandes sind in Abbildung \ref{fig:StartGetrenntAusw} dargestellt.
 Dabei wird über 50 Laserumläufe geglättet.
 Zur Bestimmung der Pulsenergien wird für beide Pulse die Höhe des Peaks im undispergierten Signal bestimmt.
-Dabei sollte beachtet werden, dass die Photodiode nach einem Puls noch nachschwingt bzw. langsamer abfällt.
+Es sollte aber beachtet werden, dass die Photodiode nach einem Puls noch nachschwingt bzw. langsamer abfällt.
 Dies bedeutet, dass die Energie des zweiten Pulses tendenziell überschätzt wird.
 Der bestimmte Energieunterschied könnte also noch etwas größer sein.
 
@@ -1179,11 +1150,12 @@ Die zeitliche Auflösung der Originaldaten liegt nämlich bei 40\,ps.
 Wird jedoch über mehrere Umläufe gemittelt, kann der Abstand genauer bestimmt werden.
 So wird beobachtet, dass die beiden Pulse sich näher kommen.
 Dies kann man darauf zurückführen, dass der hintere und somit schwächere Puls aufgrund des Kerr-Effektes schneller durch den Laserkristall propagiert und sich daher der Pulsabstand verringert.
+
 Der Anfangsabstand von etwa 430\,ps scheint nicht willkürlich zu sein.
 Diesen kann man auch in Abbildung \ref{fig:DarstM_undisp_gerade} identifizieren.
 Bevor dort nur ein modengekoppelter Puls durch den Resonator propagiert, können etwa sechs äquidistante Fluktuationen pro Laserumlauf beobachtet werden.
 Während eine dieser Fluktuationen schwächer wird, wächst gleichzeitig im Abstand von 400 bis 450 Pikosekunden eine neue an.
-Der Abstand könnte der Abweichung vom 2:1-Verhältnis zwischen langem und kurzem Arm des Laserresonators entsprechen, sodass .
+Der Abstand könnte der Abweichung vom 2:1-Verhältnis zwischen langem und kurzem Arm des Laserresonators entsprechen (vgl. Abschnitt \ref{sec:ursprung}).
 
 \begin{figure}[!htb]
    \centering
@@ -1208,7 +1180,7 @@ In Abbildung \ref{fig:StartAnnaeherung} wird das Spektrum sowie die daraus berec
 Auffällig ist, dass der Pulsabstand nicht linear abnimmt, sondern leicht stufenförmig.
 Die relative Phase nimmt beschleunigend zu, bis die nächste Stufe erreicht ist.
 Die stabileren Abstände sind vergleichbar mit den diskreten Pulsabständen, die bei den Triplett-Zuständen auftreten.
-Ein Endabstand von ca. 170\,fs sowie eine feste relative Phase stellen sich schließlich ein.
+Ein Endabstand von ca. 170\,fs sowie eine feste relative Phase stellen sich hier schließlich ein.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/4ms_25GSA_400m_MLstart_Doppelpulse2_Annaeherung_280500}
@@ -1300,19 +1272,19 @@ Der überlebende Puls kann jetzt spektral breiter und energiereicher werden.
 \end{figure}
 
 \clearpage
-\section{Automodulationen}
+\section{Multipulse bei Q-Switch-Instabilitäten}
 \label{sec:automod}
 In diesem Abschnitt wird ein weiterer interessanter Betriebsmodus präsentiert.
 Dazu wird zuerst ein stabiler modengekoppelter Femtosekundenpuls erzeugt.
 Danach wird der Abstand der beiden Fokussierspiegel (Stabilität) verringert, sodass die Verluste im Resonator größer werden.
 Dies impliziert eine selbst erregte, starke Modulation der emittierten Leistung mit einer Modulationstiefe von mehr als 90\% (siehe Abb.\ref{fig:SelfQSwitch}).
 Ein solcher Zyklus dauert etwa 172 Roundtrips, ca. $2.21\,\si{\micro\second}$, ist also etwas kürzer als die Lebensdauer des oberen Laserniveaus von $3.2\,\si{\micro\second}$.
+Dieses Verhalten wird Selbst-Güteschaltung (\textit{self-Q-switching}) genannt.
 Aufgrund des rapiden Leistungsanstiegs spaltet sich jedoch in vielen Fällen der gerade entstehende Puls auf, sodass für eine kurze Zeitspanne zwei Femtosekundenpulse im Laser propagieren.
 Sogar drei Pulse entstehen manchmal.
-
 \begin{figure}[!htb]
    \centering
-   \includegraphics[width=0.85\textwidth]{figures/4ms_25GSA_400m_MLrun_ZitternHeftig_239100}
+   \includegraphics[width=0.81\textwidth]{figures/4ms_25GSA_400m_MLrun_ZitternHeftig_239100}
    \caption{Höhere Verluste im Resonator führen zu selbstverursachten Leistungsmodulationen auf einer Zeitskala der Lebensdauer des oberen Laserniveaus:
    Dabei können sich hier sogar bis zu drei Pulse ausbilden -- gefolgt von einer Phase nahezu keiner Laseremission. 
    (\textit{oben:} Spektrale Entwicklung, \textit{mitte:} Autokorrelation, \textit{unten:} Energie).}
@@ -1324,63 +1296,32 @@ Sogar drei Pulse entstehen manchmal.
 \label{sec:SimPrax}
 Einige der oben beschriebenen Vorgänge lassen sich mit dem vorgestellten numerischen Modell aus Abschnitt \ref{sec:SimTheo} nachvollziehen.
 Im folgenden werden 3 verschiedene Dynamiken präsentiert, die sich nur durch kleine Änderungen der Simulationsparameter bzw. Anfangsbedingungen ergeben.
-Die verwendeten Größen finden sich in Tabelle \ref{tab:SimParam2} und \ref{tab:SimParamStart} wieder.
-Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs auf.
-%\begin{table}[!htb]
-%	\centering
-%	\begin{tabular}{|c|l|}
-%		\hline
-%		Größe & Wert\\
-%		\hline
-%		Zentralwellenlänge & $\lambda_0=800\,$nm\\	
-%		Brechungsindex @ $\lambda_0$ & $n=1.76$\\
-%		Kerr-Index & $n_2=3\cdot 10^{-20}\,\si{\meter^2\per\watt}$\\
-%		Kristalllänge & $x=2\,$mm\\
-%		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
-%		Selbstamplitudenmodulation & $\sigma=60$\\
-%		Modulationstiefe des sättigbaren Absorbers & $\gamma=0.24$\\
-%		Verluste & $\rho=3.3\%$\\
-%		Dispersion & $D_0=-50\,\si{\femto\second^2}$\\
-%		Wirkungsquerschnitt Emission & $\sigma_g=41\,\si{\pico\meter^2}$\\
-%		Inverse spektrale Verstärkung & $t_f=2.5\,$fs\\	
-%		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
-%		Resonatorperiode & $T_\text{cav}=12.8\,$ns\\
-%		Lebensdauer des oberen Niveaus & $T_r=3.2\,\si{\micro\second}$\\
-%		maximale Verstärkung & $\alpha_\text{max}=0.33$\\
-%		Pumpstrahlradius & $\omega_0=10\,\si{\micro\meter}$\\
-%		Pumpleistung & $P_\text{Pump}=4.6\,$W\\
-%		Absorptionswellenlänge & $\lambda_a=532\,$nm\\
-%		Absorptionsquerschnitt & $\sigma_a=20\,\si{\pico\meter^2}$\\
-%		& $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
-%		\hline		
-%		Pulsform & 2 Gaußförmige Pulse\\
-%		Pulsamplitude & 1\\
-%		Pulslänge & 25\,fs\quad @ 1/e der Pulsamplitude\\
-%		Pulsabstand & $\tau_0=100,200\,$fs\\
-%		\hline
-%	\end{tabular}
-%	\caption{Simulationsparameter.}
-%	\label{tab:SimParam}
-%\end{table}
-
+Dazu werden die Eigenschaften des Lasermediums aus Tabelle \ref{tab:TiSaProp} sowie des Resonators (Tabelle \ref{tab:RB_Prop}) verwendet.
+Einige Parameter werden aber auch aus diesen Größen berechnet: 
+So wird die Selbstphasenmodulation $\beta$ durch die Kristalllänge $x$ und den Kerr-Index $n_2$ bestimmt: $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}$.
+Weitere berechnete Größen sind die Sättigung des Lasermediums $E_s$ sowie der Pumpparameter $P$.
+Diese und die anderen verwendeten Parameter finden sich in Tabelle \ref{tab:SimParam2} wieder.
+Unter diesen Bedingungen ergeben sich Doppelpulse mit einer Pulslänge von etwa 28\,fs.
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{|c|l|}
 		\hline
 		Größe & Wert\\
 		\hline
-		Selbstphasenmodulation & $\beta=\frac{2\pi\cdot n_2\cdot 2x}{\lambda_0\cdot n}=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
+		Selbstphasenmodulation & $\beta=5.36\cdot 10^{-16}\,\si{\meter^2\per\watt}$\\
 		Selbstamplitudenmodulation & $\sigma=60 \beta$\\
 		Modulationstiefe des sätt. Absorbers & $\gamma=0.24$\\
 		Dispersion & $D_0=-50\,\si{\femto\second^2}$\\
-		Sättigungsenergie & $E_s=\frac{h\,c}{\lambda_0\sigma_g}= 6.06\,\si{\kilo\joule\per\meter^2}$\\
-		Pumpparameter & $P=\frac{P_\text{Pump}}{\pi\omega_0^2\cdot n}\cdot\frac{\sigma_a}{h\nu_a}\cdot T_\text{cav}=5.7\cdot 10^{-3}$\\
+		Sättigungsenergie & $E_s= 6.06\,\si{\kilo\joule\per\meter^2}$\\
+		Pumpparameter & $P=5.7\cdot 10^{-3}$\\
 		\hline
 	\end{tabular}
 	\caption{Weitere Simulationsparameter.}
 	\label{tab:SimParam2}
 \end{table}
 
+Die Simulation startet immer mit zwei gaussförmigen Pulsen, deren weitere  Eigenschaften in Tabelle \ref{tab:SimParamStart} aufgeführt werden.
+Variiert wird deren Anfangsabstand sowie die Pumpleistung.
 
 \begin{table}[!htb]
 	\centering
@@ -1389,7 +1330,7 @@ Die so simulierten Doppelpulse weisen jeweils eine Pulslänge von etwa 28\,fs au
 		Größe & Wert\\
 		\hline	
 		Pulsform & 2 Gaußförmige Pulse\\
-		Pulsamplitude & 1\\
+		Pulsamplitude & $1/\beta$\\
 		Pulslänge & 25\,fs\quad @ 1/e der Pulsamplitude\\
 		Pulsabstand & $\tau_0=100,200\,$fs\\
 		\hline
@@ -1537,8 +1478,8 @@ Das Pulspaar ist dabei jedoch schneller, während hier der Kerr-Effekt zu einer 
 
 Die Stärke von Echtzeit-Methoden liegt vor allem im Enthüllen von \textbf{transienten Dynamiken}, welche hier z.B. während der Pulsentstehung (Abschnitt \ref{sec:startTransient}) beobachtet wurden.
 Durch große Messkampagnen wie das oftmalige Starten in den Pulsbetrieb unter immer den gleichen Bedingungen könnten diese seltenen Ereignisse besser verstanden werden.
-Außerdem konnte in Echtzeit beobachtet werden, wie sich die Pulse bei Automodulationen der Laserleistung (Abschnitt \ref{sec:automod}) verhalten. 
-Diese Leistungsmodulation wurde in \cite{jasapara_automodulations_2000} beschrieben.
+Außerdem konnte in Echtzeit beobachtet werden, wie sich die Pulse bei Q-Switch-Instabilitäten (Abschnitt \ref{sec:automod}) verhalten. 
+Diese Leistungsmodulation wurde in \cite{xing_self-q_1995} und \cite{jasapara_automodulations_2000} beschrieben.
 Dabei wurde angenommen, dass nur ein Puls durch den Resonator propagiert.
 Hier konnte jedoch auch die Entstehung von Multipulsen beobachtet werden.
 
@@ -1573,6 +1514,7 @@ Um all diese Fragen zu beantworten, könnte man den Strahl aufspalten und den ei
 Dann ist die Abstandsinformation auch wieder im Spektrum kodiert und der Abstand zwischen beiden Pulsen kann genau gemessen werden.
 
 \section{Ursprung der Doppelpulse}
+\label{sec:ursprung}
 In Abschnitt \ref{sec:start} wurden die beiden Prozesse vorgestellt, die zur Bildung eines Pulspaares führen:
 Aufspalten eines Pulses sowie das getrennte Starten eines zweiten Pulses.
 Welche Parameter legen nun aber den vorherrschenden Prozess fest?
@@ -1582,7 +1524,10 @@ Das Ziel weiterer Messungen muss es also sein, diese Selbstamplitudenmodulation 
 Es wird vermutet, dass dieser Parameter auch die beobachteten Dynamiken der Solitonen-Moleküle beeinflusst, sodass weitere Zustände enthüllt werden könnten.
 
 Es konnte beobachtet werden, dass im Entstehungsprozess von Femtosekundenpulsen auch die Begegnung der Fluktuationen bzw. Pulse im Kristall eine große Rolle spielt.
-So könnte ein bereits modengekoppelter Puls eine Pikosekunden-Fluktuation beim Anwachsen unterstützen, statt sich selbst aufzuspalten.
+So könnte ein bereits modengekoppelter Puls eine Pikosekunden-Fluktuation beim Anwachsen unterstützen, statt sich selbst aufzuspalten (vgl. Abb. \ref{fig:StartGetrennt}).
+Möglicherweise geschieht dieser Vorgang über mehrere Kristallbegegnungen hinweg, sodass die Bedingungen direkt vor dem schon modengekoppelten Puls am besten sind:
+Der Femtosekundenpuls gibt Energie an eine Fluktuation ab, welche wiederum mit einer anderen im Kristall kollidiert und diese verstärkt, usw.
+
 Die genaue Analyse von verschiedenen Entstehungsprozessen rückt somit in den Fokus weiterer Untersuchungen.
 
 \appendix
@@ -1614,7 +1559,6 @@ Ich habe sehr viel von ihm gelernt.
 Außerdem bleibt mir der gemeinsame Besuch des Labors von Hauke Bensch (Institut für Quantenoptik, Universität Hannover) in guter Erinnerung.
 
 Dr. Murat Sivis und Benjamin Schröder halfen mir bei der korrekten Justage des Resonators.
-
 Bei der gesamten Arbeitsgruppe möchte ich mich für das freundliche, kollegiale Arbeitsklima bedanken.
 
 Ein besonderes Dankeschön geht an Herrn Dr. Christoph Bollig von \textit{Abacus Laser} für seine schnelle, technische Unterstützung.
